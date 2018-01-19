@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -25,8 +25,189 @@ if (! $res)
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 require_once '../fpdf/fpdf.php';
+include("data.php");
+
 
 class PDF_MC_Table extends FPDF{
+	
+	
+		public $datafooter = array();
+
+	// head Like header but not header
+	function head($title)
+	{
+		$this->return_to_default();
+		$this->SetY(5);
+		$this->SetFont('Arial','B',11);
+	    $this->Cell(0,5,$title[0],0,0,'C');
+	    $this->Ln();
+	    $this->Cell(0,5,$title[1],0,0,'C');
+	    $this->Ln();
+		$this->SetFont('Arial','i',11);
+	    $this->Cell(0,5,$title[2],0,0,'C');
+	    $this->Ln();
+	}
+
+	// First Page
+	function firstpage($data)
+	{
+	    // Logo
+	    $this->Image($data["logo"],13,13,50);
+	    $this->SetDrawColor(255, 191, 0);
+	    $this->SetLineWidth(2);
+	    $this->Line(10, 60, 200, 60);
+	    $this->Line(10, 140, 200, 140);
+	    // Arial bold 15
+	    $this->SetFont('Arial','B',20);
+	    // Title
+	    $this->SetY(90);
+	    $this->Cell(0,0,$data["title"][0],0,0,'C');
+	    $this->Ln(20); // Line break
+	    $this->Cell(0,0,$data["title"][1],0,0,'C');
+	    $this->Ln(20);
+	    $this->Cell(0,0,$data["title"][2],0,0,'C');
+	    // Image
+	    $this->Image($data["image"],55,150,100);
+	}
+
+	// Page 1
+	function drawfirsttable($image)
+	{
+		$this->return_to_default();
+		//line
+	    $this->Line(10, 22, 200, 22);
+	    $this->Line(10, 30, 200, 30);
+	    $this->Line(10, 40, 200, 40);
+	    $this->Line(10, 48, 200, 48);
+	    $this->Line(10, 56, 200, 56);
+	    $this->Line(10, 64, 200, 64);
+	    $this->Line(10, 76, 200, 76);
+	    $this->Line(10, 84, 200, 84);
+	    $this->Line(90, 94, 200, 94);
+	    $this->Line(90, 102, 200, 102);
+	    $this->Line(90, 120, 200, 120);
+	    $this->Line(10, 128, 200, 128);
+	    $this->Line(10, 140, 200, 140);
+	    $this->Line(90, 148, 200, 148);
+	    $this->Line(90, 156, 200, 156);
+	    $this->Line(10, 170, 200, 170);
+	    $this->Line(90, 178, 200, 178);
+	    $this->Line(10, 186, 200, 186);
+	    $this->Line(10, 200, 200, 200);
+	    $this->Line(10, 250, 200, 250);
+		//colon
+	    $this->Line(10, 22, 10, 250);
+	    $this->Line(90, 22, 90, 48);
+	    $this->Line(50, 56, 50, 76);
+	    $this->Line(90, 76, 90, 200);
+	    $this->Line(150, 76, 150, 170);
+	    $this->Line(200, 22, 200, 250);
+	    //colon
+	    $this->Image($image,15,87,70);
+	}
+
+	// Page 1
+	function page2($title,$data)
+	{
+		$this->return_to_default();
+		$this->SetY(5);
+		$this->SetFont('Arial','B',11);
+	    $this->Cell(0,5,$title[0],0,0,'C');
+	    $this->Ln();
+	    $this->Cell(0,5,$title[1],0,0,'C');
+	    $this->Ln();
+		$this->SetFont('Arial','i',11);
+	    $this->Cell(0,5,$title[2],0,0,'C');
+	    $this->Ln();
+
+	    foreach ($data as $key => $row) {
+	    	foreach ($row as $kCol => $colon) {
+		    	$this->SetXY($colon['x'], $colon['y']);
+				$this->SetFont('Arial', $colon['t'], $colon['s']);
+				$this->MultiCell($colon['w'], $colon['h'], $colon['c'], $colon['b'],$colon['l']);
+			}
+	    }
+	}
+
+	// Page 3
+	function page3($title,$data)
+	{
+		$this->return_to_default();
+		$this->head($title);
+	    foreach ($data as $key => $row) {
+			$y1 = $this->GetY();
+			$this->MultiCell(180, 8, $row[0], 0,"L");
+			$y2 = $this->GetY();
+			$this->SetXY(-15,$y1);
+			$this->MultiCell(10, 8, $row[1], 0,"L");
+			$this->SetY($y2);
+	    	$this->Ln();
+	    }
+	}
+
+	// Page 4
+	function page4($title,$data)
+	{
+		$this->return_to_default();
+		$this->head($title);
+	    foreach ($data as $key => $row) {
+	    	$this->Ln($row["ln"]);
+			$this->SetFont('Arial',$row["t"],$row["s"]);
+			$this->MultiCell(0, $row['h'], $row['c'], 0,"L");
+	    }
+	}
+
+	// Range
+	function range($title,$pages)
+	{
+		$this->return_to_default();
+		$this->head($title);
+	    foreach ($pages as $kpage => $page) {
+	    	foreach ($page as $kinfo => $info) {
+		    	$this->SetXY($info['x'], $info['y']);
+				$this->SetFont('Arial', $info['t'], $info['s']);
+				if($info['m']!=0){
+					$this->MultiCell($info['w'], $info['h'], $info['c'], $info['b'],$info['l']);
+				}else{
+					$this->Cell($info['w'], $info['h'], $info['c'], $info['b'],0,$info['l']);
+				}
+			}
+			if(isset($pages[$kpage+1])){ $this->AddPage();}
+	    }
+	}
+
+	// Simple table
+	function return_to_default()
+	{
+		$this->SetFont('Arial','',14);
+	    $this->SetDrawColor(null);
+		$this->SetLineWidth(null);
+	}
+
+	// Page footer
+	function Footer()
+	{
+		//return to default
+		$this->return_to_default();
+	    // Position at 1.5 cm from bottom
+	    $this->SetY(-20);
+	    // Arial italic 8
+	    $this->SetFont('Arial','I',8);
+	    $this->Cell(0,5,$this->datafooter["date"]);
+	    $this->Ln();
+	    $this->Cell(0,5,$this->datafooter["adress"]);
+	    $this->Ln();
+	    // Page number
+	    $this->Cell(0,10,'p '.$this->PageNo().'/{nb}',0,0,'C');
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	var $widths;
 	var $aligns;
@@ -137,7 +318,7 @@ $id	= GETPOST('id','int');
 
 
 
-$data = array();
+$dataq = array();
 
 $sql = "SELECT * ";
 $sql.= " FROM ".MAIN_DB_PREFIX."cstmd_interv_questions ";
@@ -147,7 +328,7 @@ $resql = $db->query($sql);
 if ($resql) {
 	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
 		$obj = $db->fetch_object($resql);
-		$data[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev);
+		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev);
 	}
 	$db->free($resql);
 
@@ -157,15 +338,36 @@ if ($resql) {
 }
 
 
-
 $pdf=new PDF_MC_Table();
+
+
+$pdf->datafooter = $footer;
+$pdf->SetFont('Arial','',14);
+//First Page
+$pdf->AddPage();
+$pdf->firstpage($firstpage);
+//Second Page
+$pdf->AddPage();
+$pdf->drawfirsttable($firstpage['logo']);
+$pdf->page2($title, $data);
+//page 3
+$pdf->AddPage();
+$pdf->page3($title, $page3);
+//page 4
+$pdf->AddPage();
+$pdf->page4($title, $page4);
+// Range
+$pdf->AddPage();
+$pdf->range($title, $pages);
+
+//********************************************************* Questions
 $pdf->AddPage();
 
 //Table de 20 lignes et 4 colonnes
 $pdf->SetWidths(array(140,12,12,12, 12));
 srand(microtime()*1000000);
 // for($i=0;$i<20;$i++)
-	foreach($data as $row){
+	foreach($dataq as $row){
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Row(array(utf8_decode($row['position'].' '.$row['label_question']),' CF ',' NC ',' PA ', ' EV '));
 		
