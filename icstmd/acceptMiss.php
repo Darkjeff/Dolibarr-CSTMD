@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -119,7 +119,7 @@ if (!file_exists($dir)) {
     mkdir($dir, 0777, true);
 }
 
-$filename=$dir."/acceptmiss ".date('Y_m_d').".pdf";
+$filename=$dir."/acceptmiss".date('Y_m_d').".pdf";
 $pdf->Output($filename,'F');
 
 

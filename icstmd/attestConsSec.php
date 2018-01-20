@@ -103,7 +103,7 @@ if (!file_exists($dir)) {
     mkdir($dir, 0777, true);
 }
 
-$filename=$dir."/attestConsSec ".date('Y_m_d').".pdf";
+$filename=$dir."/attestConsSec".date('Y_m_d').".pdf";
 $pdf->Output($filename,'F');
 
 if (isset($_SERVER["HTTP_REFERER"])) {
