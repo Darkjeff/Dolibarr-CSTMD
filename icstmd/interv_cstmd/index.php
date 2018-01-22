@@ -297,7 +297,7 @@ print '<div class="tabsAction">';
 
 	print '<a class="butAction btn_click" href="card.php?action=create&id_interv=' . $id . '">' . $langs->trans('New') . '</a><a class="butActionRefused btn_click_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('New') . '</a>';
 	
-	print '<a class="butAction btn_click_pdf" href="pdf.php?id='.$id.'">' . $langs->trans('Générer PDF') . '</a><a class="butActionRefused btn_click_pdf_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('Générer PDF') . '</a>';
+	print '<a class="butAction btn_click_pdf" target="blank" href="pdf.php?id='.$id.'">' . $langs->trans('Générer PDF') . '</a><a class="butActionRefused btn_click_pdf_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('Générer PDF') . '</a>';
 	
 
 

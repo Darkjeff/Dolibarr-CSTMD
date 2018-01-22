@@ -328,7 +328,8 @@ $resql = $db->query($sql);
 if ($resql) {
 	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
 		$obj = $db->fetch_object($resql);
-		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev);
+		// var_dump($obj);die;
+		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
 	}
 	$db->free($resql);
 
@@ -368,20 +369,31 @@ $pdf->SetWidths(array(140,12,12,12, 12));
 srand(microtime()*1000000);
 // for($i=0;$i<20;$i++)
 	foreach($dataq as $row){
-		$pdf->SetFont('Arial','B',8);
-		$pdf->Row(array(utf8_decode($row['position'].' '.$row['label_question']),' CF ',' NC ',' PA ', ' EV '));
-		
+		// var_dump();
+		$pdf->SetFont('Arial','B',8);		
 		$pdf->SetFont('Arial','',8);
 		$cf = $nc = $pa = $ev = null;
-		if($row['cf'] == 1){ $cf = 'X'; }
+		$show = false;
+		if($row['cf'] == 1){ $cf = 'X'; $show = true;}
 		
-		if($row['nc'] == 1){ $nc = 'X'; }
+		if($row['nc'] == 1){ $nc = 'X'; $show = true;}
 		
-		if($row['pa'] == 1){ $pa = 'X'; }
+		if($row['pa'] == 1){ $pa = 'X'; $show = true;}
 		
-		if($row['ev'] == 1){ $ev = 'X'; }
+		if($row['ev'] == 1){ $ev = 'X'; $show = true;}
 		
-		$pdf->Row(array(utf8_decode($row['texte_reglementaire']), $cf, $nc, $pa, $ev));
+		if($show){
+			$qst = $row['position'].' '.$row['label_question'];
+			$pdf->Row(array(utf8_decode($qst),' CF ',' NC ',' PA ', ' EV '));
+			if(!empty($row['recommandation'])){				
+				$pdf->Row(array(utf8_decode($row['recommandation']), '', '', '', ''));
+			}
+			if(!empty($row['reference'])){				
+				$pdf->Row(array(utf8_decode($row['reference']), '', '', '', ''));
+			}
+			
+			$pdf->Row(array(utf8_decode($row['texte_reglementaire']), $cf, $nc, $pa, $ev));
+		}
 	}
 	$pdf->Output();
 
