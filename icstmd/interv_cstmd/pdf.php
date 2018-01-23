@@ -331,7 +331,7 @@ if ($resql) {
 	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
 		$obj = $db->fetch_object($resql);
 		// var_dump($obj);die;
-		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj-dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
 	}
 	$db->free($resql);
 
@@ -389,15 +389,15 @@ srand(microtime()*1000000);
 			//todo mettre en gras
 			$pdf->Row(array(utf8_decode($qst),' CF ',' NC ',' PA ', ' EV '));
 			if(!empty($row['etat_lieux'])){
-				//$pdf->Row('Etat des lieux', '', '', '', ''));
+				$txt = "Etat des lieux";
+				$pdf->Row(array(utf8_decode($txt), '', '', '', ''));
 				$pdf->Row(array(utf8_decode($row['etat_lieux']), '', '', '', ''));				
 			}
 			if(!empty($row['recommandation'])){
 				$pdf->Row(array(utf8_decode($row['titre_recommandation']), '', '', '', ''));				
 				$pdf->Row(array(utf8_decode($row['recommandation']), '', '', '', ''));
 				
-				//todo correct date actuellement 01/01/1970
-				$txt = "en date du " .dol_print_date($row['dater'],'day', false, $outputlangs, true);
+				$txt = "Recommandation en date du " .dol_print_date($row['dater'],'day', false, $outputlangs, true);
 				$pdf->Row(array(utf8_decode($txt), '', '', '', ''));
 			}
 			if(!empty($row['reference'])){				
