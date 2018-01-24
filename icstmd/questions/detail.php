@@ -142,11 +142,11 @@ print '
 					print '<td>'.nl2br($obj->titre_recommandation).'</td>';
 					print '<td>'.nl2br($obj->recommandation).'</td>';
 					print '<td >';
-						if($obj->type == 1){
+						
 							print '<a class="btn_click_edit" href="card.php?action=edit&num=' . $nums . '&id='.$obj->rowid.'&id_cha='.$id_cha.'">' . img_edit($langs->trans('Modify')) .'</a><a class="btn_click_edit_2" title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . img_edit($langs->trans('Modify')) .'</a>';
 							print '&nbsp;&nbsp;&nbsp;';
 							print '<a class="btn_click_delete_0" href="'.$_SERVER["PHP_SELF"].'?id='.$obj->rowid.'&amp;action=delete&amp;num='.$nums.'&id_cha='.$id_cha.'">' . img_delete($langs->trans('Delete')) . '</a><a class="btn_click_delete_02" title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '" >' . img_delete($langs->trans('Delete')) . '</a>';
-						}
+						
 					print '</td>';
 				print '</tr>';
 			}

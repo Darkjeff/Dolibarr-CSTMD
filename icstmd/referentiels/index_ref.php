@@ -119,7 +119,7 @@ print '
 					print '<td>'.$object->nbquestion($obj->rowid).'</td>';
 					print '<td >';
 						print '&nbsp;&nbsp;&nbsp;';
-						print '<a href="../chapitres/index_cha.php?id_ref='.$obj->rowid.'" target="_blank"><img src="/theme/eldy/img/detail.png" border="0" alt="" title="Detail"></a>';
+						print '<a href="../chapitres/index_cha.php?id_ref='.$obj->rowid.'" target="_blank"><img src="../../../theme/eldy/img/detail.png" border="0" alt="" title="Detail"></a>';
 						print '&nbsp;&nbsp;&nbsp;';
 						print '<a class="btn_click_edit" href="card_ref.php?action=edit&id='.$obj->rowid.'">' . img_edit($langs->trans('Modify')) .'</a><a class="btn_click_edit_2" title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . img_edit($langs->trans('Modify')) .'</a>';
 						print '&nbsp;&nbsp;&nbsp;';
