@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -397,7 +397,7 @@ srand(microtime()*1000000);
 				$pdf->Row(array(utf8_decode($row['titre_recommandation']), '', '', '', ''));				
 				$pdf->Row(array(utf8_decode($row['recommandation']), '', '', '', ''));
 				
-				$txt = "Recommandation en date du " .dol_print_date($row['dater'],'day', false, $outputlangs, true);
+				$txt = "Recommandation à mettre en oeuvre avant le " .dol_print_date($row['dater'],'day', false, $outputlangs, true);
 				$pdf->Row(array(utf8_decode($txt), '', '', '', ''));
 			}
 			if(!empty($row['reference'])){				
