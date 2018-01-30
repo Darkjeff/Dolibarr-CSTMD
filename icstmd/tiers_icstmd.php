@@ -244,7 +244,7 @@ if ($id > 0)
 					<td>DREAL <?php //echo $commercial;?></td>
 					<td>
 					<?php if($action == 'editDreal'):?>
-					<form method="POST" action="<?php echo "?id=$id";?>"><?php echo$form->select_thirdparty_list('','soc_id','s.rowid in (select fk_soc from llx_categorie_societe where fk_categorie in (select rowid from llx_categorie where label="DREAL"))');?> <input type="hidden" name="action" value="saveDREAL"><input type="submit" class="button" value="Enregistrer">
+					<form method="POST" action="<?php echo "?id=$id";?>"><?php echo$form->select_thirdparty_list('','soc_id','s.rowid in (select fk_soc from ' . MAIN_DB_PREFIX . 'categorie_societe where fk_categorie in (select rowid from ' . MAIN_DB_PREFIX . 'categorie where label="DREAL"))');?> <input type="hidden" name="action" value="saveDREAL"><input type="submit" class="button" value="Enregistrer">
 					<?php else: echo $object->array_options['options_dreal'];?>
 					
 					<a class="pictosubstatus" href="?id=<?php echo $id.'&action=editDreal'; ?>"><img src="<?php echo dol_buildpath('theme/eldy/img/edit.png', 1); ?>" border="0" alt=""></a>
