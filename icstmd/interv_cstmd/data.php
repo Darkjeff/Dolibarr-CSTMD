@@ -1,7 +1,7 @@
 <?php
 $firstpage = array(
 	"logo"=> "../img/logo.jpg",
-	"title"=> array("Rapport Annuel du Conseiller a la Securite","Annee	2016",'"Denomination sociale"'),
+	"title"=> array("Rapport Annuel du Conseiller a la Securite","Annee	$annee",$name),
 	"image"=> "../img/image_doc.jpg",
 );
 $footer = array(
@@ -25,7 +25,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"",
+			"c"=>$name,
 			"x"=>90,
 			"y"=>22,
 			"w"=>0,
@@ -49,7 +49,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Adresse du siege social de l'entrepriseAdresse du siege sge social de l'entrepriseAdresse du siege s",
+			"c"=>utf8_decode($adresse),
 			"x"=>90,
 			"y"=>30,
 			"w"=>0,
@@ -62,7 +62,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Annee	concernee par le rapport",
+			"c"=>utf8_decode("Année	concernée par le rapport"),
 			"x"=>10,
 			"y"=>40,
 			"w"=>80,
@@ -73,7 +73,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"2016",
+			"c"=> $annee,
 			"x"=>90,
 			"y"=>40,
 			"w"=>0,
@@ -86,7 +86,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Ce rapport a ete etabli par :",
+			"c"=> utf8_decode("Ce rapport a été établi par :"),
 			"x"=>10,
 			"y"=>48,
 			"w"=>0,
@@ -99,7 +99,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"CARBONNE",
+			"c"=> utf8_decode($nom),
 			"x"=>10,
 			"y"=>56,
 			"w"=>40,
@@ -110,7 +110,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Francois-Xavier",
+			"c"=> utf8_decode($prenom),
 			"x"=>50,
 			"y"=>56,
 			"w"=>0,
@@ -134,7 +134,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Tel :	06 71 60 62	50 / 05 57 51 70 36 \n Email : fxc@carbonnetmd.fr",
+			"c"=> utf8_decode("Tél :	06 71 60 62	50 / 05 57 51 70 36 \n Email : fxc@carbonnetmd.fr"),
 			"x"=>50,
 			"y"=>65,
 			"w"=>0,
@@ -147,7 +147,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Fonction : Conseiller a la securite",
+			"c"=> utf8_decode("Fonction : Conseiller à la sécurité"),
 			"x"=>10,
 			"y"=>77,
 			"w"=>80,
@@ -182,7 +182,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Numero de	certificat :\n06148",
+			"c"=> utf8_decode("Numéro de	certificat :\n06148"),
 			"x"=>90,
 			"y"=>84,
 			"w"=>60,
@@ -193,7 +193,7 @@ $data = array(
 			"s"=>"11"
 		),
 		array(
-			"c"=>"Date de validite : 09/06/2018",
+			"c"=>utf8_decode("Date de validité : 09/06/2018"),
 			"x"=>150,
 			"y"=>84,
 			"w"=>0,
@@ -226,7 +226,7 @@ $data = array(
 			"s"=>"11"
 		),
 		array(
-			"c"=>"Et/ou	classe(s) de \nMarchandises \ndangereuses",
+			"c"=>utf8_decode("Et/ou	classé(s) de \nMarchandises \ndangereuses"),
 			"x"=>90,
 			"y"=>103,
 			"w"=>60,
@@ -248,7 +248,7 @@ $data = array(
 			"s"=>"11"
 		),
 		array(
-			"c"=>"Et/ou	geographique",
+			"c"=>utf8_decode("Et/ou	géographique"),
 			"x"=>90,
 			"y"=>120,
 			"w"=>60,
@@ -272,7 +272,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Visite(s)	effectuee(s) sur site(s) voir detail au	point 4.1 du present (appendice)",
+			"c"=>utf8_decode("Visite(s)	effectuée(s) sur site(s) voir détail au	point 4.1 du présent (appendice)"),
 			"x"=>10,
 			"y"=>128,
 			"w"=>80,
@@ -307,7 +307,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Identite du ou des conseillers ayant effectue la ou les visites : \nFx	Carbonne",
+			"c"=>utf8_decode("Identite du ou des conseillers ayant éffectue la ou les visites : \nFx	Carbonne"),
 			"x"=>10,
 			"y"=>140,
 			"w"=>80,
@@ -318,7 +318,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Numero(s) de certificat(s):",
+			"c"=>utf8_decode("Numéro(s) de certificat(s):"),
 			"x"=>90,
 			"y"=>140,
 			"w"=>60,
@@ -340,7 +340,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Date(s) de validite:",
+			"c"=>utf8_decode("Date(s) de validité:"),
 			"x"=>90,
 			"y"=>148,
 			"w"=>60,
@@ -386,7 +386,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Rapport annuel etabli le :",
+			"c"=>utf8_decode("Rapport annuel établi le :"),
 			"x"=>10,
 			"y"=>170,
 			"w"=>80,
@@ -397,7 +397,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Transmis a l'entreprise le :",
+			"c"=>utf8_decode("Transmis à l'entreprise le :"),
 			"x"=>90,
 			"y"=>170,
 			"w"=>0,
@@ -421,7 +421,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Signature	du conseiller a la securite",
+			"c"=>utf8_decode("Signature	du conseiller à la sécurité"),
 			"x"=>10,
 			"y"=>186,
 			"w"=>80,
@@ -445,7 +445,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Le conseiller	a la securite s'assure de	la reception du present	rapport	annuel et en conserve une trace	par	tout Le	present	rapport	est	a lire par le responsable de l'entreprise et a dispositions	des	organismes de controles. Ce	rapport	est	conforme a l'arrete du 29 mai 2009 modifie par l'arrete du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)",
+			"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la récep;on du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
 			"x"=>10,
 			"y"=>200,
 			"w"=>0,

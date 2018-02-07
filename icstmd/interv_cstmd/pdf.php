@@ -26,6 +26,53 @@ if (! $res)
 // error_reporting(E_ALL);
 require_once '../fpdf/fpdf.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/date.lib.php';
+require_once DOL_DOCUMENT_ROOT.'/fichinter/class/fichinter.class.php';
+$id			= GETPOST('id','int');
+$interv = new Fichinter($db);
+
+if ($id > 0 )
+{
+	$ret=$interv->fetch($id, null);
+	if ($ret > 0) $socid=$interv->socid;
+}
+
+if ($user->societe_id) $socid=$user->societe_id;
+$result = restrictedArea($user, 'societe', $socid, '&societe');
+
+$soc = new Societe($db);
+if ($id > 0) $soc->fetch($socid);
+
+
+$tab = explode(" ", $soc->array_options['options_cstmd']);
+// var_dump($tab);die();
+$sql = "SELECT rowid ";
+$sql.= " FROM ".MAIN_DB_PREFIX."user";	
+$sql.= " WHERE firstname = '" . $tab[0] . "'";
+$sql.= " AND lastname = '" . $tab[1] . "'";
+// echo $sql;
+$user_id = null;
+dol_syslog(__METHOD__ . " sql=" . $sql, LOG_DEBUG);
+$resql = $db->query($sql);
+if ($resql) {
+	if ($db->num_rows($resql)) {
+		$obj = $db->fetch_object($resql);
+		$user_id = $obj->rowid;
+		
+	}
+}
+
+$user_cstmd = new User($db);
+$user_cstmd->fetch($user_id); 
+
+// var_dump($interv);die;
+// var_dump($soc);die;
+
+
+$name = $soc->nom;
+$annee = date('Y', $interv->datec);
+$adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
+$nom = $user_cstmd->array_options['options_cstmd'];
+$prenom = "";
 
 include("data.php");
 
@@ -354,17 +401,25 @@ $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
 //page 3
-$pdf->AddPage();
-$pdf->page3($title, $page3);
-//page 4
-$pdf->AddPage();
-$pdf->page4($title, $page4);
+// $pdf->AddPage();
+// $pdf->page3($title, $page3);
+// page 4
+// $pdf->AddPage();
+// $pdf->page4($title, $page4);
 // Range
-$pdf->AddPage();
-$pdf->range($title, $pages);
+// $pdf->AddPage();
+// $pdf->range($title, $pages);
 
 //********************************************************* Questions
 $pdf->AddPage();
+
+$t = "5.1. Les procédés visant au respect des règles rela<ves à l'identification des marchandises dangereuses transportées";
+
+$pdf->SetFont('Arial','B',12);
+$pdf->SetXY(10, 10);
+$pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
+$pdf->MultiCell(175,5,'', 0, 'L');
+
 
 //Table de 20 lignes et 4 colonnes
 $pdf->SetWidths(array(140,12,12,12, 12));

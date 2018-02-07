@@ -64,6 +64,15 @@ if($action == 'saveVeh'){
 	
 }
 
+if($action == 'remove_file'){
+	$file = GETPOST('file');
+	$dir = $dolibarr_main_data_root."/icstmd/".$id;
+	unlink($dir.'/'.$file);
+	header("Location: ".$_SERVER["PHP_SELF"]."?id=".$id);
+
+	
+}
+
 if($action == 'saveFor'){
 	$date = GETPOST('dateNbrFrVeh');
 
@@ -342,10 +351,6 @@ if ($id > 0)
 									<div class="floatright"><a class="pictosubstatus" href="<?php echo "tiers_icstmd.php?id=$id&action=remove_file&file=".$v; ?>"><img src="<?php echo dol_buildpath('theme/eldy/img/delete.png', 1); ?>" border="0" alt="" title="delete pdf"></a></div>
 								</td>
 							</tr>
-			
-						
-						
-						
 						<?php }}
 					}
 				?>
