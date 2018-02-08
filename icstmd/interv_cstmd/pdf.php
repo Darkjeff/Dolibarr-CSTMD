@@ -365,7 +365,7 @@ class PDF_MC_Table extends FPDF{
 
 $id	= GETPOST('id','int');
 
-
+// questions
 
 $dataq = array();
 
@@ -377,8 +377,26 @@ $resql = $db->query($sql);
 if ($resql) {
 	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
 		$obj = $db->fetch_object($resql);
-		// var_dump($obj);die;
-		$dataq[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+		$p = explode(".", $obj->position);//die;
+		$dataq[$p[1]][] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+	}
+	$db->free($resql);
+
+} else {
+	$error = "Error " . $db->lasterror();
+	dol_syslog(__METHOD__ . " " . $error, LOG_ERR);
+}
+
+// chapitres
+
+$sql = "SELECT * ";
+$sql.= " FROM ".MAIN_DB_PREFIX."cstmd_chapitres";
+$resql=$db->query($sql);
+$chap = array();
+if ($resql) {
+	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
+		$obj = $db->fetch_object($resql);
+		$chap[$obj->position] = $obj->chapitre;
 	}
 	$db->free($resql);
 
@@ -413,20 +431,33 @@ $pdf->page2($title, $data);
 //********************************************************* Questions
 $pdf->AddPage();
 
-$t = "5.1. Les procédés visant au respect des règles rela<ves à l'identification des marchandises dangereuses transportées";
+$t = "5.1. Les procédés visant au respect des règles relatives à l'identification des marchandises dangereuses transportées";
 
-$pdf->SetFont('Arial','B',12);
-$pdf->SetXY(10, 10);
-$pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
-$pdf->MultiCell(175,5,'', 0, 'L');
-
+// $pdf->SetFont('Arial','B',12);
+// $pdf->SetXY(10, 10);
+// $pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
+// $pdf->MultiCell(175,5,'', 0, 'L');
+// var_dump($dataq);
+// die();
 
 //Table de 20 lignes et 4 colonnes
 $pdf->SetWidths(array(140,12,12,12, 12));
 srand(microtime()*1000000);
 // for($i=0;$i<20;$i++)
-	foreach($dataq as $row){
-		// var_dump();
+	$posit = 0;
+foreach($dataq as $k => $rows){
+	// var_dump($row['position']);
+	// die();
+		$pdf->Ln();
+		$t = "5.".$k." ".$chap["5.".$k];
+		$pdf->SetFont('Arial','B',12);
+		$pdf->SetX(10);
+		$pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
+		$pdf->MultiCell(175,5,'', 0, 'L');
+		
+	$posit = 0;
+	
+	foreach($rows as $row){
 		$pdf->SetFont('Arial','B',8);		
 		$pdf->SetFont('Arial','',8);
 		$cf = $nc = $pa = $ev = null;
@@ -461,8 +492,10 @@ srand(microtime()*1000000);
 			
 			$pdf->Row(array(utf8_decode($row['texte_reglementaire']), $cf, $nc, $pa, $ev));
 		}
+	
 	}
-	$pdf->Output();
+}
+$pdf->Output();
 
 /* 
 class PDF extends FPDF
