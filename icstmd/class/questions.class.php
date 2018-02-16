@@ -120,12 +120,18 @@ class Questions  extends CommonObject
 		$sql.= " type";
 		$sql.= ") VALUES (";
 		$sql.= (strval($this->position)!=''?"'".$this->position."'":"null"). ",";
-		$sql.= (strval($this->label_question)!=''?"'".$this->label_question."'":"null"). ",";
+      	$sql.= (strval($this->label_question)!=''?"'".$this->label_question."'":"null"). ",";
 		$sql.= (strval($this->etat_lieux)!=''?"'".$this->etat_lieux."'":"null"). ",";
 		$sql.= (strval($this->titre_recommandation)!=''?"'".$this->titre_recommandation."'":"null"). ",";
 		$sql.= (strval($this->recommandation)!=''?"'".$this->recommandation."'":"null"). ",";
 		$sql.= (strval($this->reference)!=''?"'".$this->reference."'":"null"). ",";
 		$sql.= (strval($this->texte_reglementaire)!=''?"'".$this->texte_reglementaire."'":"null"). ",";
+		//$sql.= ($this->label_question?"'".$this->db->escape($this->label_question)."'":"null")",";
+		//$sql.= ($this->etat_lieux?"'".$this->db->escape($this->etat_lieux)."'":"null")",";
+		//$sql.= ($this->titre_recommandation?"'".$this->db->escape($this->titre_recommandation)."'":"null")",";
+		//$sql.= ($this->recommandation?"'".$this->db->escape($this->recommandation)."'":"null")",";
+		//$sql.= ($this->reference?"'".$this->db->escape($this->reference)."'":"null")",";
+		//$sql.= ($this->texte_reglementaire?"'".$this->db->escape($this->texte_reglementaire)."'":"null")",";
 		$sql.= (strval($this->fk_chapitre_id)!=''?"'".$this->fk_chapitre_id."'":"null"). ",";
 		$sql.= "1";
 		$sql.= ")";
@@ -238,12 +244,12 @@ class Questions  extends CommonObject
 		
 		$sql = "UPDATE " . MAIN_DB_PREFIX . "cstmd_questions SET";
 		$sql.= " position=" . (strval($this->position)!=''?"'".$this->position."'":"null") . ",";
-		$sql.= " label_question=" . (strval($this->label_question)!=''?"'".$this->label_question."'":"null")  . ",";
-		$sql.= " etat_lieux=" . (strval($this->etat_lieux)!=''?"'".$this->etat_lieux."'":"null") . ",";
-		$sql.= " titre_recommandation=" . (strval($this->titre_recommandation)!=''?"'".$this->titre_recommandation."'":"null") . ",";
-		$sql.= " recommandation=" . (strval($this->recommandation)!=''?"'".$this->recommandation."'":"null") . ",";
-		$sql.= " reference=" . (strval($this->reference)!=''?"'".$this->reference."'":"null") . ",";
-		$sql.= " texte_reglementaire=" . (strval($this->texte_reglementaire)!=''?"'".$this->texte_reglementaire."'":"null") . ",";
+		$sql.= " label_question=" . ($this->label_question?"'".$this->db->escape($this->label_question)."'":"null")  . ",";
+     	$sql.= " etat_lieux=" . ($this->etat_lieux?"'".$this->db->escape($this->etat_lieux)."'":"null")  . ",";
+		$sql.= " titre_recommandation=" . ($this->titre_recommandation?"'".$this->db->escape($this->titre_recommandation)."'":"null")  . ",";
+		$sql.= " recommandation=" . ($this->recommandation?"'".$this->db->escape($this->recommandation)."'":"null")  . ",";
+		$sql.= " reference=" . ($this->reference?"'".$this->db->escape($this->reference)."'":"null")  . ",";
+		$sql.= " texte_reglementaire=" . ($this->texte_reglementaire?"'".$this->db->escape($this->texte_reglementaire)."'":"null")  . ",";
 		$sql.= " fk_chapitre_id=" . (strval($this->fk_chapitre_id)!=''?"'".$this->fk_chapitre_id."'":"null") . "";
 		$sql.= " WHERE rowid=" . $this->id;
 
