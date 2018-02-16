@@ -131,7 +131,9 @@ $pdf->SetFont('Arial','',12);
 $pdf->SetXY(110, 214);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
 
-$pdf->Image('img/sig.jpg',135,220,40);
+//$pdf->Image('img/sig.jpg',135,220,40);
+$pdf->Image($user_cstmd->array_options['options_vcmd'],135,200,40);
+
 
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
