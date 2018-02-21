@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -30,6 +30,31 @@ $object = new Societe($db);
 $object->fetch($socid);
 //var_dump($object);
 
+$tab = explode(" ", $object->array_options['options_cstmd']);
+// var_dump($tab);die();
+$sql = "SELECT rowid ";
+$sql.= " FROM ".MAIN_DB_PREFIX."user";	
+$sql.= " WHERE firstname = '" . $tab[0] . "'";
+$sql.= " AND lastname = '" . $tab[1] . "'";
+// echo $sql;
+$user_id = null;
+dol_syslog(__METHOD__ . " sql=" . $sql, LOG_DEBUG);
+$resql = $db->query($sql);
+if ($resql) {
+	if ($db->num_rows($resql)) {
+		$obj = $db->fetch_object($resql);
+		$user_id = $obj->rowid;
+		
+	}
+}
+
+$user_cstmd = new User($db);
+$user_cstmd->fetch($user_id); 
+
+
+
+
+
 class PDF extends FPDF
 {
 	// En-tête
@@ -55,7 +80,7 @@ $pdf->MultiCell(180,8,utf8_decode('ACCEPTATION DE MISSION DE "CONSEILLER A LA S�
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 75);
-$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user->array_options['options_cstmd'].' / CARBONNE Conseil & Formation SIRET : 500 040 092 00016), déclare accepter la mission de :'), 0, 'L');
+$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user_cstmd->array_options['options_cstmd'].' / CARBONNE Conseil & Formation SIRET : 500 040 092 00016), déclare accepter la mission de :'), 0, 'L');
 
 $pdf->SetFont('Arial','B',12);
 $pdf->SetXY(15, 100);
@@ -113,7 +138,8 @@ $pdf->SetXY(110, 190);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
 
 //$pdf->Image('img/sig.jpg',135,200,40);
-$pdf->Image($user_cstmd->array_options['options_vcmd'],135,200,40);
+$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
+
 
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
