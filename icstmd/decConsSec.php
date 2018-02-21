@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -29,6 +29,27 @@ $socid = GETPOST('socid','int');
 $object = new Societe($db);
 $dreal = new Societe($db);
 $object->fetch($socid);
+
+$tab = explode(" ", $object->array_options['options_cstmd']);
+// var_dump($tab);die();
+$sql = "SELECT rowid ";
+$sql.= " FROM ".MAIN_DB_PREFIX."user";	
+$sql.= " WHERE firstname = '" . $tab[0] . "'";
+$sql.= " AND lastname = '" . $tab[1] . "'";
+// echo $sql;
+$user_id = null;
+dol_syslog(__METHOD__ . " sql=" . $sql, LOG_DEBUG);
+$resql = $db->query($sql);
+if ($resql) {
+	if ($db->num_rows($resql)) {
+		$obj = $db->fetch_object($resql);
+		$user_id = $obj->rowid;
+		
+	}
+}
+
+$user_cstmd = new User($db);
+$user_cstmd->fetch($user_id); 
 
 $object->address = str_replace("’","'",$object->address);
 $object->address = str_replace("–","-",$object->address);
@@ -132,8 +153,7 @@ $pdf->SetXY(110, 214);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
 
 //$pdf->Image('img/sig.jpg',135,220,40);
-$pdf->Image($user_cstmd->array_options['options_vcmd'],135,200,40);
-
+$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
 
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
