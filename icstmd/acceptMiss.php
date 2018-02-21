@@ -22,7 +22,7 @@ if (false === (@include '../main.inc.php')) {  // From htdocs directory
 }
 require_once 'fpdf/fpdf.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/company.lib.php';
-
+require_once DOL_DOCUMENT_ROOT.'/core/lib/pdf.lib.php';
 
 
 $socid = GETPOST('socid','int');
@@ -50,7 +50,6 @@ if ($resql) {
 
 $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
-
 
 
 
@@ -126,7 +125,7 @@ $pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object-
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 174);
-$pdf->MultiCell(180,8,utf8_decode("Fait à Espiet, le ".date("d/m/Y")), 0, 'L');
+$pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
 
 
 $pdf->SetFont('Arial','B',12);

@@ -84,7 +84,7 @@ $pdf->MultiCell(180,8,utf8_decode("Je soussigné, ".$object->array_options['opti
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(110, 170);
-$pdf->MultiCell(80,8,utf8_decode("Fait à Espiet, le ".date("d/m/Y")), 0, 'C');
+$pdf->MultiCell(80,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'C');
 
 
 $pdf->SetFont('Arial','B',12);

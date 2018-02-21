@@ -99,7 +99,7 @@ $pdf->MultiCell(170,8,utf8_decode('Déclaration du conseiller à la sécurité.'
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(120, 95);
-$pdf->MultiCell(80,8,utf8_decode("Fait à Espiet, le ".date("d/m/Y")), 0, 'L');
+$pdf->MultiCell(80,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 120);
@@ -153,7 +153,7 @@ $pdf->SetXY(110, 214);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
 
 //$pdf->Image('img/sig.jpg',135,220,40);
-$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
+$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,220,40);
 
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
