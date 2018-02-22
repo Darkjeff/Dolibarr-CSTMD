@@ -92,22 +92,24 @@ if ($resql) {
 $user_cstmd->fetch($user_id); 
 
 // classes et domaines cstmd
-if ($user_cstmd->array_options['options_modecstmd'] = 1);
-$compcstmd = "Classe 3 à 9";
-if ($user_cstmd->array_options['options_modecstmd'] = 2);
-$compcstmd = "Classe 2";
-if ($user_cstmd->array_options['options_modecstmd'] = 3);
-$compcstmd = "Classe 1";
-if ($user_cstmd->array_options['options_modecstmd'] = 4);
-$compcstmd = "Classe 7";
-if ($user_cstmd->array_options['options_modecstmd'] = 5);
-$compcstmd = "PP";
-if ($user_cstmd->array_options['options_modecstmd'] = 6);
-$compcstmd = "Toutes Classes";
-if ($user_cstmd->array_options['options_modecstmd'] = 7);
-$compcstmd = "1 + 2 + 3 à 9";
-if ($user_cstmd->array_options['options_modecstmd'] = 8);
-$compcstmd = "2 + 3 à 9";
+$compcstmd = "";
+
+if ($user_cstmd->array_options['options_clcstmd'] == 1) {
+$compcstmd = "Classe 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 2) {
+$compcstmd = "Classe 2";}
+if ($user_cstmd->array_options['options_clcstmd'] == 3) {
+$compcstmd = "Classe 1";}
+if ($user_cstmd->array_options['options_clcstmd'] == 4) {
+$compcstmd = "Classe 7";}
+if ($user_cstmd->array_options['options_clcstmd'] == 5) {
+$compcstmd = "PP";}
+if ($user_cstmd->array_options['options_clcstmd'] == 6) {
+$compcstmd = "Toutes Classes";}
+if ($user_cstmd->array_options['options_clcstmd'] == 7) {
+$compcstmd = "1 + 2 + 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 8) {
+$compcstmd = "2 + 3 à 9";}
 
 
 	
@@ -232,7 +234,7 @@ print '<div class="container">
 			</tr>
 			<tr>
 				<td colspan="2" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="4"><input name="competence_thematique" style="width: 96%;" type="text" value="'. $compcstmd .'" /></td>
+				<td colspan="4"><input name="competence_thematique" style="width: 96%;" type="text" value="'. $compcstmd  .'" /></td>
 			</tr>
 		</table>
     </div>
