@@ -45,6 +45,11 @@ $object->address = str_replace(array("\r", "\n"), '', $object->address);
 
 class PDF extends FPDF
 {
+	public $arr = '';
+	function __construct($arr = '') {
+		parent::__construct();
+		$this->arr = $arr;
+    }
 	// En-tête
 	function Header()
 	{
@@ -53,11 +58,12 @@ class PDF extends FPDF
 
 	function Footer()
 	{
+		$arr = $this->arr;
 		include 'pdffooter.php';
 	}
 }
 // Instanciation de la classe dérivée
-$pdf = new PDF();
+$pdf = new PDF(array($conf->global->FOOTER_LIGNE1, $conf->global->FOOTER_LIGNE2, $conf->global->FOOTER_LIGNE3, $conf->global->FOOTER_LIGNE4));
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
@@ -95,7 +101,7 @@ $pdf->SetFont('Arial','',12);
 $pdf->SetXY(110, 190);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
 
-//$pdf->Image('img/sig.jpg',135,200,40);
+// $pdf->Image('img/sig.jpg',135,200,40);
 $pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
 
 

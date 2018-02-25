@@ -267,7 +267,7 @@ if ($id > 0)
 					<td>Date Attestation Valide<?php //echo $commercial;?></td>
 					<td>
 					<?php if($action == 'editDatev'):?>
-					<form method="POST" action="<?php echo "?id=$id";?>"><?php echo$form->select_date('','datev');?> <input type="hidden" name="action" value="savedatev"><input type="submit" class="button" value="Enregistrer">
+					<form method="POST" action="<?php echo "?id=$id";?>"><?php echo $form->select_date('','datev');?> <input type="hidden" name="action" value="savedatev"><input type="submit" class="button" value="Enregistrer">
 					<?php else: echo dol_print_date($object->array_options['options_datev'],'%d/%m/%Y');?>
 					
 					<a class="pictosubstatus" href="?id=<?php echo $id.'&action=editDatev'; ?>"><img src="<?php echo dol_buildpath('theme/eldy/img/edit.png', 1); ?>" border="0" alt=""></a>

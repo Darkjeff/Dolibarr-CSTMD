@@ -16,13 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+// var_dump($conf);die;
+// var_dump($conf->global->FOOTER_LIGNE1);die;
+
 	$this->SetFont('Arial','B',11);
 	$this->SetXY(15, -32);
-	$this->MultiCell(180,8,utf8_decode("CARBONNE Conseil & Formation - 25 Merlet - 33420 ESPIET"), 0, 'C');
+	$this->MultiCell(180,8,utf8_decode($arr[0]), 0, 'C');
 
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -25);
-	$this->MultiCell(180,5,utf8_decode("Tel : 05 57 51 70 36 / 06 71 60 62 50 Fax : 05 24 84 62 50 - info@carbonnetmd.fr - www.carbonnetmd.fr"), 0, 'C');
+	$this->MultiCell(180,5,utf8_decode($arr[1]), 0, 'C');
 	
 /*	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -33);
@@ -31,7 +35,7 @@
 
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -21);
-	$this->MultiCell(180,5,utf8_decode("Formation : Déclaration d'activité enregistrée sous le n° 72 33 07266 33 auprès du préfet de région Aquitaine"), 0, 'C');
+	$this->MultiCell(180,5,utf8_decode($arr[2]), 0, 'C');
 
 	/*
 	$this->SetFont('Arial','',9);
@@ -40,7 +44,7 @@
 */
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -17);
-	$this->MultiCell(180,5,utf8_decode("Cette déclaration ne vaut pas agrément de l'état - Profession Libérale - SIRET : 500 040 092 0016 - NAF : 7022 Z"), 0, 'C');
+	$this->MultiCell(180,5,utf8_decode($arr[3]), 0, 'C');
 	/*
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -18);

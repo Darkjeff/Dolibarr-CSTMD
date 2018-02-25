@@ -386,14 +386,14 @@ class Icstmd // extends CommonObject
     {
     //$dateval = $this->db->idate($datev) ;
    
-   $dateval = $this->db->idate($datev) ;
+		$dateval = date('Y-m-d', $datev) ;
     
 		// looking for date validated
 		$sql = "SELECT *";
 		$sql.= " FROM " . MAIN_DB_PREFIX . "societe_extrafields";	
 		$sql.= " WHERE fk_object = $soc_id";
 		
-		// echo $sql;
+		// echo $sql;die;
 		dol_syslog($script_file . " sql=" . $sql, LOG_DEBUG);
 		$resql=$this->db->query($sql);
 		
@@ -408,7 +408,7 @@ class Icstmd // extends CommonObject
 			$sql .= "'" . $dateval . "',";
 			$sql .= '' . $soc_id . '';
 			$sql .= ')';
-			echo $sql;
+			echo $sql;die;
 			$this->db->begin();
 
 			$resql = $this->db->query($sql);
@@ -419,10 +419,10 @@ class Icstmd // extends CommonObject
 			
 			$sql = "UPDATE " . MAIN_DB_PREFIX . "societe_extrafields SET";
 			//$sql.= " datev = ' $dateval'";
-			$sql.= " datev =" .$dateval ;
+			$sql.= " datev ='" .$dateval ."'";
 
 			$sql.= " WHERE rowid = $rowid";
-			echo $sql;
+			// echo $sql;die;
 			$this->db->begin();
 
 			$resql = $this->db->query($sql);

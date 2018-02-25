@@ -1,6 +1,6 @@
 <?php
 /* <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
+ * Copyright (C) <2018>  saasprov@gmail.com <saasprov.ma>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * \file    admin/setup.php
+ * \ingroup CSTMD
+ * \brief   Example module setup page.
+ *
+ * Put detailed description here.
+ */
+
 // Load Dolibarr environment
 if (false === (@include '../../main.inc.php')) {  // From htdocs directory
 	require '../../../main.inc.php'; // From "custom" directory
@@ -25,10 +33,43 @@ global $langs, $user;
 
 // Libraries
 require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
-require_once '../lib/mymodule.lib.php';
 //require_once "../class/myclass.class.php";
 // Translations
-$langs->load("mymodule@mymodule");
+
+
+if (! $user->admin) accessforbidden();
+
+$action = GETPOST('action','alpha');
+
+if ($action == 'setvalue' && $user->admin)
+{
+	$db->begin();
+    $result=dolibarr_set_const($db, "FOOTER_LIGNE1",GETPOST('FOOTER_LIGNE1','alpha'),'chaine',0,'',$conf->entity);
+    if (! $result > 0) $error++;
+    $result=dolibarr_set_const($db, "FOOTER_LIGNE2",GETPOST('FOOTER_LIGNE2','alpha'),'chaine',0,'',$conf->entity);
+    if (! $result > 0) $error++;
+    $result=dolibarr_set_const($db, "FOOTER_LIGNE3",GETPOST('FOOTER_LIGNE3','alpha'),'chaine',0,'',$conf->entity);
+    if (! $result > 0) $error++;
+    $result=dolibarr_set_const($db, "FOOTER_LIGNE4",GETPOST('FOOTER_LIGNE4','alpha'),'chaine',0,'',$conf->entity);
+    if (! $result > 0) $error++;
+	
+	
+	
+	//Activate Ask For Preferred Shipping Method
+
+	
+	if (! $error)
+  	{
+  		$db->commit();
+  		setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');
+  	}
+  	else
+  	{
+  		$db->rollback();
+		dol_print_error($db);
+    }
+}
+
 
 // Access control
 if (! $user->admin) {
@@ -45,7 +86,7 @@ $action = GETPOST('action', 'alpha');
 /*
  * View
  */
-$page_name = "MyModuleSetup";
+$page_name = "CSTMDSetup";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
@@ -54,18 +95,69 @@ $linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">'
 print load_fiche_titre($langs->trans($page_name), $linkback);
 
 // Configuration header
-$head = mymoduleAdminPrepareHead();
 dol_fiche_head(
-	$head,
+	'',
 	'settings',
-	$langs->trans("Module500000Name"),
+	$langs->trans("CSTMD"),
 	0,
-	"mymodule@mymodule"
+	"CSTMD@CSTMD"
 );
 
 // Setup page goes here
-echo $langs->trans("MyModuleSetupPage");
+echo $langs->trans("CSTMDSetupPage");
 
-// Page end
+// Test if php curl exist
+if (! function_exists('curl_version'))
+{
+	$langs->load("errors");
+	setEventMessages($langs->trans("ErrorPhpCurlNotInstalled"), null, 'errors');
+}
+
+print '<form method="post" action="'.$_SERVER["PHP_SELF"].'">';
+print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
+print '<input type="hidden" name="action" value="setvalue">';
+
+print '<br>';
+print '<br>';
+
+print '<table class="noborder" width="100%">';
+
+// Account Parameters
+$var=true;
+print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print $langs->trans("Ligne 1 : ").'</td><td>';
+print '<input size="150" type="text" name="FOOTER_LIGNE1" value="'.$conf->global->FOOTER_LIGNE1.'">';
+print '</td></tr>';
+
+$var=!$var;
+
+print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print $langs->trans("Ligne 2 : ").'</td><td>';
+print '<input size="150" type="text" name="FOOTER_LIGNE2" value="'.$conf->global->FOOTER_LIGNE2.'">';
+print '</td></tr>';
+
+$var=!$var;
+
+print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print $langs->trans("Ligne 3 : ").'</td><td>';
+print '<input size="150" type="text" name="FOOTER_LIGNE3" value="'.$conf->global->FOOTER_LIGNE3.'">';
+print '</td></tr>';
+
+$var=!$var;
+
+print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print $langs->trans("Ligne 4 : ").'</td><td>';
+print '<input size="150" type="text" name="FOOTER_LIGNE4" value="'.$conf->global->FOOTER_LIGNE4.'">';
+print '</td></tr>';
+
+
+
+print '</table>';
+
 dol_fiche_end();
+
+print '<div class="center"><input type="submit" class="button" value="'.$langs->trans("Modify").'"></div>';
+
+print '</form>';
+
 llxFooter();
