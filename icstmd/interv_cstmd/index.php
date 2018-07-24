@@ -38,6 +38,7 @@ $confirm	= GETPOST('confirm','alpha');
 
 // Search criteria
 $search_position = GETPOST("search_position");
+$search_chapitre = GETPOST("search_chapitre");
 $search_label_question = GETPOST("search_label_question");
 $search_descrition = GETPOST("search_descrition", 'alpha');
 $search_cf = GETPOST("search_cf");
@@ -49,6 +50,7 @@ $id_ques = GETPOST('id_ques','int');
 	// Do we click on purge search criteria ?
 if (GETPOST("button_removefilter_x")) {
 	$search_position = '';
+	$search_chapitre = '';
 	$search_label_question = "";
 	$search_descrition = '';
 	$search_cf = "";
@@ -141,9 +143,12 @@ llxHeader('',$langs->trans("Intervention"));
     dol_banner_tab($object, 'ref', $linkback, 1, 'ref', 'ref', $morehtmlref);
 	print '<div class="clearboth"></div>';
 	
-$sql = "SELECT * ";
-$sql.= " FROM ".MAIN_DB_PREFIX."cstmd_interv_questions ";
-$sql.= " WHERE fk_intervention = ".$id;
+$sql = "SELECT qu.rowid as rowid, qu.position as position, qu.label_question as label_question, qu.texte_reglementaire as texte_reglementaire, qu.etat_lieux as etat_lieux, qu.titre_recommandation as titre_recommandation, ";
+$sql.= " qu.recommandation as recommandation, qu.dater as dater, qu.reference as reference, qu.fk_intervention as intervention, qu.fk_chapitre as fk_chapitre, qu.cf as cf, qu.nc as nc, qu.pa as pa, ";
+$sql.= " qu.ev as ev, ch.chapitre as chapitre, ch.position as posi, ch.rowid as chrowid ";
+$sql.= " FROM ".MAIN_DB_PREFIX."cstmd_interv_questions as qu";
+$sql.= " LEFT JOIN  ".MAIN_DB_PREFIX."cstmd_chapitres as ch ON ch.rowid = qu.fk_chapitre";
+$sql.= " WHERE qu.fk_intervention = ".$id;
 $rec_ev = null;
 $rec_pa = null;
 $rec_nc = null;
@@ -160,9 +165,10 @@ if($search_nc != '' && (int)$search_nc != -1){
 if($search_cf != '' && (int)$search_cf != -1){
 	$rec_cf = is_int((int)$search_cf);
 }
-if ($search_position) $sql.= natural_search("position",$search_position);
+if ($search_position) $sql.= natural_search("qu.position",$search_position);
+if ($search_chapitre) $sql.= natural_search("chapitre",$search_chapitre);
 if ($search_label_question) $sql.= natural_search("label_question",$search_label_question);
-if ($search_descrition) $sql.= natural_search("descrition",$search_descrition);
+if ($search_descrition) $sql.= natural_search("recommandation",$search_descrition);
 if ($rec_cf) $sql.= natural_search("cf",$search_cf);
 if ($rec_nc) $sql.= natural_search("nc",$search_nc);
 if ($rec_pa) $sql.= natural_search("nc",$search_pa);
@@ -182,6 +188,7 @@ if ($resql)
     $params='';
 
 	if ($search_position != '') $params.= '&amp;search_position='.urlencode($search_position);
+	if ($search_chapitre != '') $params.= '&amp;search_chapitre='.urlencode($search_chapitre);
 	if ($search_label_question != '') $params.= '&amp;search_label_question='.urlencode($search_label_question);
 	if ($search_descrition != '') $params.= '&amp;search_descrition='.urlencode($search_descrition);
 	if ($search_cf != '') $params.= '&amp;search_cf='.urlencode($search_cf);
@@ -205,8 +212,9 @@ if ($resql)
     // Fields title
     print '<tr class="liste_titre">
 		<th class="liste_titre">Numéro</th>
+        <th class="liste_titre">Chapitre</th>
 		<th class="liste_titre">Question</th>
-		<th class="liste_titre">Descrition</th>
+		<th class="liste_titre">Recommandation</th>
 		<th class="liste_titre">CF</th>
 		<th class="liste_titre">NC</th>
 		<th class="liste_titre">PA</th>
@@ -218,6 +226,7 @@ if ($resql)
 	// LIST_OF_TD_TITLE_SEARCH
 	
 	print '<td class="liste_titre"><input type="text" class="flat" name="search_position" value="'.$search_position.'" size="10"></td>';
+	print '<td class="liste_titre"><input type="text" class="flat" name="search_position" value="'.$search_chapitre.'" size="10"></td>';
 	print '<td class="liste_titre"><input type="text" class="flat" name="search_label_question" value="'.$search_label_question.'" size="10"></td>';
 	print '<td class="liste_titre"><input type="text" class="flat" name="search_descrition" value="'.$search_descrition.'" size="10"></td>';
 	print '<td class="liste_titre">';
@@ -255,6 +264,7 @@ if ($resql)
 				$nums = explode(".",$obj->position);
 				$num = $nums[0].'.'.$nums[1].'.';
                 print '<td>'.$obj->position.'</td>';
+      			print '<td>'. dol_trunc($obj->chapitre, 32) .'</td>';
                 print '<td>'.$obj->label_question.'</td>';
                 print '<td>'.$obj->recommandation.'-'.$obj->dater.'</td>';
                 $chek_cf = ($obj->cf?'statut4' : 'statut8');
