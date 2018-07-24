@@ -307,8 +307,9 @@ print '<div class="tabsAction">';
 
 	print '<a class="butAction btn_click" href="card.php?action=create&id_interv=' . $id . '">' . $langs->trans('New') . '</a><a class="butActionRefused btn_click_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('New') . '</a>';
 	
-	print '<a class="butAction btn_click_pdf" target="blank" href="pdf.php?id='.$id.'">' . $langs->trans('Générer PDF') . '</a><a class="butActionRefused btn_click_pdf_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('Générer PDF') . '</a>';
+	print '<a class="butAction btn_click_pdf" target="blank" href="pdf.php?id='.$id.'">' . $langs->trans('Générer Rapport Annuel') . '</a><a class="butActionRefused btn_click_pdf_2"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('Générer PDF') . '</a>';
 	
+	print '<a class="butAction btn_click_pdfv" target="blank" href="pdfv.php?id='.$id.'">' . $langs->trans('Générer Rapport Visite') . '</a><a class="butActionRefused btn_click_pdf_v"  title="' . dol_escape_htmltag($langs->trans("NotAllowed")) . '">' . $langs->trans('Générer PDF') . '</a>';
 
 
 print '</div>';
@@ -327,6 +328,14 @@ print '<script type="text/javascript" language="javascript">
 				$(".btn_click_pdf_2").attr("disabled", true);
 				$(".btn_click_pdf_2").show();
 			});
+            
+            $(".btn_click_pdf_v").hide();
+			$("body").on("click", "a.btn_click_pdfv", function(e) {
+				$(this).hide();
+				$(".btn_click_pdf_v").attr("disabled", true);
+				$(".btn_click_pdf_v").show();
+			});
+            
 			$(".btn_click_edit_2").hide();
 			$("body").on("click", "a.btn_click_edit", function(e) {
 				$(this).hide();
