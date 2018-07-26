@@ -1,14 +1,14 @@
 <?php
 $firstpage = array(
 	"logo"=> "../img/logo.jpg",
-	"title"=> array("Rapport de visite","En date du	$date",$name),
+	"title"=> array("Rapport de visite","En date du	$date",$name ),
 	"image"=> "../img/image_doc.jpg",
 );
 $footer = array(
-	"date"=> "V11 janvier 2016",
-	"adress"=> "CARBONNE Conseil & FormaPon - 25 Merlet - 33420 ESPIET"
+	"date"=> "V12 $now ",
+	"adress"=>" $myname - $myadress -  $myzip $mytown "
 );
-$title = array("RAPPORT ANNUEL DU CSTMD","(CONSEILLER A LA SECURITE	POUR LE TRANSPORT DE MARCHANDISES DANGEREUSES)","Conforme a l'arrete du	02 decembre 2014 modifiant l'arrete du 29 mai 2009 dit 'arrete TMD'");
+$title = array("RAPPORT DE VISITE");
 
 //c=> content, b=> border, l=> line(center-right-left), t=> type font(italy,bold), s=> size font
 $data = array(
@@ -53,11 +53,11 @@ $data = array(
 			"x"=>90,
 			"y"=>30,
 			"w"=>0,
-			"h"=>5,
+			"h"=>3,
 			"b"=>0,
 			"l"=>"t",
 			"t"=>"",
-			"s"=>"12"
+			"s"=>"10"
 		)
 	),
 	array(
@@ -123,7 +123,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Carbonne Conseil & Formation",
+			"c"=>$myname,
 			"x"=>10,
 			"y"=>65,
 			"w"=>40,
@@ -182,7 +182,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=> utf8_decode("Numéro de	certificat :\n06148"),
+			"c"=> utf8_decode("Numéro de certificat : $certificat"),
 			"x"=>90,
 			"y"=>84,
 			"w"=>60,
@@ -193,7 +193,7 @@ $data = array(
 			"s"=>"11"
 		),
 		array(
-			"c"=>utf8_decode("Date de validité : 09/06/2018"),
+			"c"=>utf8_decode("Date de validité : $datecertif "),
 			"x"=>150,
 			"y"=>84,
 			"w"=>0,
@@ -329,7 +329,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"06148",
+			"c"=>"$certificat",
 			"x"=>150,
 			"y"=>140,
 			"w"=>0,
@@ -351,7 +351,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"09/06/2018",
+			"c"=>"$datecertif",
 			"x"=>150,
 			"y"=>148,
 			"w"=>0,

@@ -67,12 +67,24 @@ $user_cstmd->fetch($user_id);
 // var_dump($interv);die;
 // var_dump($soc);die;
 
+// recup referentiel
+
+
+
 
 $name = $soc->nom;
+$myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
+$myadress =  $conf->global->MAIN_INFO_SOCIETE_ADDRESS ;
+$myzip =  $conf->global->MAIN_INFO_SOCIETE_ZIP;
+$mytown =  $conf->global->MAIN_INFO_SOCIETE_TOWN;
+
+$now = date('d/m/Y' ,dol_now());
+
 $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
-$nom = $user_cstmd->array_options['options_cstmd'];
+$certificat = $user->array_options['options_cstmd'];
+$datecertif = $user->array_options['options_valcertif'];
 $prenom = "";
 
 include("datav.php");
@@ -248,7 +260,8 @@ class PDF_MC_Table extends FPDF{
 	    $this->Cell(0,5,$this->datafooter["adress"]);
 	    $this->Ln();
 	    // Page number
-	    $this->Cell(0,10,'p '.$this->PageNo().'/{nb}',0,0,'C');
+	    
+	    $this->Cell(0,10,'p '.$this->PageNo().'',0,0,'C');
 	}
 	
 	
@@ -379,7 +392,7 @@ if ($resql) {
 	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
 		$obj = $db->fetch_object($resql);
 		$p = explode(".", $obj->position);//die;
-		$dataq[$p[1]][] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+		$dataq[$p[1]][] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference, 'namereferentiel'=> $obj->refelabel );
 	}
 	$db->free($resql);
 
@@ -432,7 +445,7 @@ $pdf->page2($title, $data);
 //********************************************************* Questions
 $pdf->AddPage();
 
-$t = "5.1. Les procédés visant au respect des règles relatives à l'identification des marchandises dangereuses transportées";
+//$t = "5.1. Les procédés visant au respect des règles relatives à l'identification des marchandises dangereuses transportées";
 
 // $pdf->SetFont('Arial','B',12);
 // $pdf->SetXY(10, 10);
