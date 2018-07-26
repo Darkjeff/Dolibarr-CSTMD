@@ -88,6 +88,8 @@ class Chapitre  extends CommonObject
 		$sql.= " position,";
 		$sql.= " fk_referentiel_id";
 		$sql.= ") VALUES (";
+   
+    
 		$sql.= (strval($this->chapitre)!=''?"'".$this->chapitre."'":"null"). ",";
 		$sql.= (strval($this->position)!=''?"'".$this->position."'":"null"). ",";
 		$sql.= (strval($this->fk_referentiel_id)!=''?"'".$this->fk_referentiel_id."'":"null"). "";
@@ -177,7 +179,8 @@ class Chapitre  extends CommonObject
 		// Update request
 		
 		$sql = "UPDATE " . MAIN_DB_PREFIX . "cstmd_chapitres SET";
-		$sql.= " chapitre=" . (strval($this->chapitre)!=''?"'".$this->chapitre."'":"null") . ",";
+		//$sql.= " chapitre=" . (strval($this->chapitre)!=''?"'".$this->chapitre."'":"null") . ",";
+    	$sql.= " chapitre=" . ($this->chapitre?"'".$this->db->escape($this->chapitre)."'":"null")  . ",";
 		$sql.= " position=" . (strval($this->position)!=''?"'".$this->position."'":"null") . ",";
 		$sql.= " fk_referentiel_id=" . (strval($this->fk_referentiel_id)!=''?"'".$this->fk_referentiel_id."'":"null") . "";
 		$sql.= " WHERE rowid=" . $this->id;
