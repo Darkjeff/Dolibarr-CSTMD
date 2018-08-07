@@ -1,7 +1,7 @@
 <?php
 $firstpage = array(
 	"logo"=> "../img/logo.jpg",
-	"title"=> array("Rapport de visite","En date du	$date",$name ),
+	"title"=> array("Rapport de visite","En date du	$daterapport",$name, $test ),
 	"image"=> "../img/image_doc.jpg",
 );
 $footer = array(
@@ -60,30 +60,7 @@ $data = array(
 			"s"=>"10"
 		)
 	),
-	array(
-		array(
-			"c"=>utf8_decode("Année	concernée par le rapport"),
-			"x"=>10,
-			"y"=>40,
-			"w"=>80,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=> $annee,
-			"x"=>90,
-			"y"=>40,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>"12"
-		)
-	),
+	
 	array(
 		array(
 			"c"=> utf8_decode("Ce rapport a été établi par :"),
@@ -99,7 +76,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=> utf8_decode($nom),
+			"c"=> utf8_decode($nomuser),
 			"x"=>10,
 			"y"=>56,
 			"w"=>40,
@@ -110,7 +87,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=> utf8_decode($prenom),
+			"c"=> utf8_decode($prenomuser),
 			"x"=>50,
 			"y"=>56,
 			"w"=>0,
@@ -122,6 +99,7 @@ $data = array(
 		)
 	),
 	array(
+    /*
 		array(
 			"c"=>$myname,
 			"x"=>10,
@@ -133,8 +111,9 @@ $data = array(
 			"t"=>"",
 			"s"=>"12"
 		),
+        */
 		array(
-			"c"=> utf8_decode("Tél :	06 71 60 62	50 / 05 57 51 70 36 \n Email : fxc@carbonnetmd.fr"),
+			"c"=> utf8_decode("Tél :	$teluser  \n Email : $mailuser "),
 			"x"=>50,
 			"y"=>65,
 			"w"=>0,
@@ -147,7 +126,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=> utf8_decode("Fonction : Conseiller à la sécurité"),
+			"c"=> utf8_decode("Fonction : $posteuser "),
 			"x"=>10,
 			"y"=>77,
 			"w"=>80,
@@ -215,7 +194,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Tous modes",
+			"c"=>"$modeuser",
 			"x"=>150,
 			"y"=>94,
 			"w"=>0,
@@ -237,7 +216,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"Toutes classes",
+			"c"=>"$classuser",
 			"x"=>150,
 			"y"=>103,
 			"w"=>0,
@@ -247,28 +226,7 @@ $data = array(
 			"t"=>"B",
 			"s"=>"11"
 		),
-		array(
-			"c"=>utf8_decode("Et/ou	géographique"),
-			"x"=>90,
-			"y"=>120,
-			"w"=>60,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>"S/O",
-			"x"=>150,
-			"y"=>120,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>"12"
-		)
+		
 	),
 	array(
 		array(
@@ -306,122 +264,18 @@ $data = array(
 		)
 	),
 	array(
-		array(
-			"c"=>utf8_decode("Identite du ou des conseillers ayant éffectue la ou les visites : \nFx	Carbonne"),
-			"x"=>10,
-			"y"=>140,
-			"w"=>80,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>utf8_decode("Numéro(s) de certificat(s):"),
-			"x"=>90,
-			"y"=>140,
-			"w"=>60,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>"$certificat",
-			"x"=>150,
-			"y"=>140,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>"12"
-		),
-		array(
-			"c"=>utf8_decode("Date(s) de validité:"),
-			"x"=>90,
-			"y"=>148,
-			"w"=>60,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>"$datecertif",
-			"x"=>150,
-			"y"=>148,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>"12"
-		),
-		array(
-			"c"=>"Signature(s) :",
-			"x"=>90,
-			"y"=>156,
-			"w"=>60,
-			"h"=>5,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
+		
+		
+		
+		
+		
+	),
+	array(
+		
+	),
+	array(
 		array(
 			"c"=>"",
-			"x"=>150,
-			"y"=>156,
-			"w"=>0,
-			"h"=>5,
-			"b"=>0,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>"12"
-		)
-	),
-	array(
-		array(
-			"c"=>utf8_decode("Rapport annuel établi le :"),
-			"x"=>10,
-			"y"=>170,
-			"w"=>80,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>utf8_decode("Transmis à l'entreprise le :"),
-			"x"=>90,
-			"y"=>170,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		),
-		array(
-			"c"=>"A: Interlocuteur	CSTMD",
-			"x"=>90,
-			"y"=>178,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>"12"
-		)
-	),
-	array(
-		array(
-			"c"=>utf8_decode("Signature	du conseiller à la sécurité"),
 			"x"=>10,
 			"y"=>186,
 			"w"=>80,
@@ -445,7 +299,8 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la récep;on du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
+        	"c"=>utf8_decode("Signature"),
+	//		"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la récep;on du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
 			"x"=>10,
 			"y"=>200,
 			"w"=>0,

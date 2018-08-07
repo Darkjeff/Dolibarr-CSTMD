@@ -82,10 +82,56 @@ $now = date('d/m/Y' ,dol_now());
 
 $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
+$daterapport = $interv->array_options['options_daterapport'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $certificat = $user->array_options['options_cstmd'];
 $datecertif = $user->array_options['options_valcertif'];
-$prenom = "";
+
+$prenomuser = $tab[0];
+$nomuser = $tab[1];
+$teluser = $user_cstmd->user_mobile ;
+$mailuser = $user_cstmd->email ;
+$posteuser = $user_cstmd->job ; 
+
+//Mode user
+//
+
+
+
+$modeuser = "";
+
+if ($user_cstmd->array_options['options_modecstmd'] == 1) {
+$modeuser  = "Route";}
+if ($user_cstmd->array_options['options_modecstmd'] == 2) {
+$modeuser  = "Fer";}
+if ($user_cstmd->array_options['options_modecstmd'] == 3) {
+$modeuser  = "Fluvial";}
+if ($user_cstmd->array_options['options_modecstmd'] == 4) {
+$modeuser  = "Tous modes";}
+if ($user_cstmd->array_options['options_modecstmd'] == 5) {
+$modeuser  = "Route + Fer";}
+
+// Class user
+// 
+$classuser= "";
+
+if ($user_cstmd->array_options['options_clcstmd'] == 1) {
+$classuser = "Classe 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 2) {
+$classuser = "Classe 2";}
+if ($user_cstmd->array_options['options_clcstmd'] == 3) {
+$classuser = "Classe 1";}
+if ($user_cstmd->array_options['options_clcstmd'] == 4) {
+$classuser = "Classe 7";}
+if ($user_cstmd->array_options['options_clcstmd'] == 5) {
+$classuser = "PP";}
+if ($user_cstmd->array_options['options_clcstmd'] == 6) {
+$classuser= "Toutes Classes";}
+if ($user_cstmd->array_options['options_clcstmd'] == 7) {
+$classuser = "1 + 2 + 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 8) {
+$classuser = "2 + 3 à 9";}
+
 
 include("datav.php");
 
@@ -139,7 +185,7 @@ class PDF_MC_Table extends FPDF{
 		//line
 	    $this->Line(10, 22, 200, 22);
 	    $this->Line(10, 30, 200, 30);
-	    $this->Line(10, 40, 200, 40);
+	   // $this->Line(10, 40, 200, 40);
 	    $this->Line(10, 48, 200, 48);
 	    $this->Line(10, 56, 200, 56);
 	    $this->Line(10, 64, 200, 64);
@@ -148,13 +194,13 @@ class PDF_MC_Table extends FPDF{
 	    $this->Line(90, 94, 200, 94);
 	    $this->Line(90, 102, 200, 102);
 	    $this->Line(90, 120, 200, 120);
-	    $this->Line(10, 128, 200, 128);
-	    $this->Line(10, 140, 200, 140);
-	    $this->Line(90, 148, 200, 148);
-	    $this->Line(90, 156, 200, 156);
-	    $this->Line(10, 170, 200, 170);
-	    $this->Line(90, 178, 200, 178);
-	    $this->Line(10, 186, 200, 186);
+	    //$this->Line(10, 128, 200, 128);
+	    //$this->Line(10, 140, 200, 140);
+	    //$this->Line(90, 148, 200, 148);
+	    //$this->Line(90, 156, 200, 156);
+	    //$this->Line(10, 170, 200, 170);
+	    //$this->Line(90, 178, 200, 178);
+	    //$this->Line(10, 186, 200, 186);
 	    $this->Line(10, 200, 200, 200);
 	    $this->Line(10, 250, 200, 250);
 		//colon
@@ -432,6 +478,7 @@ $pdf->firstpage($firstpage);
 $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
+$pdf->Image("../" .$user_cstmd->array_options['options_vcstmd'],150,215,40);
 //page 3
 // $pdf->AddPage();
 // $pdf->page3($title, $page3);
