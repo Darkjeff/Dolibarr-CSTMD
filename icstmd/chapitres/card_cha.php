@@ -227,7 +227,9 @@ if (($id) && $action == 'edit')
 	
     print '<table class="border centpercent">'."\n";
 	print '<tr><td >'.$langs->trans("Code").'</td><td><input class="flat" type="text" size="36" id="position" name="position" value="'.$object->position.'" ></td></tr>';
-	print '<tr><td >'.$langs->trans("Chapitre").'</td><td><input class="flat" type="text" size="36"  name="chapitre" value="'.$object->chapitre.'" ></td></tr>';
+	//print '<tr><td >'.$langs->trans("Chapitre").'</td><td><input class="flat" type="text" size="36"  name="chapitre" value="'.nl2br($object->chapitre).'" ></td></tr>';
+	
+	print '<tr><td >'.$langs->trans("Chapitre").'</td><td><textarea name="chapitre" rows="3" cols="0" class="flat" style="width:360px;" >'.nl2br($object->chapitre).'</textarea></tr>';
     print '</table>';
     
     dol_fiche_end();
