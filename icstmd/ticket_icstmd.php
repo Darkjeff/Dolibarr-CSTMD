@@ -64,6 +64,7 @@ $pdf->AddPage();
 llxHeader('',$langs->trans("Intervention"));
 
 
+	
 	$head = fichinter_prepare_head($object);
 
 	dol_fiche_head($head, 'icstmdficheinter', $langs->trans("InterventionCard"), -1, 'intervention');
@@ -119,76 +120,45 @@ $compcstmd = "2 + 3 à 9";}
 
 
 	
-print '<form action="pdf_cert.php" method="POST" target="_blank"><div class="container">
+print '<form action="pdf_ticket.php" method="POST" target="_blank"><div class="container">
 	<input type="hidden" name="interv_id" value="'.$id.'">
+    
     <div class="header">
-		<span style="font-size:22px;color:#fff;margin-left:35px;">Activités marchandises dangereurses de l\'entreprise </span>
+		<span style="font-size:22px;color:#fff;margin-left:35px;">DECLARATION D\'EXPEDITION DE MARCHANDISES DANGEREUSES 1</span>
 	</div>
     <div class="mainbody">
-			<table style="width: 100%;">
-				 <thead>
-					  <tr>
-						 <th style="width: 15%;"></th>
-						 <th>Route</th>
-						 <th>Fer</th>
-						 <th>Fluvial</th>
-						 <th style="width: 15%;"></th>
-						 <th>Route</th>
-						 <th>Fer</th>
-						 <th>Fluvial</th>
-					  </tr>
-				 </thead>
-				 <tfoot>
-					  <tr>
-						 <td></td>
-						 <td></td>
-					  </tr>
-				 </tfoot>
-				 <tbody>
-					  <tr>
-						 <td style="font-size:17px;">Transport</td>
-						 <td style="text-align: center;"><input type="checkbox" name="transRoute" value="route"/></td>
-						 <td style="text-align: center;"><input type="checkbox" name="transFer" value="fer" /></td>
-						 <td style="text-align: center;"><input type="checkbox" name="transFluv" value="fluvial" /></td>
-						 <td style="font-size:17px;">Chargement</td>
-						 <td style="text-align: center;"><input type="checkbox" name="chargRoute" value="route" /></td>
-						 <td style="text-align: center;"><input type="checkbox" name="chargFer" value="fer" /></td>
-						 <td style="text-align: center;"><input type="checkbox" name="chargFluv" value="fluvial" /></td>
-					  </tr>
-					  <tr>
-						 <td style="font-size:17px;">Remplissage</td>
-						 <td style="text-align: center;"><input type="checkbox" name="rempRoute" value="route"/></td>
-						 <td style="text-align: center;"><input type="checkbox" name="rempFer" value="fer" /></td>
-						 <td style="text-align: center;"><input type="checkbox" name="rempFluv" value="fluvial" /></td>
-						 <td style="font-size:17px;">Déchargement</td>
-						 <td style="text-align: center;"><input type="checkbox" name="dechargRoute" value="route"/></td>
-						 <td style="text-align: center;"><input type="checkbox" name="dechargFer" value="fer" /></td>
-						 <td style="text-align: center;"><input type="checkbox" name="dechargFluv" value="fluvial" /></td>
-					  </tr>
-					  <tr>
-						 <td colspan="8">
-							<hr style="border-color: #0153a0;">
-						 </td>
-					  </tr>
-					  <tr>
-						 <td style="font-size:17px;" colspan="3">
-							Emballage (tous modes confondus)
-						 </td>
-						 <td style="text-align: center;"><input type="checkbox" name="emballage" /></td>
-						 <td colspan="4">
-						 </td>
-					  </tr>
-					  <tr>
-						 <td colspan="8">
-							<hr style="border-color: #0153a0;">
-						 </td>
-					  </tr>
-					  <tr>
-						 <td style="font-size:17px;" colspan="7">
-							Marchandises dangereurses à haut risque selon accord ADR (tableau 1.10.5)
-						 </td>
-						 <td style="text-align: center;"><input type="checkbox" name="adr"/></td>
-					  </tr>
+     <table style="width: 100%;">
+			<tr>
+            	<td style="font-size:17px;" >1 Expediteur : </td>
+				<td colspan="2"><input name="decla_1" style="width: 80%;" type="text" value="'.$objSociete->nom.'"/></td>
+            </tr>
+            <tr>
+                <td style="font-size:17px;" >2 Numero de document de transport : </td>
+				<td colspan="2"><input name="decla_2" style="width: 80%;" type="text" value="'.$objSociete->nom.'"/></td>
+			</tr>
+			<tr>
+           	 	<td style="font-size:17px;" >3 numero : </td>
+				<td colspan="2"><input name="decla_3" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
+            </tr>
+			<tr>
+            	<td style="font-size:17px;" >4 Numero de reference de l expediteur : </td>
+				<td colspan="2"><input name="decla_4" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
+            </tr>
+			<tr>
+                <td style="font-size:17px;" >5 numero de reference du transitaire  : </td>
+				<td colspan="2"><input name="decla_5" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
+			</tr>
+            <tr>
+                <td style="font-size:17px;" >6 Destinataire  : </td>
+				<td colspan="2"><input name="decla_6" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
+			</tr>
+            <tr>
+                <td style="font-size:17px;" >7 Transporteur  : </td>
+				<td colspan="2"><input name="decla_7" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
+			</tr>
+            
+                
+                
 				 </tbody>
 			</table>
     </div>
@@ -196,52 +166,40 @@ print '<form action="pdf_cert.php" method="POST" target="_blank"><div class="con
 </div><br>';
 print '<div class="container">
     <div class="header">
-		<span style="font-size:22px;color:#fff;margin-left:35px;">Siège de l\'entreprise</span>
+		<span style="font-size:22px;color:#fff;margin-left:35px;">DECLARATION D\'EXPEDITION DE MARCHANDISES DANGEREUSES 2</span>
 	</div>
     <div class="mainbody">
 	   <table style="width: 100%;">
-			<tr>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input  name="nic" style="width: 80%;" type="text" value="'.substr($objSociete->idprof2, -5).'"/></td>
-				<td style="font-size:17px;" >Nom commercial : </td>
-				<td colspan="3"><input name="nom_commercial" style="width: 95%;" type="text" value="'.$objSociete->nom.'"/></td>
+       <tr>
+                <td style="font-size:17px;" >9 Informations complementaires  : </td>
+				<td colspan="2"><input name="decla_9" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="4"><input name="adresse" style="width: 96%;" type="text" value="'.$objSociete->address.'"/></td>
+            <tr>
+                <td style="font-size:17px;" >10 Navire  : </td>
+				<td colspan="2"><input name="decla_10" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td colspan="6"><input name="adresse_suite" style="width: 98%;" type="text" value="'.$pays.'"/></td>
+            <tr>
+                <td style="font-size:17px;" >11 Port chargement  : </td>
+				<td colspan="2"><input name="decla_11" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td style="font-size:17px;">Code Postal :  </td>
-				<td style="text-align: center;"><input name="code_postal" type="text" value="'.$objSociete->zip.'"/></td>
-				<td style="font-size:17px;" >Commune : </td>
-				<td colspan="3"><input name="commune" style="width: 95%;" type="text" value="'.$objSociete->town.'"/></td>
+            <tr>
+                <td style="font-size:17px;" >12 Port dechargement  : </td>
+				<td colspan="2"><input name="decla_12" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1" style="width: 76%;" type="text" value="'.$objSociete->phone.'"/></td>
-				<td style="font-size:17px;" >FAX : </td>
-				<td colspan="2"><input  name="tele_2" style="width: 93%;" type="text" value="'.$objSociete->fax.'"/></td>
+            <tr>
+                <td style="font-size:17px;" >13 Destination  : </td>
+				<td colspan="2"><input name="decla_13" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom" style="width: 85%;" type="text" value="'.$full_name[1].'"/></td>
-				<td style="font-size:17px;">Prenom :</td>
-				<td ><input  name="prenom" style="width: 90%;" type="text" value="'.$full_name[0].'"/></td>
+            <tr>
+                <td style="font-size:17px;" >14 Marques d expeditions  : </td>
+				<td colspan="2"><input name="decla_14" style="width: 40%;" type="text" value="'.$objSociete->nom.'"/></td>
 			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat" type="text" value="'. $user_cstmd->array_options['options_cstmd'] .'"/></td>
-				<td colspan="2" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="2"><input name="pays_certicat" style="width: 93%;" type="text" value="FRANCE"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="4"><input name="competence_thematique" style="width: 96%;" type="text" value="'. $compcstmd  .'" /></td>
-			</tr>
+            
+            
+       
+			
+			
+			
 		</table>
     </div>
 </div><br>

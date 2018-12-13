@@ -68,6 +68,16 @@ if ($resql) {
 }
 
 
+$decla_1 = GETPOST('decla_1');
+$decla_2 = GETPOST('decla_2');
+$decla_3 = GETPOST('decla_3');
+$decla_4 = GETPOST('decla_4');
+$decla_5 = GETPOST('decla_5');
+$decla_6 = GETPOST('decla_6');
+$decla_7 = GETPOST('decla_7');
+
+
+
 $transRoute	= GETPOST('transRoute'); 
 $transFer	= GETPOST('transFer');
 $transFluv	= GETPOST('transFluv');
@@ -235,10 +245,15 @@ $pdf->SetTextColor(0, 0, 0);
 $identite = array(
 
 			//identite de l'entreprise
-			"siren" => array(28,63,$objSociete->idprof1,1),
-			"rs"    => array(47,68.8,$objSociete->nom,0),
-			"ren"   => array(76,74.6,$lastname,0),
-			"rep"   => array(37,80,$firstname,0),
+			"$decla_1" => array(26,33,$decla_1,0),
+			"$decla_2"    => array(105,33,$decla_2,0),
+			"$decla_3"   => array(105,43,$decla_3,0),
+			"$decla_4"   => array(125,43,$decla_4,0),
+
+
+
+
+
 			
 			//Activites marchandises dangereuses de l'entreprise
 			"transportRoute"   => array(49,102,$tR,0),
