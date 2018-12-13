@@ -246,9 +246,9 @@ $identite = array(
 
 			//identite de l'entreprise
 			"$decla_1" => array(26,33,$decla_1,0),
-			"$decla_2"    => array(105,33,$decla_2,0),
-			"$decla_3"   => array(105,43,$decla_3,0),
-			"$decla_4"   => array(125,43,$decla_4,0),
+			"$decla_2"    => array(102,33,$decla_2,0),
+			"$decla_3"   => array(102,37,$decla_3,0),
+			"$decla_4"   => array(125,37,$decla_4,0),
 
 
 
