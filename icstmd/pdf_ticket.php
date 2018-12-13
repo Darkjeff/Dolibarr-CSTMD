@@ -245,10 +245,13 @@ $pdf->SetTextColor(0, 0, 0);
 $identite = array(
 
 			//identite de l'entreprise
-			"$decla_1" => array(26,33,$decla_1,0),
-			"$decla_2"    => array(102,33,$decla_2,0),
-			"$decla_3"   => array(102,37,$decla_3,0),
-			"$decla_4"   => array(125,37,$decla_4,0),
+			"$decla_1" => array(16,20,$decla_1,0),
+			"$decla_2"    => array(102,20,$decla_2,0),
+			"$decla_3"   => array(122,32,$decla_3,0),
+			"$decla_4"   => array(145,35,$decla_4,0),
+			"$decla_5"   => array(145,45,$decla_5,0),
+			"$decla_6"   => array(16,55,$decla_6,0),
+			"$decla_7"   => array(102,55,$decla_7,0),
 
 
 
@@ -388,28 +391,6 @@ foreach($identite as $key => $valIdentite){
 }
 /***************************End contenu de la premier page****************************/
 
-
-// add a page 2
-$pdf->AddPage();
-// import page 2
-$tplIdx = $pdf->importPage(2);
-// use the imported page and place it at point 10,10 with a width of 100 mm
-$pdf->useTemplate($tplIdx);
-
-
-/***************************Start contenu de la deuxieme page****************************/
-foreach($page2 as $key => $valIdentite){
-	$pdf->SetY($valIdentite[1]);
-	$pdf->SetX($valIdentite[0]);
-	if($valIdentite[3] == 1){
-		$valIdentite[2] = str_split($valIdentite[2]);
-		foreach($valIdentite[2] as $key => $char){
-			$pdf->Cell(4,0, utf8_decode($char) ,0,'C');
-		}
-	}else{
-		$pdf->Cell(0,0, utf8_decode($valIdentite[2]) ,0,'L');
-	}
-}
 
 //$pdf->Output();
 
