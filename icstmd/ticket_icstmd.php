@@ -64,9 +64,15 @@ $pdf->AddPage();
 llxHeader('',$langs->trans("Intervention"));
 
 
-	$head = societe_prepare_head($objSociete);
+	$head = fichinter_prepare_head($object);
 
-    dol_fiche_head($head, 'tabname1', $langs->trans("ThirdParty"),0,'company');
+	dol_fiche_head($head, 'icstmdficheinter', $langs->trans("InterventionCard"), -1, 'intervention');
+	
+	// Intervention card
+	$linkback = '<a href="'.DOL_URL_ROOT.'/fichinter/list.php'.(! empty($socid)?'?socid='.$socid:'').'">'.$langs->trans("BackToList").'</a>';
+
+
+	$morehtmlref='<div class="refidno">';
 	
     
 	$full_name=explode(" ",$objSociete->array_options['options_cstmd']);

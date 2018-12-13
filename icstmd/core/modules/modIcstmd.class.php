@@ -360,8 +360,8 @@ class modIcstmd extends DolibarrModules
 							'thirdparty:+icstmdtiers:ICSTMD:$user->rights->icstmd->read:/icstmd/tiers_icstmd.php?id=__ID__',
 							'thirdparty:+icstmdtiers:ICSTMD_PDF:$user->rights->icstmd->read:/icstmd/interv_icstmd.php?id=__ID__',
 							'contact:+icstmdcontact:ICSTMD:$user->rights->icstmd->read:/icstmd/contact_icstmd.php?id=__ID__',
-							'intervention:+icstmdficheinter:CSTMD:$user->rights->icstmd->read:/icstmd/interv_cstmd/index.php?id=__ID__');
-							'intervention:+icstmdficheinter:CSTMD_PDF:$user->rights->icstmd->read:/icstmd/tickety_icstmd.php?id=__ID__',
+							'intervention:+icstmdficheinter:CSTMD:$user->rights->icstmd->read:/icstmd/interv_cstmd/index.php?id=__ID__',
+							'intervention:+icstmdficheinter:CSTMD_PDF:$user->rights->icstmd->read:/icstmd/ticket_icstmd.php?id=__ID__');
 		// 'categories_x'	  to add a tab in category view (replace 'x' by type of category (0=product, 1=supplier, 2=customer, 3=member)
 		// 'contact'          to add a tab in contact view
 		// 'contract'         to add a tab in contract view

@@ -221,7 +221,7 @@ $pdf = new FPDI();
 // add a page
 $pdf->AddPage();
 // set the source file
-$pdf->setSourceFile("cerfa_12251-02.pdf");
+$pdf->setSourceFile("cerfa_materiel.pdf");
 // import page 1
 $tplIdx = $pdf->importPage(1);
 // use the imported page and place it at point 10,10 with a width of 100 mm
