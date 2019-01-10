@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -19,6 +19,9 @@
 
 // var_dump($conf);die;
 // var_dump($conf->global->FOOTER_LIGNE1);die;
+
+// Add symbol of currency 
+		
 
 	$this->SetFont('Arial','B',11);
 	$this->SetXY(15, -32);
@@ -44,7 +47,8 @@
 */
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -17);
-	$this->MultiCell(180,5,utf8_decode($arr[3]), 0, 'C');
+	$this->MultiCell(180,5,utf8_decode(htmlentities((string)$arr[3],ENT_COMPAT,"UTF-8")), 0, 'C');
+	//$this->MultiCell(180,5,$arr[3], 0, 'C');
 	/*
 	$this->SetFont('Arial','',9);
 	$this->SetXY(15, -18);

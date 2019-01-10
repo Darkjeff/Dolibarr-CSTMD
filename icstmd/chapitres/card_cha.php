@@ -23,7 +23,7 @@ if (! $res)
 if (! $res)
 	die("Include of main fails");
 
-require_once '../class/chapitre.class.php';
+dol_include_once('/icstmd/class/chapitre.class.php','Chapitre');
 require_once DOL_DOCUMENT_ROOT.'/core/class/extrafields.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
 

@@ -1,6 +1,7 @@
 <?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2018>  saasprov@gmail.com <saasprov.ma>
+ * Copyright (C) 2018 Philippe Grand  <philippe.grand@atoo-net.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,9 +34,10 @@ global $langs, $user;
 
 // Libraries
 require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
-//require_once "../class/myclass.class.php";
-// Translations
+require_once '../lib/icstmd.lib.php';
 
+// Translations
+$langs->loadLangs(array("admin", "icstmd@icstmd"));
 
 if (! $user->admin) accessforbidden();
 
@@ -90,17 +92,18 @@ $page_name = "CSTMDSetup";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
-$linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">'
-	. $langs->trans("BackToModuleList") . '</a>';
-print load_fiche_titre($langs->trans($page_name), $linkback);
+$linkback = '<a href="'.($backtopage?$backtopage:DOL_URL_ROOT.'/admin/modules.php?restore_lastsearch_values=1').'">'.$langs->trans("BackToModuleList").'</a>';
+
+print load_fiche_titre($langs->trans($page_name), $linkback, 'icstmd@icstmd');
 
 // Configuration header
+$head = icstmd_prepare_head();
 dol_fiche_head(
-	'',
+	$head,
 	'settings',
 	$langs->trans("CSTMD"),
 	0,
-	"CSTMD@CSTMD"
+	"icstmd@icstmd"
 );
 
 // Setup page goes here
@@ -123,33 +126,28 @@ print '<br>';
 print '<table class="noborder" width="100%">';
 
 // Account Parameters
-$var=true;
-print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print '<tr class="oddeven"><td class="fieldrequired">';
 print $langs->trans("Ligne 1 : ").'</td><td>';
 print '<input size="150" type="text" name="FOOTER_LIGNE1" value="'.$conf->global->FOOTER_LIGNE1.'">';
 print '</td></tr>';
 
-$var=!$var;
 
-print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print '<tr class="oddeven"><td class="fieldrequired">';
 print $langs->trans("Ligne 2 : ").'</td><td>';
 print '<input size="150" type="text" name="FOOTER_LIGNE2" value="'.$conf->global->FOOTER_LIGNE2.'">';
 print '</td></tr>';
 
-$var=!$var;
 
-print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print '<tr class="oddeven"><td class="fieldrequired">';
 print $langs->trans("Ligne 3 : ").'</td><td>';
 print '<input size="150" type="text" name="FOOTER_LIGNE3" value="'.$conf->global->FOOTER_LIGNE3.'">';
 print '</td></tr>';
 
-$var=!$var;
 
-print '<tr '.$bc[$var].'><td class="fieldrequired">';
+print '<tr class="oddeven"><td class="fieldrequired">';
 print $langs->trans("Ligne 4 : ").'</td><td>';
 print '<input size="150" type="text" name="FOOTER_LIGNE4" value="'.$conf->global->FOOTER_LIGNE4.'">';
 print '</td></tr>';
-
 
 
 print '</table>';

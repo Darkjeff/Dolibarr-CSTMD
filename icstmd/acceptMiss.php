@@ -76,7 +76,7 @@ class PDF extends FPDF
 
 // Instanciation de la classe dérivée
 $pdf = new PDF(array($conf->global->FOOTER_LIGNE1, $conf->global->FOOTER_LIGNE2, $conf->global->FOOTER_LIGNE3, $conf->global->FOOTER_LIGNE4));
-$pdf->AliasNbPages();
+if (method_exists($pdf,'AliasNbPages')) $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','BU',13);
 
@@ -107,7 +107,6 @@ $object->address = str_replace("–","-",$object->address);
 $adress = str_replace(array("\r", "\n"), '', $object->address);
 $pdf->MultiCell(180,8,utf8_decode($adress), 0, 'L');
 
-
 $pdf->SetXY(35, 132);
 $pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object->country), 0, 'L');
 
@@ -124,15 +123,12 @@ $pdf->SetXY(35, 158);
 $adress = str_replace(array("\r", "\n"), '', $object->address);
 $pdf->MultiCell(180,8,utf8_decode($adress), 0, 'L');
 
-
 $pdf->SetXY(35, 164);
 $pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object->country), 0, 'L');
-
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 174);
 $pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
-
 
 $pdf->SetFont('Arial','B',12);
 $pdf->SetXY(110, 184);
@@ -141,12 +137,23 @@ $pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(110, 190);
 $pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
-
-// $pdf->Image('img/sig.jpg',135,200,40);
-// $pdf->Footer("hhhh");
 $pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
 
-
+/*
+$title_key=(empty($user_cstmd->array_options['options_vcstmd']))?'':($user_cstmd->array_options['options_vcstmd']);	
+$extrafields = new ExtraFields($db);
+$extralabels = $extrafields->fetch_name_optionals_label ($user_cstmd->table_element, true);
+if (is_array($extralabels ) && key_exists('vcstmd', $extralabels) && !empty($title_key)) 
+{
+	$titlekey = $extrafields->showOutputField ('vcstmd', $title_key);
+	$pdf->Image('$title_key', 135, 200, 40);
+	//$pdf->Image('img/sig_fg.jpg', 135, 200, 40);
+}
+else
+{
+	setEventMessages('FPDF error: Image file has no extension and no type was specified:'.$title_key, null, 'errors');
+}
+*/
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
     mkdir($dir, 0777, true);
@@ -154,7 +161,6 @@ if (!file_exists($dir)) {
 
 $filename=$dir."/acceptmiss".date('Y_m_d').".pdf";
 $pdf->Output($filename,'F');
-
 
 if (isset($_SERVER["HTTP_REFERER"])) {
 	header("Location: " . $_SERVER["HTTP_REFERER"]);

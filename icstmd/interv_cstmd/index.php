@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -59,14 +59,15 @@ if (GETPOST("button_removefilter_x")) {
 	$search_ev = '';
 }
 
-$limit = GETPOST("limit")?GETPOST("limit","int"):$conf->liste_limit;
-$page=GETPOST("page",'int');
-if ($page == -1) { $page = 0 ; }
+// Load variable for pagination
+$limit = GETPOST('limit','int')?GETPOST('limit','int'):$conf->liste_limit;
+$sortfield = GETPOST('sortfield','alpha');
+$sortorder = GETPOST('sortorder','alpha');
+$page = GETPOST('page','int');
+if (empty($page) || $page == -1 || GETPOST('button_search','alpha') || GETPOST('button_removefilter','alpha') || (empty($toselect) && $massaction === '0')) { $page = 0; }     // If $page is not defined, or '' or -1 or if we click on clear filters or if we select empty mass action
 $offset = $limit * $page;
 $pageprev = $page - 1;
 $pagenext = $page + 1;
-$sortorder = GETPOST('sortorder', 'alpha');
-$sortfield = GETPOST('sortfield', 'alpha');
 
 // Security check
 if ($user->societe_id) $socid=$user->societe_id;
@@ -181,6 +182,7 @@ if (empty($conf->global->MAIN_DISABLE_FULL_SCANLIST))
 }	
 
 $sql.= $db->plimit($limit+1, $offset);
+
 $resql=$db->query($sql);
 if ($resql)
 {
@@ -205,6 +207,7 @@ if ($resql)
 	print '<input type="hidden" name="formfilteraction" id="formfilteraction" value="list">';
 	print '<input type="hidden" name="sortfield" value="'.$sortfield.'">';
 	print '<input type="hidden" name="sortorder" value="'.$sortorder.'">';
+	
 	print_barre_liste($title, $page, $_SERVER["PHP_SELF"], $params, $sortfield, $sortorder, '', $num, $nbtotalofrecords, 'title_companies', 0, '', '', $limit);
 	
 	print '<table class="liste '.($moreforfilter?"listwithfilterbefore":"").'">';

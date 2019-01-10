@@ -36,6 +36,7 @@ $sql = "SELECT rowid ";
 $sql.= " FROM ".MAIN_DB_PREFIX."user";	
 $sql.= " WHERE firstname = '" . $tab[0] . "'";
 $sql.= " AND lastname = '" . $tab[1] . "'";
+    
 // echo $sql;
 $user_id = null;
 dol_syslog(__METHOD__ . " sql=" . $sql, LOG_DEBUG);
@@ -76,7 +77,7 @@ class PDF extends FPDF
 }
 // Instanciation de la classe dérivée
 $pdf = new PDF(array($conf->global->FOOTER_LIGNE1, $conf->global->FOOTER_LIGNE2, $conf->global->FOOTER_LIGNE3, $conf->global->FOOTER_LIGNE4));
-$pdf->AliasNbPages();
+if (method_exists($pdf,'AliasNbPages')) $pdf->AliasNbPages();
 $pdf->AddPage();
 
 $pdf->SetFont('Arial','B',12);
@@ -150,16 +151,20 @@ $pdf->MultiCell(180,7,utf8_decode("Veuillez agréer, Madame, Monsieur, l'express
 
 
 
+//$pdf->SetFont('Arial','B',12);
+//$pdf->SetXY(110, 208);
+//$pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C');
+
 $pdf->SetFont('Arial','B',12);
-$pdf->SetXY(110, 208);
-$pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C');
+$pdf->SetXY(100, 208);
+$pdf->MultiCell(80,8,utf8_decode($user->firstname ." ".$user->lastname), 0, 'C');
 
 $pdf->SetFont('Arial','',12);
-$pdf->SetXY(110, 214);
-$pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
-
+$pdf->SetXY(100, 212);
+$pdf->MultiCell(80,8,utf8_decode($user->job), 0, 'C');
+    
 $pdf->Image('img/sig.jpg',135,220,40);
-// $pdf->Image($user_cstmd->array_options['options_vcstmd'],135,220,40);
+//$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,220,40);
 
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {

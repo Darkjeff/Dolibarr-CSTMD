@@ -53,6 +53,7 @@ $permissiondellink=$user->rights->ficheinter->creer;	// Used by the include of a
 class PDF extends FPDF {}
 
 $pdf = new PDF();
+
 $pdf->AliasNbPages();
 $pdf->AddPage();
 

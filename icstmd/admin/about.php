@@ -1,6 +1,7 @@
 <?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
+ * Copyright (C) 2018 Philippe Grand  <philippe.grand@atoo-net.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,11 +27,12 @@ global $langs, $user;
 // Libraries
 require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
 require_once '../class/ParsedownDolibarr.php';
-require_once '../lib/mymodule.lib.php';
+dol_include_once('/ultimatepdf/class/ParsedownDolibarr.php','ParsedownDolibarr');
+require_once '../lib/icstmd.lib.php';
 
 //require_once "../class/myclass.class.php";
 // Translations
-$langs->load("mymodule@mymodule");
+$langs->loadLangs(array("admin", "icstmd@icstmd"));
 
 // Access control
 if (! $user->admin) {
@@ -47,30 +49,30 @@ $action = GETPOST('action', 'alpha');
 /*
  * View
  */
-$page_name = "MyModuleAbout";
+$page_name = "IcstmdAbout";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
-$linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">'
-	. $langs->trans("BackToModuleList") . '</a>';
-print load_fiche_titre($langs->trans($page_name), $linkback);
+$linkback = '<a href="'.($backtopage?$backtopage:DOL_URL_ROOT.'/admin/modules.php?restore_lastsearch_values=1').'">'.$langs->trans("BackToModuleList").'</a>';
+
+print load_fiche_titre($langs->trans($page_name), $linkback, 'icstmd@icstmd');
 
 // Configuration header
-$head = mymoduleAdminPrepareHead();
+$head = icstmd_prepare_head();
 dol_fiche_head(
 	$head,
 	'about',
-	$langs->trans("Module500000Name"),
+	$langs->trans("CSTMD"),
 	0,
-	'mymodule@mymodule'
+	'icstmd@icstmd'
 );
 
 // About page goes here
-echo $langs->trans("MyModuleAboutPage");
+echo $langs->trans("IcstmdAboutPage");
 
 echo '<br>';
 
-$buffer = file_get_contents(dol_buildpath('/mymodule/README.md', 0));
+$buffer = file_get_contents(dol_buildpath('/icstmd/README.md', 0));
 echo ParsedownDolibarr::instance()->text($buffer);
 
 // Page end

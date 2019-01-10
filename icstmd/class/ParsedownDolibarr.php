@@ -18,6 +18,7 @@
 
 /** Includes */
 require __DIR__ . '/../vendor/autoload.php';
+include_once DOL_DOCUMENT_ROOT.'/includes/parsedown/Parsedown.php';
 
 /**
  * Class ParsedownDolibarr
@@ -35,7 +36,7 @@ class ParsedownDolibarr extends Parsedown
         $image = parent::inlineImage($Excerpt);
         $path = new \Enrise\Uri($image['element']['attributes']['src']);
         if ($path->isRelative()) {
-            $image['element']['attributes']['src'] = dol_buildpath('/mymodule/' . $path, 1);
+            $image['element']['attributes']['src'] = dol_buildpath('/icstmd/' . $path, 1);
         }
         return $image;
     }

@@ -244,10 +244,10 @@ class PDF_MC_Table extends FPDF{
 	    $this->SetFont('Arial','I',8);
 	    $this->Cell(0,5,$this->datafooter["date"]);
 	    $this->Ln();
-	    $this->Cell(0,5,$this->datafooter["adress"]);
+	    $this->Cell(0,5,$this->datafooter["address"]);
 	    $this->Ln();
 	    // Page number
-	    $this->Cell(0,10,'p '.$this->PageNo().'/{nb}',0,0,'C');
+	    $this->Cell(0,5,'p '.$this->PageNo().'/{nb}',0,0,'C');
 	}
 	
 	
