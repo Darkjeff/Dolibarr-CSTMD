@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -82,7 +82,7 @@ $now = date('d/m/Y' ,dol_now());
 
 $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
-$daterapport = $interv->array_options['options_daterapport'] ;
+$daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $certificat = $user->array_options['options_cstmd'];
 $datecertif = $user->array_options['options_valcertif'];
