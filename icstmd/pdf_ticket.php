@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -37,9 +37,14 @@ $emballage = $adr = "";
 
 $socid = GETPOST('interv_id','int');
 $id	= GETPOST('interv_id','int');
+
+
 $lastname = '';
 $firstname = '';
 $objSociete = new Societe($db);
+$object = new Fichinter($db);
+if ($id > 0) $object->fetch($id);
+$reference = $object->ref ;
 if ($id > 0) $objSociete->fetch($id);
 $sql = "SELECT lastname ,firstname ";
 $sql.= " FROM " . MAIN_DB_PREFIX . "socpeople";	
@@ -66,6 +71,7 @@ if ($resql) {
 	$error++;
 	dol_print_error($db);
 }
+
 
 
 $decla_1 = GETPOST('decla_1');
@@ -394,7 +400,7 @@ foreach($identite as $key => $valIdentite){
 
 //$pdf->Output();
 
-$dir = $dolibarr_main_data_root."/icstmd/".$socid;
+$dir = $dolibarr_main_data_root."/ficheinter/".$reference;
 if (!file_exists($dir)) {
     mkdir($dir, 0777, true);
 }
