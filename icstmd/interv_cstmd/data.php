@@ -445,7 +445,8 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la récep;on du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
+			//"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la réception du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
+			"c"=>"",
 			"x"=>10,
 			"y"=>200,
 			"w"=>0,
@@ -458,25 +459,20 @@ $data = array(
 	)
 );
 $page3 = array(
-	array("1.Presentation et organisation de l'entreprise pour les actvites liees aux transports de marchandises dangereuses","4"),
-	array("1.1. Gestion administrative	et operationnelle des activites liees au transport","4"),
-	array("1.2. Place du conseiller liees aux transports de marchandises dangereusesliees aux transports de marchandises dangereusesliees aux transports de marchandises dangereusesa la securite dans l'organisation","4"),
-	array("2. Releve des activites de l'annee ecoulee","5"),
-	array("2.1.	Chiffres de l'annee	coliees aux transports de marchandises dangereusesncernes par le rapport","5"),
-	array("2.2.	Marchandises dangereuses a haut	risque","8"),
-	array("3. Declarations,	rapports, resume et	bilan des differents evenements	et/ou accidents","9"),
-	array("3.1. evenements soumis a	declaration au titre de l'article 7 du present arrete(accidents declares)","10"),
-	array("3.2.	Accidents soumis a la redaction	d'un rapport d'accident au titre du 4 de l'article 6 du present arrete","10"),
+	
+	array(utf8_decode("Le conseiller à la sécurité s'assure de la réception du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD"),""),
+	array(utf8_decode($synthrapport)," 5")
+	
 );
 
 $page4 = array(
-	array('c'=>"1. Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>10, 's'=>20, 't'=>"B" ,'ln'=>25 ),
-	array('c'=>"1.1 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>16, 't'=>"B" ,'ln'=>15 ),
-	array('c'=>"1.1.1 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>15 ),
-	array('c'=>"1.1.2 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>15 ),
-	array('c'=>"1.2 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>16, 't'=>"B" ,'ln'=>15 ),
-	array('c'=>"1.2.1 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>15 ),
-	array('c'=>"1.2.2 Presentation	et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses", 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>15 ),
+	array('c'=>utf8_decode("1. 1. Organisation de l'entreprise pour les activités liées au transport de marchandises dangereuses"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.1. Gestion administrative et opérationnelle des activités liées au transport"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.1.1 Activité de l'entreprise"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode($activiteclient), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.1.2 Organisation et équipements"), 'h'=>8, 's'=>16, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode($synthrapport), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.2. Place du conseiller à la sécurité dans l’organisation"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 );
 
 $pages = array(

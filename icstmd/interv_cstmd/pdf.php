@@ -80,7 +80,9 @@ $now = date('d/m/Y' ,dol_now());
 $name = $soc->nom;
 $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
+$synthrapport =  $interv->array_options['options_synthrapport'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
+$activiteclient =  $soc->array_options['options_activiteclient'] ;
 $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
 
@@ -92,6 +94,45 @@ $nomuser = $tab[1];
 $teluser = $user_cstmd->user_mobile ;
 $mailuser = $user_cstmd->email ;
 $posteuser = $user_cstmd->job ; 
+
+//Mode user
+//
+
+
+
+$modeuser = "";
+
+if ($user_cstmd->array_options['options_modecstmd'] == 1) {
+$modeuser  = "Route";}
+if ($user_cstmd->array_options['options_modecstmd'] == 2) {
+$modeuser  = "Fer";}
+if ($user_cstmd->array_options['options_modecstmd'] == 3) {
+$modeuser  = "Fluvial";}
+if ($user_cstmd->array_options['options_modecstmd'] == 4) {
+$modeuser  = "Tous modes";}
+if ($user_cstmd->array_options['options_modecstmd'] == 5) {
+$modeuser  = "Route + Fer";}
+
+// Class user
+// 
+$classuser= "";
+
+if ($user_cstmd->array_options['options_clcstmd'] == 1) {
+$classuser = "Classe 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 2) {
+$classuser = "Classe 2";}
+if ($user_cstmd->array_options['options_clcstmd'] == 3) {
+$classuser = "Classe 1";}
+if ($user_cstmd->array_options['options_clcstmd'] == 4) {
+$classuser = "Classe 7";}
+if ($user_cstmd->array_options['options_clcstmd'] == 5) {
+$classuser = "PP";}
+if ($user_cstmd->array_options['options_clcstmd'] == 6) {
+$classuser= "Toutes Classes";}
+if ($user_cstmd->array_options['options_clcstmd'] == 7) {
+$classuser = "1 + 2 + 3 à 9";}
+if ($user_cstmd->array_options['options_clcstmd'] == 8) {
+$classuser = "2 + 3 à 9";}
 
 include("data.php");
 
@@ -438,11 +479,11 @@ $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
 //page 3
-// $pdf->AddPage();
-// $pdf->page3($title, $page3);
+$pdf->AddPage();
+$pdf->page3($title, $page3);
 // page 4
-// $pdf->AddPage();
-// $pdf->page4($title, $page4);
+$pdf->AddPage();
+$pdf->page4($title, $page4);
 // Range
 // $pdf->AddPage();
 // $pdf->range($title, $pages);
