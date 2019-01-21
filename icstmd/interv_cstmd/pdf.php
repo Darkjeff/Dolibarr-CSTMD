@@ -67,12 +67,31 @@ $user_cstmd->fetch($user_id);
 // var_dump($interv);die;
 // var_dump($soc);die;
 
+// liste variable pour document 
+
+$name = $soc->nom;
+$myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
+$myadress =  $conf->global->MAIN_INFO_SOCIETE_ADDRESS ;
+$myzip =  $conf->global->MAIN_INFO_SOCIETE_ZIP;
+$mytown =  $conf->global->MAIN_INFO_SOCIETE_TOWN;
+
+$now = date('d/m/Y' ,dol_now());
 
 $name = $soc->nom;
 $annee = date('Y', $interv->datec);
+$daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
+
+$certificat = $user->array_options['options_cstmd'];
+$datecertif = $user->array_options['options_valcertif'];
+
+$prenomuser = $tab[0];
+$nomuser = $tab[1];
+$teluser = $user_cstmd->user_mobile ;
+$mailuser = $user_cstmd->email ;
+$posteuser = $user_cstmd->job ; 
 
 include("data.php");
 
