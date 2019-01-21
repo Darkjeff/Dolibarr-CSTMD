@@ -83,6 +83,7 @@ $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $synthrapport =  $interv->array_options['options_synthrapport'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $activiteclient =  $soc->array_options['options_activiteclient'] ;
+$orgaclient =  $soc->array_options['options_orgaclient'] ;
 $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
 
