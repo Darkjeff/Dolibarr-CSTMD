@@ -182,7 +182,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=> utf8_decode("Numéro de	certificat :\n06148"),
+			"c"=> utf8_decode("Numéro de	certificat :".$certificat),
 			"x"=>90,
 			"y"=>84,
 			"w"=>60,
@@ -193,7 +193,7 @@ $data = array(
 			"s"=>"11"
 		),
 		array(
-			"c"=>utf8_decode("Date de validité : 09/06/2018"),
+			"c"=>utf8_decode("Date de validité : ".$datecertif),
 			"x"=>150,
 			"y"=>84,
 			"w"=>0,
@@ -329,7 +329,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"06148",
+			"c"=>$certificat,
 			"x"=>150,
 			"y"=>140,
 			"w"=>0,
@@ -351,7 +351,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"09/06/2018",
+			"c"=>$datecertif,
 			"x"=>150,
 			"y"=>148,
 			"w"=>0,
@@ -386,7 +386,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Rapport annuel établi le :"),
+			"c"=>utf8_decode("Rapport annuel établi le :" .$daterapport),
 			"x"=>10,
 			"y"=>170,
 			"w"=>80,
@@ -432,7 +432,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"",
+			"c"=>$signuser,
 			"x"=>90,
 			"y"=>186,
 			"w"=>0,

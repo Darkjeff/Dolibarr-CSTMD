@@ -88,13 +88,14 @@ $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
 
 $certificat = $user->array_options['options_cstmd'];
-$datecertif = $user->array_options['options_valcertif'];
+$datecertif = date('d/m/Y',$user->array_options['options_valcertif']);
 
-$prenomuser = $tab[0];
+$prenomuser = $tab[0] ." ". $tab[1];
 $nomuser = $tab[1];
 $teluser = $user_cstmd->user_mobile ;
 $mailuser = $user_cstmd->email ;
 $posteuser = $user_cstmd->job ; 
+$signuser = $user_cstmd->array_options['options_vcstmd'] ;
 
 //Mode user
 //
