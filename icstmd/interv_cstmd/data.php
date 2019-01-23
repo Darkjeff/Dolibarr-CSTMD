@@ -483,7 +483,7 @@ $page4 = array(
 	array('c'=>utf8_decode($drealaddress), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealcpville), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("L'entreprise a mis en place un plan de sûreté conformément a ses obliga9ons.Le CSTMD a vérifié son adéquation avec l'activité et la taille de l'organisme."), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode($suretehrtxt), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode("2. Relevé des activités de l'année écoulée"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
 );
 
