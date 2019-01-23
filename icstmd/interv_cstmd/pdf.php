@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
  *
@@ -238,6 +238,7 @@ class PDF_MC_Table extends FPDF{
 				$this->MultiCell($colon['w'], $colon['h'], $colon['c'], $colon['b'],$colon['l']);
 			}
 	    }
+		//$this->Image($image,55,150,100);
 	}
 
 	// Page 3
@@ -480,6 +481,9 @@ $pdf->firstpage($firstpage);
 $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
+//$pdf->Image("../" .$user_cstmd->array_options['options_vcstmd'],150,215,40);
+$pdf->Image("../" .$signuser,150,215,40);
+
 //page 3
 $pdf->AddPage();
 $pdf->page3($title, $page3);

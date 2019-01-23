@@ -478,6 +478,11 @@ $page4 = array(
 	array('c'=>utf8_decode($prenomuser), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode($modeuser), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode($classuser), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("Ce conseiller à la sécurité est lié par un contrat et déclaré auprès de la DREAL"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode($adresse), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("L'entreprise a mis en place un plan de sûreté conformément a ses obliga9ons.Le CSTMD a vérifié son adéquation avec l’activité et la taille de l'organisme."), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("2. Relevé des activités de l'année écoulée"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
 );
 
 $pages = array(
