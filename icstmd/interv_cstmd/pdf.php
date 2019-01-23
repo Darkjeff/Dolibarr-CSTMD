@@ -522,11 +522,17 @@ $pdf->page3($title, $page3);
 $pdf->AddPage();
 $pdf->page4($title, $page4);
 // page 5
-$pdf->AddPage();
-$pdf->page5($title, $page5);
+//$pdf->AddPage();
+//$pdf->page5($title, $page5);
+
+
 // Range
-// $pdf->AddPage();
-// $pdf->range($title, $pages);
+ $pdf->AddPage();
+ $pdf->range($title, $pages);
+
+
+
+
 
 //********************************************************* Questions
 $pdf->AddPage();
