@@ -27,6 +27,8 @@ if (! $res)
 require_once '../fpdf/fpdf.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/date.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/fichinter/class/fichinter.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/lib/company.lib.php';
+
 $id			= GETPOST('id','int');
 $interv = new Fichinter($db);
 
@@ -42,6 +44,9 @@ $result = restrictedArea($user, 'societe', $socid, '&societe');
 $soc = new Societe($db);
 if ($id > 0) $soc->fetch($socid);
 
+$dreal = new Societe($db);
+
+$dreal = $dreal->searchByName($soc->array_options['options_dreal'])[0];
 
 $tab = explode(" ", $soc->array_options['options_cstmd']);
 // var_dump($tab);die();
@@ -96,6 +101,11 @@ $teluser = $user_cstmd->user_mobile ;
 $mailuser = $user_cstmd->email ;
 $posteuser = $user_cstmd->job ; 
 $signuser = $user_cstmd->array_options['options_vcstmd'] ;
+
+$drealnom = $dreal->nom ;
+$drealaddress = $dreal->address ;
+$drealcpville = $dreal->zip ." ".$dreal->town ;
+
 
 //Mode user
 //
@@ -481,7 +491,7 @@ $pdf->firstpage($firstpage);
 $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
-//$pdf->Image("../" .$user_cstmd->array_options['options_vcstmd'],150,215,40);
+$pdf->Image("../" .$signuser,160,156,20);
 $pdf->Image("../" .$signuser,150,215,40);
 
 //page 3
