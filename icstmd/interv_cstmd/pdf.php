@@ -87,6 +87,7 @@ $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $synthrapport =  $interv->array_options['options_synthrapport'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
+$adressedoli = $myadress .", ". $myzip .", ". $mytown;
 $activiteclient =  utf8_decode($soc->array_options['options_activiteclient'] );
 $orgaclient =  $soc->array_options['options_orgaclient'] ;
 $nom = $user_cstmd->array_options['options_cstmd'];
@@ -222,7 +223,7 @@ class PDF_MC_Table extends FPDF{
 	    $this->Line(10, 170, 200, 170);
 	    $this->Line(90, 178, 200, 178);
 	    $this->Line(10, 186, 200, 186);
-	    $this->Line(10, 200, 200, 200);
+	   // $this->Line(10, 200, 200, 200);
 	    $this->Line(10, 250, 200, 250);
 		//colon
 	    $this->Line(10, 22, 10, 250);
@@ -286,6 +287,18 @@ class PDF_MC_Table extends FPDF{
 			$this->MultiCell(0, $row['h'], $row['c'], 0,"L");
 	    }
 	}
+	
+	// Page 5
+	function page5($title,$data)
+	{
+		$this->return_to_default();
+		$this->head($title);
+	    foreach ($data as $key => $row) {
+	    	$this->Ln($row["ln"]);
+			$this->SetFont('Arial',$row["t"],$row["s"]);
+			$this->MultiCell(0, $row['h'], $row['c'], 0,"L");
+	    }
+	}
 
 	// Range
 	function range($title,$pages)
@@ -328,7 +341,7 @@ class PDF_MC_Table extends FPDF{
 	    $this->Cell(0,5,$this->datafooter["address"]);
 	    $this->Ln();
 	    // Page number
-	    $this->Cell(0,5,'p '.$this->PageNo().'/{nb}',0,0,'C');
+	    $this->Cell(0,5,'page '.$this->PageNo(),0,0,'C');
 	}
 	
 	
@@ -508,6 +521,9 @@ $pdf->page3($title, $page3);
 // page 4
 $pdf->AddPage();
 $pdf->page4($title, $page4);
+// page 5
+$pdf->AddPage();
+$pdf->page5($title, $page5);
 // Range
 // $pdf->AddPage();
 // $pdf->range($title, $pages);

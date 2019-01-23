@@ -5,8 +5,9 @@ $firstpage = array(
 	"image"=> "../img/image_doc.jpg",
 );
 $footer = array(
-	"date"=> "V11 janvier 2016",
+	"date"=> $daterapport,
 	"adress"=> "CARBONNE Conseil & FormaPon - 25 Merlet - 33420 ESPIET"
+	//"adress"=> $adresse
 );
 $title = array("RAPPORT ANNUEL DU CSTMD","(CONSEILLER A LA SECURITE	POUR LE TRANSPORT DE MARCHANDISES DANGEREUSES)","Conforme a l'arrete du	02 decembre 2014 modifiant l'arrete du 29 mai 2009 dit 'arrete TMD'");
 
@@ -484,7 +485,12 @@ $page4 = array(
 	array('c'=>utf8_decode($drealcpville), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($suretehrtxt), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("2. Relevé des activités de l'année écoulée"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	);
+
+$page5 = array(
+	array('c'=>utf8_decode("2. Relevé des activités de l'année écoulée"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("2.1. Chiffres de l'année concernée par le rapport"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("2.1.1. Marchandises emballées"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 );
 
 $pages = array(
