@@ -68,7 +68,8 @@ if ($resql) {
 
 // qry pour les quantites marchandises
 
-$sql2 = "SELECT 211classe as a_classe, 211etiquette as a_etiquette, 211conditionnement as a_conditionnement, 211quantite as a_quantite";
+$sql2 = "SELECT 211classe as a_classe, 211etiquette as a_etiquette, 211conditionnement as a_conditionnement, 211quantite as a_quantite, 212classe as b_classe, 212etiquette as b_etiquette, 212colis as b_colis";
+//$sql2.= ", 212classe as b_classe, 212etiquette as b_etiquette, 212colis as b_colis, 212vrac as b_vrac, 212citerne a b_citerne";
 $sql2.= " FROM ".MAIN_DB_PREFIX."cust_marchandise_activite_extrafields";	
 $sql2.= " WHERE fk_object = " . $id ;
 
@@ -88,7 +89,12 @@ $a_etiquette = $obj2->a_etiquette;
 $a_conditionnement = $obj2->a_conditionnement;
 $a_quantite = $obj2->a_quantite ;
 
+$b_classe = $obj2->b_classe;
+$b_etiquette = $obj2->b_etiquette;
+$b_colis = $obj2->b_colis;
 
+
+global $conf,$langs,$mysoc;
 
 
 
@@ -96,11 +102,15 @@ $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
 
 // var_dump($interv);die;
-// var_dump($soc);die;
-
+/*
+print '<pre>';
+ var_dump($mysoc);die;
+ print '</pre>';
+*/
 // liste variable pour document 
 
 $name = $soc->nom;
+
 $myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
 $myadress =  $conf->global->MAIN_INFO_SOCIETE_ADDRESS ;
 $myzip =  $conf->global->MAIN_INFO_SOCIETE_ZIP;

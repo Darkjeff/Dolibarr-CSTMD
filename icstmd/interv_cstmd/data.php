@@ -647,7 +647,7 @@ $pages = array(
 			"m"=>1
 		),
 		
-		//////////////// todooooooooooooooo page 5 suite tableau 
+	
 		
 		
 		
@@ -773,6 +773,9 @@ $pages = array(
 			"s"=>12,
 			"m"=>0
 		),
+		
+			//////////////// todooooooooooooooo page 5 suite tableau 
+		
 		array(
 			"c"=>"N/A",
 			"x"=>15,
