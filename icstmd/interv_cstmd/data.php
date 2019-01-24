@@ -1212,7 +1212,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"Wagons",
+			"c"=>utf8_decode("Bateau à cargaison sèche"),
 			"x"=>110,
 			"y"=>220,
 			"w"=>45,
@@ -1224,7 +1224,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"UTI",
+			"c"=>utf8_decode("Bateau Citerne"),
 			"x"=>155,
 			"y"=>220,
 			"w"=>45,
@@ -1371,7 +1371,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette",
 			"x"=>60,
-			"y"=>130,
+			"y"=>40,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1383,7 +1383,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles"),
 			"x"=>110,
-			"y"=>130,
+			"y"=>40,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1393,9 +1393,9 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"Colis",
+			"c"=>"R",
 			"x"=>110,
-			"y"=>140,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1405,9 +1405,9 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"Vrac",
+			"c"=>"F",
 			"x"=>140,
-			"y"=>140,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1417,9 +1417,9 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"Citerne",
+			"c"=>"N",
 			"x"=>170,
-			"y"=>140,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1431,7 +1431,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_classe),
 			"x"=>10,
-			"y"=>150,
+			"y"=>60,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
@@ -1443,7 +1443,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_etiquette),
 			"x"=>60,
-			"y"=>150,
+			"y"=>60,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
@@ -1455,7 +1455,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_colis),
 			"x"=>110,
-			"y"=>150,
+			"y"=>60,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1467,7 +1467,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_vrac),
 			"x"=>140,
-			"y"=>150,
+			"y"=>60,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1479,7 +1479,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_citerne),
 			"x"=>170,
-			"y"=>150,
+			"y"=>60,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1489,11 +1489,13 @@ $pages = array(
 			"m"=>0
 		),
 	
-		// END table 1 page 6
+		// END tableau 1 page 6
+		
+		
 		array(
 			'c'=>"2.1.3.2 Presentation et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses",
 			"x"=>10,
-			"y"=>100,
+			"y"=>80,
 			"w"=>0,
 			"h"=>6,
 			"b"=>0,
