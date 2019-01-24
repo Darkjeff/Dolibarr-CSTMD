@@ -1108,7 +1108,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($d_classe),
 			"x"=>10,
 			"y"=>190,
 			"w"=>50,
@@ -1120,7 +1120,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($d_etiquette),
 			"x"=>60,
 			"y"=>190,
 			"w"=>50,
@@ -1132,7 +1132,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($d_wagon),
 			"x"=>110,
 			"y"=>190,
 			"w"=>45,
@@ -1144,7 +1144,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($d_uti),
 			"x"=>155,
 			"y"=>190,
 			"w"=>45,
@@ -1236,7 +1236,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($e_classe),
 			"x"=>10,
 			"y"=>230,
 			"w"=>50,
@@ -1248,7 +1248,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($e_etiquette),
 			"x"=>60,
 			"y"=>230,
 			"w"=>50,
@@ -1260,7 +1260,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($e_bateau),
 			"x"=>110,
 			"y"=>230,
 			"w"=>45,
@@ -1272,7 +1272,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($e_citerne),
 			"x"=>155,
 			"y"=>230,
 			"w"=>45,
@@ -1966,7 +1966,7 @@ $pages = array(
 		),
 		//Start table 1 page 8
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est-elle concernée par les marchandises reprises dans le tableau du 1.10.3.1.2 ?"),
 			"x"=>10,
 			"y"=>45,
 			"w"=>0,
@@ -1978,7 +1978,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>10,
 			"y"=>55,
 			"w"=>95,
@@ -1990,7 +1990,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>105,
 			"y"=>55,
 			"w"=>95,
@@ -2002,7 +2002,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est-elle concernée par les marchandises reprises dans le tableau du 1.10.3.1.3 ?"),
 			"x"=>10,
 			"y"=>65,
 			"w"=>0,
@@ -2014,7 +2014,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>10,
 			"y"=>75,
 			"w"=>95,
@@ -2026,7 +2026,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>105,
 			"y"=>75,
 			"w"=>95,
@@ -2038,7 +2038,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Si oui, activité (s) concernée (s)"),
 			"x"=>10,
 			"y"=>85,
 			"w"=>0,
