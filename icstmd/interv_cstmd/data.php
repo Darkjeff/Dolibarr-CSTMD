@@ -777,14 +777,26 @@ $pages = array(
 			//////////////// todooooooooooooooo page 5 suite tableau 
 		
 		array(
-			"c"=>"N/A",
+			"c"=>utf8_decode($b_classe),
 			"x"=>15,
 			"y"=>100,
-			"w"=>170,
+			"w"=>35,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
-			"t"=>"B",
+			"t"=>"",
+			"s"=>12,
+			"m"=>0
+		),
+			array(
+			"c"=>utf8_decode($b_etiquette),
+			"x"=>50,
+			"y"=>100,
+			"w"=>35,
+			"h"=>10,
+			"b"=>1,
+			"l"=>"C",
+			"t"=>"",
 			"s"=>12,
 			"m"=>0
 		),
