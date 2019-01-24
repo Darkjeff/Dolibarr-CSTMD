@@ -68,8 +68,9 @@ if ($resql) {
 
 // qry pour les quantites marchandises
 
-$sql2 = "SELECT 211classe as a_classe, 211etiquette as a_etiquette, 211conditionnement as a_conditionnement, 211quantite as a_quantite, 212classe as b_classe, 212etiquette as b_etiquette, 212colis as b_colis";
-//$sql2.= ", 212classe as b_classe, 212etiquette as b_etiquette, 212colis as b_colis, 212vrac as b_vrac, 212citerne a b_citerne";
+$sql2 = "SELECT 211classe as a_classe, 211etiquette as a_etiquette, 211conditionnement as a_conditionnement," ;
+$sql2.= "211quantite as a_quantite, 212classe as b_classe, 212etiquette as b_etiquette, 212colis as b_colis,";
+$sql2.= "212vrac as b_vrac, 212citerne as b_citerne, 212R as b_R, 212F as b_F, 212N as b_N ";
 $sql2.= " FROM ".MAIN_DB_PREFIX."cust_marchandise_activite_extrafields";	
 $sql2.= " WHERE fk_object = " . $id ;
 
@@ -92,6 +93,12 @@ $a_quantite = $obj2->a_quantite ;
 $b_classe = $obj2->b_classe;
 $b_etiquette = $obj2->b_etiquette;
 $b_colis = $obj2->b_colis;
+$b_vrac = $obj2->b_vrac;
+$b_citerne = $obj2->b_citerne;
+$b_R = $obj2->b_R;
+$b_F = $obj2->b_F;
+$b_N = $obj2->b_N;
+
 
 
 global $conf,$langs,$mysoc;
