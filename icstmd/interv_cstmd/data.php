@@ -971,19 +971,19 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"0",
+			"c"=>utf8_decode($c_classe),
 			"x"=>10,
 			"y"=>150,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
-			"t"=>"B",
+			"t"=>"",
 			"s"=>12,
 			"m"=>0
 		),
 		array(
-			"c"=>"0",
+			"c"=>utf8_decode($c_etiquette),
 			"x"=>60,
 			"y"=>150,
 			"w"=>50,
@@ -995,19 +995,19 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"0",
+			"c"=>utf8_decode($c_colis),
 			"x"=>110,
 			"y"=>150,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
-			"t"=>"B",
+			"t"=>"",
 			"s"=>12,
 			"m"=>0
 		),
 		array(
-			"c"=>"0",
+			"c"=>utf8_decode($c_vrac),
 			"x"=>140,
 			"y"=>150,
 			"w"=>30,
@@ -1019,7 +1019,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>"0",
+			"c"=>utf8_decode($c_citerne),
 			"x"=>170,
 			"y"=>150,
 			"w"=>30,
