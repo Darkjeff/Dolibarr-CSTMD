@@ -66,6 +66,32 @@ if ($resql) {
 	}
 }
 
+// qry pour les quantites marchandises
+
+$sql2 = "SELECT 211classe as a_classe, 211etiquette as a_etiquette, 211conditionnement as a_conditionnement, 211quantite as a_quantite";
+$sql2.= " FROM ".MAIN_DB_PREFIX."cust_marchandise_activite_extrafields";	
+$sql2.= " WHERE fk_object = " . $id ;
+
+// echo $sql;
+
+dol_syslog(__METHOD__ . " sql2=" . $sql2, LOG_DEBUG);
+$resql2 = $db->query($sql2);
+if ($resql2) {
+	if ($db->num_rows($resql2)) {
+		$obj2 = $db->fetch_object($resql2);
+				
+	}
+}
+
+$a_classe = $obj2->a_classe;
+$a_etiquette = $obj2->a_etiquette;
+$a_conditionnement = $obj2->a_conditionnement;
+$a_quantite = $obj2->a_quantite ;
+
+
+
+
+
 $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
 

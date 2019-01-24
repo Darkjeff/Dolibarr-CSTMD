@@ -584,7 +584,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode(""),
+			"c"=>utf8_decode($a_classe),
 			"x"=>15,
 			"y"=>55,
 			"w"=>35,
@@ -596,7 +596,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode(""),
+			"c"=>utf8_decode($a_etiquette),
 			"x"=>50,
 			"y"=>55,
 			"w"=>35,
@@ -608,7 +608,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode(""),
+			"c"=>utf8_decode($a_conditionnement),
 			"x"=>85,
 			"y"=>55,
 			"w"=>55,
@@ -620,7 +620,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode(""),
+			"c"=>utf8_decode($a_quantite),
 			"x"=>140,
 			"y"=>55,
 			"w"=>55,
