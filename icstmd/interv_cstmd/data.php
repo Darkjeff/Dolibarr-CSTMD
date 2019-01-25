@@ -2373,12 +2373,47 @@ $pages = array(
 			"s"=>12,
 			"m"=>0
 		),
-		//END table 1 page 8
+		//END table 1 page 7
 	),
+	
+	
+	/////// page 8
+	
+	
+	
+	
 	array(
-		//info page 9
+		//info page 8
+		
 		array(
-			'c'=>"3 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("2.3 Dispositions relatives aux parcs de stationnement selon le 2.3.2 de l'annexe 1 du présent arrêté L'entreprise dispose-t-elle de parcs de stationnement soumis aux exigences du 2.3.2 ?"),
+			"x"=>10,
+			"y"=>10,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Si oui, nombre de parc de stationnement :"),
+			"x"=>10,
+			"y"=>30,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>1
+		),
+		
+		
+		
+		array(
+			'c'=>utf8_decode("3 Déclarations, rapports, résumé et bilan des différents évènements et/ou accidents"),
 			"x"=>10,
 			"y"=>40,
 			"w"=>0,
@@ -2386,11 +2421,11 @@ $pages = array(
 			"b"=>0,
 			"l"=>"L",
 			"t"=>"B",
-			"s"=>20,
+			"s"=>14,
 			"m"=>1
 		),
 		array(
-			'c'=>"Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risqueMarchandises dangereuses a haut risqueMarchandises dangereuses a haut	risqueMarchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("Rappel : En application des acticles 6 et 7 de l'arrêté TMD, tout accident répondant au 1.8.3.6 doit faire l'objet d'un rapport d'accident, par les conseillers à la sécurité concernés, accompagné d'une analyse des causes et de recommandations écrites visant à éviter le renouvellement de tels accidents"),
 			"x"=>10,
 			"y"=>60,
 			"w"=>0,
@@ -2398,10 +2433,126 @@ $pages = array(
 			"b"=>0,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Lorsque ces accidents ont répondu aux critères de déclaration d'évènements selon le chapitre 1.8.5.3, le rapport d'accident doit être transmis aux autorités concernées, dans un délai d'un mois"),
+			"x"=>10,
+			"y"=>90,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Les accidents répondant aux critères de déclaration d'évènements impliquant des matières dangereuses selon le chapitre 1.8.5.3 sont résumés dans les tableaux ci-dessous"),
+			"x"=>10,
+			"y"=>110,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("R = route, F = Fer, N = Fluvial"),
+			"x"=>10,
+			"y"=>130,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("C = chargement, D= déchargement, T = transport, E = emballage, Tb = transbordement"),
+			"x"=>10,
+			"y"=>140,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("En cas de perte de la ou les marchandise(s) dangereuse(s)"),
+			"x"=>10,
+			"y"=>150,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 1 : dommages corporels"),
+			"x"=>10,
+			"y"=>160,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 2 : perte de marchandise dangereuse"),
+			"x"=>10,
+			"y"=>170,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 3 : dommages matériels ou à l'environnement,"),
+			"x"=>10,
+			"y"=>180,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 4 : intervention des autorités."),
+			"x"=>10,
+			"y"=>190,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
 			"m"=>1
 		),
 	),
+		
+	
+	///////// Page 9
+	
+	
+	
+	
+	
 	array(
 		//info page 9
 		array(
