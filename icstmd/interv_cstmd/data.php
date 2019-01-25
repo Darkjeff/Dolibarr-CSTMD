@@ -2556,7 +2556,7 @@ $pages = array(
 	array(
 		//info page 9
 		array(
-			'c'=>"3.1 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.1 Evènements soumis à déclaration au titre de l'article 7 du présent arrêté (accidents déclarés)"),
 			"x"=>10,
 			"y"=>20,
 			"w"=>0,
@@ -2580,7 +2580,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Lieu",
 			"x"=>30,
 			"y"=>40,
 			"w"=>20,
@@ -2592,7 +2592,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Mode",
 			"x"=>50,
 			"y"=>40,
 			"w"=>20,
@@ -2604,7 +2604,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Opération",
 			"x"=>70,
 			"y"=>40,
 			"w"=>30,
@@ -2616,7 +2616,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"ONU",
 			"x"=>100,
 			"y"=>40,
 			"w"=>20,
@@ -2628,7 +2628,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Classe",
 			"x"=>120,
 			"y"=>40,
 			"w"=>20,
@@ -2640,7 +2640,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"GE",
 			"x"=>140,
 			"y"=>40,
 			"w"=>20,
@@ -2652,7 +2652,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Désignation"),
 			"x"=>160,
 			"y"=>40,
 			"w"=>20,
@@ -2664,7 +2664,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Critères"),
 			"x"=>180,
 			"y"=>40,
 			"w"=>20,
@@ -2676,7 +2676,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Aucun evenement declare cese annee",
+			'c'=>utf8_decode("Aucun évènement déclaré cette année"),
 			"x"=>10,
 			"y"=>50,
 			"w"=>0,
@@ -2688,7 +2688,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"3.2 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.2 Accidents soumis à la rédaction d'un rapport d'accident au titre du 4 de l'article 6 du présent arrêté"),
 			"x"=>10,
 			"y"=>80,
 			"w"=>0,
@@ -2712,7 +2712,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Lieu",
 			"x"=>30,
 			"y"=>100,
 			"w"=>20,
@@ -2724,7 +2724,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Mode",
 			"x"=>50,
 			"y"=>100,
 			"w"=>20,
@@ -2736,7 +2736,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Opération",
 			"x"=>70,
 			"y"=>100,
 			"w"=>30,
@@ -2748,7 +2748,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"ONU",
 			"x"=>100,
 			"y"=>100,
 			"w"=>20,
@@ -2760,7 +2760,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Classe",
 			"x"=>120,
 			"y"=>100,
 			"w"=>20,
@@ -2772,7 +2772,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"GE",
 			"x"=>140,
 			"y"=>100,
 			"w"=>20,
@@ -2784,7 +2784,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Désignation"),
 			"x"=>160,
 			"y"=>100,
 			"w"=>20,
@@ -2796,7 +2796,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Critères"),
 			"x"=>180,
 			"y"=>100,
 			"w"=>20,
@@ -2808,7 +2808,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Aucun evenement declare cese annee",
+			'c'=>utf8_decode("Aucun accident cette année"),
 			"x"=>10,
 			"y"=>110,
 			"w"=>0,
@@ -2820,7 +2820,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"3.3 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.3 Evènements relatifs au transport de marchandises dangereuses de la classe 7"),
 			"x"=>10,
 			"y"=>140,
 			"w"=>0,
@@ -2832,7 +2832,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Nombre d'évènements significatifs :"),
 			"x"=>10,
 			"y"=>160,
 			"w"=>95,
@@ -2844,7 +2844,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Nombre d'évènements intéressants (EIT)(*):"),
 			"x"=>105,
 			"y"=>160,
 			"w"=>95,
@@ -2856,7 +2856,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Aucun accident déclaré cette année"),
 			"x"=>10,
 			"y"=>170,
 			"w"=>0,
@@ -2868,7 +2868,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("(*) EIT : Ecarts aux exigences réglementaires qui n'entraînent pas de dégradation des fonctions de sûreté et dont les incidences sont faibles. Ces EIT sont alors classés hors échelle sur l'échelle INES et ne nécessitent pas de compte rendu d'évènement significatif"),
 			"x"=>10,
 			"y"=>180,
 			"w"=>0,
@@ -2876,7 +2876,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>12,
+			"s"=>7,
 			"m"=>1
 		),
 	),
