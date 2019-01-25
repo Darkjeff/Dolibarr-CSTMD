@@ -1951,7 +1951,7 @@ $pages = array(
 	//////// PAGE 7
 	
 	array(
-		//info page 8
+		//info page 7
 		array(
 			'c'=>"2.2 Marchandises dangereuses a haut risque",
 			"x"=>10,
@@ -1964,7 +1964,7 @@ $pages = array(
 			"s"=>16,
 			"m"=>1
 		),
-		//Start table 1 page 8
+		//Start table 1 page 7
 		array(
 			'c'=>utf8_decode("L'entreprise est-elle concernée par les marchandises reprises dans le tableau du 1.10.3.1.2 ?"),
 			"x"=>10,
@@ -2050,7 +2050,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Emballeur",
 			"x"=>10,
 			"y"=>95,
 			"w"=>47,
@@ -2074,7 +2074,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Remplisseur",
 			"x"=>105,
 			"y"=>95,
 			"w"=>47,
@@ -2098,7 +2098,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Expéditeur"),
 			"x"=>10,
 			"y"=>105,
 			"w"=>47,
@@ -2122,7 +2122,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Chargeur",
 			"x"=>105,
 			"y"=>105,
 			"w"=>47,
@@ -2146,7 +2146,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Destinataire",
 			"x"=>10,
 			"y"=>115,
 			"w"=>47,
@@ -2170,7 +2170,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Transporteur",
 			"x"=>105,
 			"y"=>115,
 			"w"=>47,
@@ -2194,7 +2194,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Déchargeur"),
 			"x"=>10,
 			"y"=>125,
 			"w"=>47,
@@ -2218,7 +2218,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"",
 			"x"=>105,
 			"y"=>125,
 			"w"=>0,
@@ -2230,7 +2230,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Autre (à préciser)"),
 			"x"=>10,
 			"y"=>135,
 			"w"=>95,
@@ -2254,7 +2254,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Préciser, le cas échéant, les marchandises dangereuses et/ou classes de danger concernées, et en cas de pluralité, le(s) site(s) concerné(s):"),
 			"x"=>10,
 			"y"=>155,
 			"w"=>0,
@@ -2262,11 +2262,11 @@ $pages = array(
 			"b"=>1,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>10,
+			"s"=>8,
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est elle soumise au plan de sûreté prévu au 1.10.3.2 ?"),
 			"x"=>10,
 			"y"=>165,
 			"w"=>0,
@@ -2278,7 +2278,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>10,
 			"y"=>175,
 			"w"=>95,
@@ -2290,7 +2290,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>105,
 			"y"=>175,
 			"w"=>0,
@@ -2302,7 +2302,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Si oui est-il établi"),
 			"x"=>10,
 			"y"=>185,
 			"w"=>0,
@@ -2314,7 +2314,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>10,
 			"y"=>195,
 			"w"=>95,
@@ -2326,7 +2326,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>105,
 			"y"=>195,
 			"w"=>0,
@@ -2338,7 +2338,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
 			"x"=>10,
 			"y"=>205,
 			"w"=>0,
@@ -2350,7 +2350,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NA",
 			"x"=>10,
 			"y"=>215,
 			"w"=>95,
