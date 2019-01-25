@@ -2604,7 +2604,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Opération",
+			'c'=>utf8_decode("Opération"),
 			"x"=>70,
 			"y"=>40,
 			"w"=>30,
@@ -2736,7 +2736,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Opération",
+			'c'=>utf8_decode("Opération"),
 			"x"=>70,
 			"y"=>100,
 			"w"=>30,
@@ -2880,4 +2880,60 @@ $pages = array(
 			"m"=>1
 		),
 	),
+	
+	
+	///// Page 10
+	array(
+		array(
+			'c'=>utf8_decode("4 Bilan des interventions réalisées au titre des activités liées au transport de marchandises dangereuses "),
+			"x"=>10,
+			"y"=>10,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"B",
+			"s"=>14,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("4.1 Tableau de synthèse des visites et interventions réalisées par le conseiller à la sécurité"),
+			"x"=>10,
+			"y"=>30,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("4.2 Rappel des autres travaux ou audits réalisés pouvant avoir une incidence sur les activités liées au transport de marchandises dangereuses"),
+			"x"=>10,
+			"y"=>100,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	),
+	
+	
+	
+	
+	
 );
