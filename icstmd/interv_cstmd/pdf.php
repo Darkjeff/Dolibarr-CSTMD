@@ -74,7 +74,10 @@ $sql2.= "212vrac as b_vrac, 212citerne as b_citerne, 212R as b_R, 212F as b_F, 2
 $sql2.= "2131classe as c_classe, 2131etiquette as c_etiquette, 2131colis as c_colis, 2131vrac as c_vrac, 2131citerne as c_citerne, ";
 $sql2.= "2132classe as d_classe, 2132etiquette as d_etiquette, 2132wagon as d_wagon, 2132uti as d_uti, ";
 $sql2.= "2133classe as e_classe, 2133etiquette as e_etiquette, 2133bateau as e_bateau, 2133citerne as e_citerne, ";
-$sql2.= "214classe as f_classe, 214etiquette as f_etiquette, 214R as f_R, 214F as f_F, 214N as f_N ";
+$sql2.= "214classe as f_classe, 214etiquette as f_etiquette, 214R as f_R, 214F as f_F, 214N as f_N, ";
+$sql2.= "2151classe as g_classe, 2151etiquette as g_etiquette, 2151colis as g_colis, 2151vrac as g_vrac, 2151citerne as g_citerne, ";
+$sql2.= "2152classe as h_classe, 2152etiquette as h_etiquette, 2152wagon as h_wagon, 2152uti as h_uti, ";
+$sql2.= "2153classe as i_classe, 2153etiquette as i_etiquette, 2153bateau as i_bateau, 2153citerne as i_citerne ";
 $sql2.= " FROM ".MAIN_DB_PREFIX."cust_marchandise_activite_extrafields";	
 $sql2.= " WHERE fk_object = " . $id ;
 
@@ -124,6 +127,22 @@ $f_etiquette = $obj2->f_etiquette;
 $f_R = $obj2->f_R;
 $f_F = $obj2->f_F;
 $f_N = $obj2->f_N;
+
+$g_classe = $obj2->g_classe;
+$g_etiquette = $obj2->g_etiquette;
+$g_colis = $obj2->g_colis;
+$g_vrac = $obj2->g_vrac;
+$g_citerne = $obj2->g_citerne;
+
+$h_classe = $obj2->h_classe;
+$h_etiquette = $obj2->h_etiquette;
+$h_wagon = $obj2->h_wagon;
+$h_uti = $obj2->h_uti;
+
+$i_classe = $obj2->i_classe;
+$i_etiquette = $obj2->i_etiquette;
+$i_bateau = $obj2->i_bateau;
+$i_citerne = $obj2->i_citerne;
 
 global $conf,$langs,$mysoc;
 

@@ -1631,7 +1631,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($g_classe),
 			"x"=>10,
 			"y"=>120,
 			"w"=>50,
@@ -1643,7 +1643,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($g_etiquette),
 			"x"=>60,
 			"y"=>120,
 			"w"=>50,
@@ -1655,7 +1655,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($g_colis),
 			"x"=>110,
 			"y"=>120,
 			"w"=>30,
@@ -1667,7 +1667,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($g_vrac),
 			"x"=>140,
 			"y"=>120,
 			"w"=>30,
@@ -1679,7 +1679,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_citerne),
+			"c"=>utf8_decode($g_citerne),
 			"x"=>170,
 			"y"=>120,
 			"w"=>30,
@@ -1769,7 +1769,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($h_classe),
 			"x"=>10,
 			"y"=>160,
 			"w"=>50,
@@ -1781,7 +1781,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($h_etiquette),
 			"x"=>60,
 			"y"=>160,
 			"w"=>50,
@@ -1793,7 +1793,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($h_wagon),
 			"x"=>110,
 			"y"=>160,
 			"w"=>45,
@@ -1805,7 +1805,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($h_uti),
 			"x"=>155,
 			"y"=>160,
 			"w"=>45,
@@ -1895,7 +1895,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($i_classe),
 			"x"=>10,
 			"y"=>200,
 			"w"=>50,
@@ -1907,7 +1907,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($i_etiquette),
 			"x"=>60,
 			"y"=>200,
 			"w"=>50,
@@ -1919,7 +1919,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($i_bateau),
 			"x"=>110,
 			"y"=>200,
 			"w"=>45,
@@ -1931,7 +1931,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($i_citerne),
 			"x"=>155,
 			"y"=>200,
 			"w"=>45,
@@ -1971,6 +1971,42 @@ $pages = array(
 			"c"=>utf8_decode("(3) Indiquer les quantités de marchandises concernées"),
 			"x"=>15,
 			"y"=>246,
+			"w"=>0,
+			"h"=>7,
+			"b"=>0,
+			"l"=>"",
+			"t"=>"",
+			"s"=>7,
+			"m"=>1
+		),
+		array(
+			"c"=>utf8_decode("(4) Indiquer les quantités de marchandises concernées en fonction du mode de transport (R:route F:ferroviaire N:voies de navigations intérieures"),
+			"x"=>15,
+			"y"=>249,
+			"w"=>0,
+			"h"=>7,
+			"b"=>0,
+			"l"=>"",
+			"t"=>"",
+			"s"=>7,
+			"m"=>1
+		),
+		array(
+			"c"=>utf8_decode("(5) Indiquer les quantités de marchandises concernées selon qu'il s'agit de wagons et ou d'UTI (unités de transport intermodales)"),
+			"x"=>15,
+			"y"=>253,
+			"w"=>0,
+			"h"=>7,
+			"b"=>0,
+			"l"=>"",
+			"t"=>"",
+			"s"=>7,
+			"m"=>1
+		),
+		array(
+			"c"=>utf8_decode("(5) Indiquer les quantités de marchandises concernées en fonction du type de bateau utilisé"),
+			"x"=>15,
+			"y"=>256,
 			"w"=>0,
 			"h"=>7,
 			"b"=>0,
