@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='ISO-8859-1'?><customtabs>
+<label>Relevé des activités de l'année écoulée</label>
+<element>intervention</element>
+<tablename>marchandise_activite</tablename>
+<mode>1</mode>
+<files>1</files>
+<template><p><strong>Marchandises Emballees</strong></p>
+<tr>
+<td>	#LABEL-211classe# </td> <td colspan="2"> #FIELD-211classe# </td></tr>
+<tr>
+<td>	#LABEL-211etiquette# </td> <td colspan="2"> #FIELD-211etiquette# </td></tr>
+<tr>
+<td>	#LABEL-211conditionnement# </td> <td colspan="2"> #FIELD-211conditionnement# </td></tr>
+<tr>
+<td>	#LABEL-211quantite# </td> <td colspan="2"> #FIELD-211quantite# </td></tr>
+<br>
+<p><strong>Marchandises Dangereuses chargees ou remplies</strong></p>
+<tr>
+<td>	#LABEL-212classe# </td> <td colspan="2"> #FIELD-212classe# </td></tr>
+<tr>
+<td>	#LABEL-212etiquette# </td> <td colspan="2"> #FIELD-212etiquette# </td></tr>
+<tr>
+<td>	#LABEL-212colis# </td> <td colspan="2"> #FIELD-212colis# </td></tr>
+<tr>
+<td>	#LABEL-212vrac# </td> <td colspan="2"> #FIELD-212vrac# </td></tr>
+<tr>
+<td>	#LABEL-212citerne# </td> <td colspan="2"> #FIELD-212citerne# </td></tr>
+<tr>
+<td>	#LABEL-212R# </td> <td colspan="2"> #FIELD-212R# </td></tr>
+<tr>
+<td>	#LABEL-212F# </td> <td colspan="2"> #FIELD-212F# </td></tr>
+<tr>
+<td>	#LABEL-212N# </td> <td colspan="2"> #FIELD-212N# </td></tr>
+<br>
+<p><strong>Marchandises Dangereuses transportees</strong></p>
+<p>Mode routier</p>
+<tr>
+<td>	#LABEL-2131classe# </td> <td colspan="2"> #FIELD-2131classe# </td></tr>
+<tr>
+<td>	#LABEL-2131etiquette# </td> <td colspan="2"> #FIELD-2131etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2131colis# </td> <td colspan="2"> #FIELD-2131colis# </td></tr>
+<tr>
+<td>	#LABEL-2131vrac# </td> <td colspan="2"> #FIELD-2131vrac# </td></tr>
+<tr>
+<td>	#LABEL-2131citerne# </td> <td colspan="2"> #FIELD-2131citerne# </td></tr>
+<br>
+<p>Mode ferroviaire</p>
+<tr>
+<td>	#LABEL-2132classe# </td> <td colspan="2"> #FIELD-2132classe# </td></tr>
+<tr>
+<td>	#LABEL-2132etiquette# </td> <td colspan="2"> #FIELD-2132etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2132wagon# </td> <td colspan="2"> #FIELD-2132wagon# </td></tr>
+<tr>
+<td>	#LABEL-2132uti# </td> <td colspan="2"> #FIELD-2132uti# </td></tr>
+<p>Par voies de navigation intérieures</p>
+<tr>
+<td>	#LABEL-2133classe# </td> <td colspan="2"> #FIELD-2133classe# </td></tr>
+<tr>
+<td>	#LABEL-2133etiquette# </td> <td colspan="2"> #FIELD-2133etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2133bateau# </td> <td colspan="2"> #FIELD-2133bateau# </td></tr>
+<tr>
+<td>	#LABEL-2133citerne# </td> <td colspan="2"> #FIELD-2133citerne# </td></tr>
+<p><strong>Marchandises Dangereuses déchargées</strong></p>
+<tr>
+<td>	#LABEL-214classe# </td> <td colspan="2"> #FIELD-214classe# </td></tr>
+<tr>
+<td>	#LABEL-214etiquette# </td> <td colspan="2"> #FIELD-214etiquette# </td></tr>
+<tr>
+<td>	#LABEL-214R# </td> <td colspan="2"> #FIELD-214R# </td></tr>
+<tr>
+<td>	#LABEL-214F# </td> <td colspan="2"> #FIELD-214F# </td></tr>
+<tr>
+<td>	#LABEL-214N# </td> <td colspan="2"> #FIELD-214N# </td></tr>
+<br>
+<p><strong>Marchandises Dangereuses transportees</strong></p>
+<p>Mode routier</p>
+<tr>
+<td>	#LABEL-2151classe# </td> <td colspan="2"> #FIELD-2151classe# </td></tr>
+<tr>
+<td>	#LABEL-2151etiquette# </td> <td colspan="2"> #FIELD-2151etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2151colis# </td> <td colspan="2"> #FIELD-2151colis# </td></tr>
+<tr>
+<td>	#LABEL-2151vrac# </td> <td colspan="2"> #FIELD-2151vrac# </td></tr>
+<tr>
+<td>	#LABEL-2151citerne# </td> <td colspan="2"> #FIELD-2151citerne# </td></tr>
+<br>
+<p>Mode ferroviaire</p>
+<tr>
+<td>	#LABEL-2152classe# </td> <td colspan="2"> #FIELD-2152classe# </td></tr>
+<tr>
+<td>	#LABEL-2152etiquette# </td> <td colspan="2"> #FIELD-2152etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2152wagon# </td> <td colspan="2"> #FIELD-2152wagon# </td></tr>
+<tr>
+<td>	#LABEL-2152uti# </td> <td colspan="2"> #FIELD-2152uti# </td></tr>
+<p>Par voies de navigation intérieures</p>
+<tr>
+<td>	#LABEL-2153classe# </td> <td colspan="2"> #FIELD-2153classe# </td></tr>
+<tr>
+<td>	#LABEL-2153etiquette# </td> <td colspan="2"> #FIELD-2153etiquette# </td></tr>
+<tr>
+<td>	#LABEL-2153bateau# </td> <td colspan="2"> #FIELD-2153bateau# </td></tr>
+<tr>
+<td>	#LABEL-2153citerne# </td> <td colspan="2"> #FIELD-2153citerne# </td></tr>
+</template>
+<customextrafields>
+	<customextrafield>
+	 	<key>212R</key>
+	 	<label>R</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212F</key>
+	 	<label>F</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212N</key>
+	 	<label>N</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212citerne</key>
+	 	<label>citerne</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2131classe</key>
+	 	<label>Classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2131etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2131colis</key>
+	 	<label>colis</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2131vrac</key>
+	 	<label>vrac</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2131citerne</key>
+	 	<label>citerne</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2132classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2132etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2132wagon</key>
+	 	<label>wagon</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2132uti</key>
+	 	<label>UTI</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2133classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2133etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2133bateau</key>
+	 	<label>bateau</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2133citerne</key>
+	 	<label>citerne</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>211etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>211conditionnement</key>
+	 	<label>conditionnement</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>211quantite</key>
+	 	<label>quantite</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>211classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>214classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>214etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>214R</key>
+	 	<label>R</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>214F</key>
+	 	<label>F</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>214N</key>
+	 	<label>N</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2151classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2151etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2151colis</key>
+	 	<label>colis</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2151vrac</key>
+	 	<label>vrac</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2151citerne</key>
+	 	<label>citerne</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2152classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2152etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2152wagon</key>
+	 	<label>wagon</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2152uti</key>
+	 	<label>UTI</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2153classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2153etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2153bateau</key>
+	 	<label>bateau</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>2153citerne</key>
+	 	<label>citerne</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>0</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212classe</key>
+	 	<label>classe</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>5</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212etiquette</key>
+	 	<label>etiquette</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>6</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212colis</key>
+	 	<label>colis</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>7</pos>
+	 	<required>0</required>
+	</customextrafield>
+	<customextrafield>
+	 	<key>212vrac</key>
+	 	<label>vrac</label>
+	 	<type>varchar</type>
+	 	<size>255</size>
+	 	<unique>0</unique>
+	 	<param>a:1:{s:7:"options";a:1:{s:0:"";N;}}</param>
+	 	<pos>8</pos>
+	 	<required>0</required>
+	</customextrafield>
+</customextrafields>
+</customtabs>
