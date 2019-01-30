@@ -73,7 +73,8 @@ $sql2.= "211quantite as a_quantite, 212classe as b_classe, 212etiquette as b_eti
 $sql2.= "212vrac as b_vrac, 212citerne as b_citerne, 212R as b_R, 212F as b_F, 212N as b_N, ";
 $sql2.= "2131classe as c_classe, 2131etiquette as c_etiquette, 2131colis as c_colis, 2131vrac as c_vrac, 2131citerne as c_citerne, ";
 $sql2.= "2132classe as d_classe, 2132etiquette as d_etiquette, 2132wagon as d_wagon, 2132uti as d_uti, ";
-$sql2.= "2133classe as e_classe, 2133etiquette as e_etiquette, 2133bateau as e_bateau, 2133citerne as e_citerne ";
+$sql2.= "2133classe as e_classe, 2133etiquette as e_etiquette, 2133bateau as e_bateau, 2133citerne as e_citerne, ";
+$sql2.= "214classe as f_classe, 214etiquette as f_etiquette, 214R as f_R, 214F as f_F, 214N as f_N ";
 $sql2.= " FROM ".MAIN_DB_PREFIX."cust_marchandise_activite_extrafields";	
 $sql2.= " WHERE fk_object = " . $id ;
 
@@ -118,6 +119,11 @@ $e_etiquette = $obj2->e_etiquette;
 $e_bateau = $obj2->e_bateau;
 $e_citerne = $obj2->e_citerne;
 
+$f_classe = $obj2->f_classe;
+$f_etiquette = $obj2->f_etiquette;
+$f_R = $obj2->f_R;
+$f_F = $obj2->f_F;
+$f_N = $obj2->f_N;
 
 global $conf,$langs,$mysoc;
 

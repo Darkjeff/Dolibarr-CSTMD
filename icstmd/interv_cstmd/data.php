@@ -1369,14 +1369,14 @@ $pages = array(
 	array(
 		array(
 			"c"=>utf8_decode("2.1.4 Marchandises dangereuses déchargées"),
-			"x"=>15,
+			"x"=>10,
 			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
 			"l"=>"L",
-			"t"=>"",
-			"s"=>10,
+			"t"=>"B",
+			"s"=>12,
 			"m"=>1
 		),
 		array(
@@ -1465,7 +1465,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_classe),
+			"c"=>utf8_decode($f_classe),
 			"x"=>10,
 			"y"=>60,
 			"w"=>50,
@@ -1477,7 +1477,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_etiquette),
+			"c"=>utf8_decode($f_etiquette),
 			"x"=>60,
 			"y"=>60,
 			"w"=>50,
@@ -1489,7 +1489,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_colis),
+			"c"=>utf8_decode($f_R),
 			"x"=>110,
 			"y"=>60,
 			"w"=>30,
@@ -1501,7 +1501,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_vrac),
+			"c"=>utf8_decode($f_F),
 			"x"=>140,
 			"y"=>60,
 			"w"=>30,
@@ -1513,7 +1513,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			"c"=>utf8_decode($c_citerne),
+			"c"=>utf8_decode($f_N),
 			"x"=>170,
 			"y"=>60,
 			"w"=>30,
