@@ -165,6 +165,7 @@ $myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
 $myadress =  $conf->global->MAIN_INFO_SOCIETE_ADDRESS ;
 $myzip =  $conf->global->MAIN_INFO_SOCIETE_ZIP;
 $mytown =  $conf->global->MAIN_INFO_SOCIETE_TOWN;
+$logo =  $conf->global->MAIN_INFO_SOCIETE_LOGO;
 
 $now = date('d/m/Y' ,dol_now());
 

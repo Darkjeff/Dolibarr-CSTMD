@@ -1,6 +1,7 @@
 <?php
 $firstpage = array(
-	"logo"=> "../img/logo.jpg",
+	//"logo"=> "../img/logo.jpg",
+	"logo"=> "../../../../documents/mycompany/logos/" .$logo,
 	"title"=> array("Rapport Annuel du Conseiller a la Securite","Annee	$annee",$name),
 	"image"=> "../img/image_doc.jpg",
 );
@@ -124,7 +125,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>"Carbonne Conseil & Formation",
+			"c"=> utf8_decode($myname),
 			"x"=>10,
 			"y"=>65,
 			"w"=>40,
