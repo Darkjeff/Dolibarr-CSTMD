@@ -136,7 +136,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=> utf8_decode("Tél :	06 71 60 62	50 / 05 57 51 70 36 \n Email : fxc@carbonnetmd.fr"),
+			"c"=> utf8_decode("Tél :".$mytel.	" \n Email :".$myemail),
 			"x"=>50,
 			"y"=>65,
 			"w"=>0,
@@ -309,7 +309,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Identite du ou des conseillers ayant éffectue la ou les visites : \nFx	Carbonne"),
+			"c"=>utf8_decode("Identite du ou des conseillers ayant éffectue la ou les visites : \n" .$prenomuser),
 			"x"=>10,
 			"y"=>140,
 			"w"=>80,
@@ -434,7 +434,8 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>$signuser,
+			//"c"=>$signuser,
+			"c"=>"",
 			"x"=>90,
 			"y"=>186,
 			"w"=>0,
