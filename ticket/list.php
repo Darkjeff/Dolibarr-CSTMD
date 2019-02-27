@@ -123,6 +123,7 @@ $arrayfields = dol_sort_array($arrayfields, 'position');
 if (!$user->rights->ticket->read) {
     accessforbidden();
 }
+if ($user->societe_id > 0) $socid = $user->societe_id;
 
 // Store current page url
 $url_page_current = dol_buildpath('/ticket/list.php', 1);
