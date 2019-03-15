@@ -56,6 +56,9 @@ $object->address = str_replace("’","'",$object->address);
 $object->address = str_replace("–","-",$object->address);
 $object->address = str_replace(array("\r", "\n"), '', $object->address);
 
+$myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
+$logo =  $conf->global->MAIN_INFO_SOCIETE_LOGO;
+
 class PDF extends FPDF
 {
 	public $arr = '';
@@ -79,6 +82,8 @@ class PDF extends FPDF
 $pdf = new PDF(array($conf->global->FOOTER_LIGNE1, $conf->global->FOOTER_LIGNE2, $conf->global->FOOTER_LIGNE3, $conf->global->FOOTER_LIGNE4));
 if (method_exists($pdf,'AliasNbPages')) $pdf->AliasNbPages();
 $pdf->AddPage();
+
+$pdf->Image('../../../documents/mycompany/logos/'.$logo ,20,15,50);
 
 $pdf->SetFont('Arial','B',12);
 $pdf->SetXY(120, 55);
