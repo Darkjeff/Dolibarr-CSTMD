@@ -51,6 +51,10 @@ if ($resql) {
 $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
 
+$myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
+$logo =  $conf->global->MAIN_INFO_SOCIETE_LOGO;
+
+
 // var_dump($user_cstmd);die;
 
 
@@ -85,7 +89,7 @@ $pdf->MultiCell(180,8,utf8_decode('ACCEPTATION DE MISSION DE "CONSEILLER A LA S�
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 75);
-$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user_cstmd->array_options['options_cstmd'].' / CARBONNE Conseil & Formation SIRET : 500 040 092 00016), déclare accepter la mission de :'), 0, 'L');
+$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user_cstmd->array_options['options_cstmd'].' / '.$myname.' SIRET : 500 040 092 00016), déclare accepter la mission de :'), 0, 'L');
 
 $pdf->SetFont('Arial','B',12);
 $pdf->SetXY(15, 100);
