@@ -20,7 +20,7 @@
 	
 	
 	
-    $this->Image('img/logo.jpg',20,15,50);
+   // $this->Image('img/logo.jpg',20,15,50);
    // $this->Image('../../../documents/mycompany/logos/'.$logo ,20,15,50);
     // Police Arial gras 15
     $this->SetFont('Arial','I',11);
@@ -37,7 +37,7 @@
 	$this->SetXY(80, 32);
     $this->Write(0,utf8_decode('Formation déchets et CLP-GHS'));
 	
-	$this->SetXY(80, 32);
-    $this->Write(0,utf8_decode($logo));
+	//$this->SetXY(80, 36);
+    //$this->Write(0,utf8_decode($logo));
 
 ?>

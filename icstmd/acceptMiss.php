@@ -84,6 +84,9 @@ if (method_exists($pdf,'AliasNbPages')) $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','BU',13);
 
+//$this->Image('img/logo.jpg',20,15,50);
+$pdf->Image('../../../documents/mycompany/logos/'.$logo ,20,15,50);
+
 $pdf->SetXY(15, 60);
 $pdf->MultiCell(180,8,utf8_decode('ACCEPTATION DE MISSION DE "CONSEILLER A LA SÉCURITÉ"'), 0, 'C');
 
