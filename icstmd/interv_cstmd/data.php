@@ -2,7 +2,7 @@
 $firstpage = array(
 	//"logo"=> "../img/logo.jpg",
 	"logo"=> "../../../../documents/mycompany/logos/" .$logo,
-	"title"=> array("Rapport Annuel du Conseiller a la Securite","Annee	$annee",$name),
+	"title"=> array("Rapport Annuel du Conseiller a la Securite","Annee	$annee",utf8_decode($name)),
 	"image"=> "../img/image_doc.jpg",
 );
 $footer = array(
@@ -27,7 +27,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>$name,
+			"c"=>utf8_decode($name),
 			"x"=>90,
 			"y"=>22,
 			"w"=>0,
