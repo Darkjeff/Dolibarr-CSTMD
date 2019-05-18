@@ -749,7 +749,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -761,7 +761,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -773,7 +773,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		
@@ -788,7 +788,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 			array(
@@ -800,7 +800,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -812,7 +812,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -824,7 +824,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -836,7 +836,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -848,7 +848,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -860,7 +860,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -872,7 +872,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		),
@@ -918,7 +918,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -930,7 +930,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -942,7 +942,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -954,7 +954,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -966,7 +966,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -978,7 +978,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>0
 		),
 		array(
@@ -990,7 +990,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -1002,7 +1002,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -1014,7 +1014,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -1026,7 +1026,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
@@ -1038,7 +1038,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		//end tableau 3 page 5
@@ -1046,7 +1046,7 @@ $pages = array(
 		array(
 			"c"=>"2.1.3.2 Mode ferroviaire",
 			"x"=>15,
-			"y"=>150,
+			"y"=>140,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1061,7 +1061,7 @@ $pages = array(
 		array(
 			"c"=>"Classe (1)",
 			"x"=>10,
-			"y"=>170,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1073,7 +1073,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette (2)",
 			"x"=>60,
-			"y"=>170,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1085,7 +1085,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles (4)"),
 			"x"=>110,
-			"y"=>170,
+			"y"=>150,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1097,7 +1097,7 @@ $pages = array(
 		array(
 			"c"=>"Wagons",
 			"x"=>110,
-			"y"=>180,
+			"y"=>160,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1109,7 +1109,7 @@ $pages = array(
 		array(
 			"c"=>"UTI",
 			"x"=>155,
-			"y"=>180,
+			"y"=>160,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1121,58 +1121,58 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($d_classe),
 			"x"=>10,
-			"y"=>190,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($d_etiquette),
 			"x"=>60,
-			"y"=>190,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($d_wagon),
 			"x"=>110,
-			"y"=>190,
+			"y"=>170,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($d_uti),
 			"x"=>155,
-			"y"=>190,
+			"y"=>170,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
-		
-		// end tableau 4 page 5
-		
+		),
+		// BEGIN PAGE 7
+	array(
 		array(
 			"c"=>utf8_decode("2.1.3.3 Par voies de navigation intérieures"),
 			"x"=>15,
-			"y"=>200,
+			"y"=>10,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1189,187 +1189,115 @@ $pages = array(
 		array(
 			"c"=>"Classe (1)",
 			"x"=>10,
-			"y"=>210,
+			"y"=>20,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>"Etiquette (2)",
 			"x"=>60,
-			"y"=>210,
+			"y"=>20,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles (5)"),
 			"x"=>110,
-			"y"=>210,
+			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode("Bateau à cargaison sèche"),
 			"x"=>110,
-			"y"=>220,
+			"y"=>30,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>10,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode("Bateau Citerne"),
 			"x"=>155,
-			"y"=>220,
+			"y"=>30,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($e_classe),
 			"x"=>10,
-			"y"=>230,
+			"y"=>40,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($e_etiquette),
 			"x"=>60,
-			"y"=>230,
+			"y"=>40,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($e_bateau),
 			"x"=>110,
-			"y"=>230,
+			"y"=>40,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($e_citerne),
 			"x"=>155,
-			"y"=>230,
+			"y"=>40,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		
 		// end tableau 5 page 5
 		
-		array(
-			"c"=>utf8_decode("(1) Indiquer la classe"),
-			"x"=>15,
-			"y"=>240,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-		array(
-			"c"=>utf8_decode("(2) Colonne a remplir obligatoirement dans le cas de la classe 7"),
-			"x"=>15,
-			"y"=>243,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-		array(
-			"c"=>utf8_decode("(3) Indiquer les quantités de marchandises concernées"),
-			"x"=>15,
-			"y"=>246,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-		array(
-			"c"=>utf8_decode("(4) Indiquer les quantités de marchandises concernées selon qu'il s'agit de wagons et ou d'UTI (unités de transport intermodales)"),
-			"x"=>15,
-			"y"=>249,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-		array(
-			"c"=>utf8_decode("(5) Indiquer les quantités de marchandises concernées en fonction du type de bateau utilisé)"),
-			"x"=>15,
-			"y"=>252,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-		array(
-			"c"=>utf8_decode("(6) Le type de conditionnement peut apparaître en toutes lettres ou sous la forme des codes issus des chapitres 6.1 à 6.6 des réglementations modales)"),
-			"x"=>15,
-			"y"=>255,
-			"w"=>0,
-			"h"=>7,
-			"b"=>0,
-			"l"=>"",
-			"t"=>"",
-			"s"=>7,
-			"m"=>1
-		),
-	),
+
 	
 	/// debut page 6
 	
@@ -1377,11 +1305,11 @@ $pages = array(
 	//debut tableau 1 page 6
 	
 	
-	array(
+	
 		array(
 			"c"=>utf8_decode("2.1.4 Marchandises dangereuses déchargées"),
 			"x"=>10,
-			"y"=>20,
+			"y"=>130,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1393,7 +1321,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Le relevé des activités de déchargement comprend au minimum les informations contenues dans le tableau présenté ci-dessous"),
 			"x"=>15,
-			"y"=>30,
+			"y"=>140,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1406,7 +1334,7 @@ $pages = array(
 	array(
 			"c"=>"Classe",
 			"x"=>10,
-			"y"=>40,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1418,7 +1346,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette",
 			"x"=>60,
-			"y"=>40,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1430,7 +1358,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles"),
 			"x"=>110,
-			"y"=>40,
+			"y"=>150,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1442,7 +1370,7 @@ $pages = array(
 		array(
 			"c"=>"R",
 			"x"=>110,
-			"y"=>50,
+			"y"=>160,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1454,7 +1382,7 @@ $pages = array(
 		array(
 			"c"=>"F",
 			"x"=>140,
-			"y"=>50,
+			"y"=>160,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1466,7 +1394,7 @@ $pages = array(
 		array(
 			"c"=>"N",
 			"x"=>170,
-			"y"=>50,
+			"y"=>160,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1478,66 +1406,68 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($f_classe),
 			"x"=>10,
-			"y"=>60,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($f_etiquette),
 			"x"=>60,
-			"y"=>60,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($f_R),
 			"x"=>110,
-			"y"=>60,
+			"y"=>170,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($f_F),
 			"x"=>140,
-			"y"=>60,
+			"y"=>170,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($f_N),
 			"x"=>170,
-			"y"=>60,
+			"y"=>170,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 	
-		// END tableau 1 page 6
-		
+	),
+
+		// BEGIN PAGE 8
+	array(	
 		
 		array(
 			'c'=>utf8_decode("2.1.5 Marchandises dangereuses expédiées"),
