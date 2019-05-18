@@ -777,7 +777,7 @@ $pages = array(
 			"m"=>0
 		),
 		
-			//////////////// todooooooooooooooo page 5 suite tableau 
+			
 		
 		array(
 			"c"=>utf8_decode($b_classe),
@@ -884,11 +884,10 @@ $pages = array(
 	
 	
 	array(
-		// End table 2 page 5
 		array(
 			"c"=>utf8_decode("2.1.3	Marchandises dangereuses transportées"),
 			"x"=>10,
-			"y"=>110,
+			"y"=>10,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -900,7 +899,7 @@ $pages = array(
 		array(
 			"c"=>"2.1.3.1 Mode routier",
 			"x"=>15,
-			"y"=>120,
+			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -913,7 +912,7 @@ $pages = array(
 		array(
 			"c"=>"Classe (1)",
 			"x"=>10,
-			"y"=>130,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -925,7 +924,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette (2)",
 			"x"=>60,
-			"y"=>130,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -937,7 +936,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles (3)"),
 			"x"=>110,
-			"y"=>130,
+			"y"=>30,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -949,7 +948,7 @@ $pages = array(
 		array(
 			"c"=>"Colis",
 			"x"=>110,
-			"y"=>140,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -961,7 +960,7 @@ $pages = array(
 		array(
 			"c"=>"Vrac",
 			"x"=>140,
-			"y"=>140,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -973,7 +972,7 @@ $pages = array(
 		array(
 			"c"=>"Citerne",
 			"x"=>170,
-			"y"=>140,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -985,69 +984,69 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($c_classe),
 			"x"=>10,
-			"y"=>150,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($c_etiquette),
 			"x"=>60,
-			"y"=>150,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($c_colis),
 			"x"=>110,
-			"y"=>150,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($c_vrac),
 			"x"=>140,
-			"y"=>150,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($c_citerne),
 			"x"=>170,
-			"y"=>150,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		//end tableau 3 page 5
 		
 		array(
 			"c"=>"2.1.3.2 Mode ferroviaire",
 			"x"=>15,
-			"y"=>160,
+			"y"=>150,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
