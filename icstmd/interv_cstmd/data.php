@@ -1472,7 +1472,7 @@ $pages = array(
 		array(
 			'c'=>utf8_decode("2.1.5 Marchandises dangereuses expédiées"),
 			"x"=>10,
-			"y"=>80,
+			"y"=>10,
 			"w"=>0,
 			"h"=>6,
 			"b"=>0,
@@ -1486,7 +1486,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("2.1.5.1 Mode routier"),
 			"x"=>15,
-			"y"=>90,
+			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1502,7 +1502,7 @@ $pages = array(
 	array(
 			"c"=>"Classe",
 			"x"=>10,
-			"y"=>100,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1514,7 +1514,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette",
 			"x"=>60,
-			"y"=>100,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1526,7 +1526,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles"),
 			"x"=>110,
-			"y"=>100,
+			"y"=>30,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1538,7 +1538,7 @@ $pages = array(
 		array(
 			"c"=>"Colis",
 			"x"=>110,
-			"y"=>110,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1550,7 +1550,7 @@ $pages = array(
 		array(
 			"c"=>"Vrac",
 			"x"=>140,
-			"y"=>110,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1562,7 +1562,7 @@ $pages = array(
 		array(
 			"c"=>"Citerne",
 			"x"=>170,
-			"y"=>110,
+			"y"=>40,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
@@ -1574,62 +1574,62 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($g_classe),
 			"x"=>10,
-			"y"=>120,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($g_etiquette),
 			"x"=>60,
-			"y"=>120,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($g_colis),
 			"x"=>110,
-			"y"=>120,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($g_vrac),
 			"x"=>140,
-			"y"=>120,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($g_citerne),
 			"x"=>170,
-			"y"=>120,
+			"y"=>50,
 			"w"=>30,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		
 		//END tableau 2 page6
@@ -1637,7 +1637,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("2.1.5.2 Mode ferroviaire"),
 			"x"=>15,
-			"y"=>130,
+			"y"=>140,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1652,7 +1652,7 @@ $pages = array(
 		array(
 			"c"=>"Classe",
 			"x"=>10,
-			"y"=>140,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1664,7 +1664,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette",
 			"x"=>60,
-			"y"=>140,
+			"y"=>150,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1676,7 +1676,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles"),
 			"x"=>110,
-			"y"=>140,
+			"y"=>150,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1688,7 +1688,7 @@ $pages = array(
 		array(
 			"c"=>"Wagons",
 			"x"=>110,
-			"y"=>150,
+			"y"=>160,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1700,7 +1700,7 @@ $pages = array(
 		array(
 			"c"=>"UTI",
 			"x"=>155,
-			"y"=>150,
+			"y"=>160,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1712,58 +1712,58 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($h_classe),
 			"x"=>10,
-			"y"=>160,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($h_etiquette),
 			"x"=>60,
-			"y"=>160,
+			"y"=>170,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($h_wagon),
 			"x"=>110,
-			"y"=>160,
+			"y"=>170,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($h_uti),
 			"x"=>155,
-			"y"=>160,
+			"y"=>170,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
 			"s"=>12,
-			"m"=>0
+			"m"=>1
 		),
-		
-		// END tableau 3 page 6
-		
+		),
+		// begin page 9
+	array(	
 		array(
-			"c"=>utf8_decode("2.1.3.3 Par voiez de navigation intérieures"),
+			"c"=>utf8_decode("2.1.5.3 Par voie de navigation intérieures"),
 			"x"=>15,
-			"y"=>170,
+			"y"=>10,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1778,7 +1778,7 @@ $pages = array(
 		array(
 			"c"=>"Classe",
 			"x"=>10,
-			"y"=>180,
+			"y"=>20,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1790,7 +1790,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette",
 			"x"=>60,
-			"y"=>180,
+			"y"=>20,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1802,7 +1802,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles"),
 			"x"=>110,
-			"y"=>180,
+			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1814,7 +1814,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Bateau à cargaison sèche"),
 			"x"=>110,
-			"y"=>190,
+			"y"=>30,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1826,7 +1826,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Bateau-citerne"),
 			"x"=>155,
-			"y"=>190,
+			"y"=>30,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1838,50 +1838,50 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($i_classe),
 			"x"=>10,
-			"y"=>200,
+			"y"=>40,
 			"w"=>50,
-			"h"=>10,
+			"h"=>5,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($i_etiquette),
 			"x"=>60,
-			"y"=>200,
+			"y"=>40,
 			"w"=>50,
-			"h"=>10,
+			"h"=>5,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($i_bateau),
 			"x"=>110,
-			"y"=>200,
+			"y"=>40,
 			"w"=>45,
-			"h"=>10,
+			"h"=>5,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		array(
 			"c"=>utf8_decode($i_citerne),
 			"x"=>155,
-			"y"=>200,
+			"y"=>40,
 			"w"=>45,
-			"h"=>10,
+			"h"=>5,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
-			"m"=>0
+			"s"=>10,
+			"m"=>1
 		),
 		
 		array(
