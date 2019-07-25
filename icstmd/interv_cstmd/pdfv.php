@@ -77,6 +77,10 @@ $myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
 $myadress =  $conf->global->MAIN_INFO_SOCIETE_ADDRESS ;
 $myzip =  $conf->global->MAIN_INFO_SOCIETE_ZIP;
 $mytown =  $conf->global->MAIN_INFO_SOCIETE_TOWN;
+$logo =  $conf->global->MAIN_INFO_SOCIETE_LOGO;
+$myemail = $conf->global->MAIN_INFO_SOCIETE_MAIL;
+$myfax = $conf->global->MAIN_INFO_SOCIETE_FAX;
+$mytel = $conf->global->MAIN_INFO_SOCIETE_TEL;
 
 $now = date('d/m/Y' ,dol_now());
 

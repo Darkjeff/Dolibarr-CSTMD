@@ -1,6 +1,6 @@
 <?php
 $firstpage = array(
-	"logo"=> "../img/logo.jpg",
+	"logo"=> "../../../../documents/mycompany/logos/" .$logo,
 	"title"=> array("Rapport de visite","En date du	$daterapport",$name, $test ),
 	"image"=> "../img/image_doc.jpg",
 );
@@ -299,7 +299,8 @@ $data = array(
 	),
 	array(
 		array(
-        	"c"=>utf8_decode("Signature"),
+        "c"=>"",
+      //  "c"=>utf8_decode("Signature"),
 	//		"c"=>utf8_decode("Le conseiller à la sécurité s'assure de la récep;on du présent rapport annuel et en conserve une trace par tout moyen approprié. Le présent rapport est à lire par le responsable de l'entreprise et à conserver pendant 5 ans à disposions des organismes de contrôles. Ce	rapport	est	conforme a l'arrêté du 29 mai 2009 modifié par l'arrêté du 02 decembre 2014 avec les ameliorations preconisees par l'ANCS (Association Nationale des CSTMD)"),
 			"x"=>10,
 			"y"=>200,
