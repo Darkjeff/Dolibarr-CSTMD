@@ -89,7 +89,7 @@ $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $certificat = $user->array_options['options_cstmd'];
-$datecertif = $user->array_options['options_valcertif'];
+$datecertif = date('d/m/Y',$user->array_options['options_valcertif']);
 
 $prenomuser = $tab[0];
 $nomuser = $tab[1];
