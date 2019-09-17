@@ -304,20 +304,21 @@ if (($id) && $action == 'edit')
    //Question
 	print '<tr><td >'.$langs->trans("Question").'</td><td><textarea name="label_question" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->label_question.'</textarea></tr>';
 	//Etat des lieux
-	print '<tr><td>'.$langs->trans("Etat des lieux").'</td><td><textarea name="etat_lieux" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->etat_lieux.'</textarea></td></tr>';
+	//print '<tr><td>'.$langs->trans("Reponse").'</td><td><textarea name="etat_lieux" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->etat_lieux.'</textarea></td></tr>';
+	//print '<tr><td>'.$langs->trans("Etat des lieux").'</td><td><textarea name="etat_lieux" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->etat_lieux.'</textarea></td></tr>';
 	//Titre recommandation
-	print '<tr><td>'.$langs->trans("Titre recommandation").'</td><td><textarea name="titre_recommandation" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->titre_recommandation.'</textarea></td></tr>';
+	//print '<tr><td>'.$langs->trans("Titre recommandation").'</td><td><textarea name="titre_recommandation" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->titre_recommandation.'</textarea></td></tr>';
 	//Recommandation
-	print '<tr><td>'.$langs->trans("Recommandation").'</td><td><textarea name="recommandation" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->recommandation.'</textarea></td></tr>';
+	//print '<tr><td>'.$langs->trans("Recommandation").'</td><td><textarea name="recommandation" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->recommandation.'</textarea></td></tr>';
 	//Date Recommandation
-	print '<tr><td>'.$langs->trans("Date Recommandation").'</td>';
-	print '<td align="left">';
-	print $form->select_date($object->dater, 're', 0, 0, 0, 'card', 1);
-	print '</td></tr>';
+	//print '<tr><td>'.$langs->trans("Date Recommandation").'</td>';
+	//print '<td align="left">';
+	//print $form->select_date($object->dater, 're', 0, 0, 0, 'card', 1);
+	//print '</td></tr>';
 	//Référence
-	print '<tr><td>'.$langs->trans("Référence").'</td><td><textarea name="reference" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->reference.'</textarea></td></tr>';
+	//print '<tr><td>'.$langs->trans("Référence").'</td><td><textarea name="reference" rows="3" cols="0" class="flat" style="width:360px;" >'.$object->reference.'</textarea></td></tr>';
 	//Texte réglementaire
-	print '<tr><td>'.$langs->trans("Texte réglementaire").'</td><td><textarea name="texte_reglementaire" rows="3" cols="0" class="flat" style="width:360px;" >'. $object->texte_reglementaire .'</textarea></td></tr>';
+	print '<tr><td>'.$langs->trans("Reponse").'</td><td><textarea name="texte_reglementaire" rows="3" cols="0" class="flat" style="width:360px;" >'. $object->texte_reglementaire .'</textarea></td></tr>';
 	
 	print 
 		'<tr>
