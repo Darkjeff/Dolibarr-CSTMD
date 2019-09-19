@@ -42,6 +42,9 @@ $result = restrictedArea($user, 'societe', $socid, '&societe');
 $soc = new Societe($db);
 if ($id > 0) $soc->fetch($socid);
 
+$dreal = new Societe($db);
+
+$dreal = $dreal->searchByName($soc->array_options['options_dreal'])[0];
 
 $tab = explode(" ", $soc->array_options['options_cstmd']);
 // var_dump($tab);die();
@@ -484,14 +487,14 @@ $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
 $pdf->Image("../" .$user_cstmd->array_options['options_vcstmd'],150,215,40);
 //page 3
-// $pdf->AddPage();
-// $pdf->page3($title, $page3);
-// page 4
-// $pdf->AddPage();
-// $pdf->page4($title, $page4);
-// Range
-// $pdf->AddPage();
-// $pdf->range($title, $pages);
+$pdf->AddPage();
+$pdf->page3($title, $page3);
+//page 4
+$pdf->AddPage();
+$pdf->page4($title, $page4);
+//Range
+//$pdf->AddPage();
+//$pdf->range($title, $pages);
 
 //********************************************************* Questions
 $pdf->AddPage();
