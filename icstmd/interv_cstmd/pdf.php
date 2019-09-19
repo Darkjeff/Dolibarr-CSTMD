@@ -173,7 +173,7 @@ $mytel = $conf->global->MAIN_INFO_SOCIETE_TEL;
 
 $now = date('d/m/Y' ,dol_now());
 
-$name = $soc->nom;
+$date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $synthrapport =  $interv->array_options['options_synthrapport'] ;

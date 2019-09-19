@@ -67,12 +67,8 @@ if ($resql) {
 $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
 
-// var_dump($interv);die;
-// var_dump($soc);die;
 
-// recup referentiel
-
-
+// liste variable pour document
 
 
 $name = $soc->nom;
@@ -90,7 +86,14 @@ $now = date('d/m/Y' ,dol_now());
 $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
+$synthrapport =  $interv->array_options['options_synthrapport'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
+$adressedoli = $myadress .", ". $myzip .", ". $mytown;
+$activiteclient =  utf8_decode($soc->array_options['options_activiteclient'] );
+$orgaclient =  $soc->array_options['options_orgaclient'] ;
+$nom = $user_cstmd->array_options['options_cstmd'];
+$prenom = "";
+
 $certificat = $user->array_options['options_cstmd'];
 $datecertif = date('d/m/Y',$user->array_options['options_valcertif']);
 
@@ -99,6 +102,23 @@ $nomuser = $tab[1];
 $teluser = $user_cstmd->user_mobile ;
 $mailuser = $user_cstmd->email ;
 $posteuser = $user_cstmd->job ; 
+$signuser = $user_cstmd->array_options['options_vcstmd'] ;
+
+//
+
+$suretehr = $soc->array_options['options_suretehr'] ;
+$suretehrtxt = " " ;
+
+if ($soc->array_options['options_suretehr'] == 1) {
+$suretehrtxt = "L'entreprise a mis en place un plan de sûreté conformément a ses obligations.Le CSTMD a vérifié son adéqua9on avec l'activité et la taille de l'organisme." ;
+$suretehroui = "OUI" ;
+$suretehrnon = " " ;
+}
+if ($soc->array_options['options_suretehr'] == 0) {
+$suretehrtxt = "L'entreprise ne transporte pas des marchandises dangereuses à haut risque" ; 
+$suretehroui = " " ;
+$suretehrnon = "NON" ;
+}
 
 //Mode user
 //
