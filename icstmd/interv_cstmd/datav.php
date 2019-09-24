@@ -314,15 +314,15 @@ $data = array(
 	)
 );
 $page3 = array(
-	array("1.Presentation et organisation de l'entreprise pour les actvites liees aux transports de marchandises dangereuses","4"),
-	array("1.1. Gestion administrative	et operationnelle des activites liees au transport","4"),
-	array("1.2. Place du conseiller liees aux transports de marchandises dangereusesliees aux transports de marchandises dangereusesliees aux transports de marchandises dangereusesa la securite dans l'organisation","4"),
-	array("2. Releve des activites de l'annee ecoulee","5"),
-	array("2.1.	Chiffres de l'annee	coliees aux transports de marchandises dangereusesncernes par le rapport","5"),
-	array("2.2.	Marchandises dangereuses a haut	risque","8"),
-	array("3. Declarations,	rapports, resume et	bilan des differents evenements	et/ou accidents","9"),
-	array("3.1. evenements soumis a	declaration au titre de l'article 7 du present arrete(accidents declares)","10"),
-	array("3.2.	Accidents soumis a la redaction	d'un rapport d'accident au titre du 4 de l'article 6 du present arrete","10"),
+	array("1.Presentation et organisation de l'entreprise pour les actvites liees aux transports de marchandises dangereuses",""),
+	array("1.1. Gestion administrative	et operationnelle des activites liees au transport",""),
+	array("1.2. Place du conseiller a la securite dans l organisation",""),
+	array("2. Releve des activites de l'annee ecoulee",""),
+	array("2.1.	Chiffres de l'annee	coliees aux transports de marchandises dangereusesncernes par le rapport",""),
+	array("2.2.	Marchandises dangereuses a haut	risque",""),
+	array("3. Declarations,	rapports, resume et	bilan des differents evenements	et/ou accidents",""),
+	array("3.1. evenements soumis a	declaration au titre de l'article 7 du present arrete(accidents declares)",""),
+	array("3.2.	Accidents soumis a la redaction	d'un rapport d'accident au titre du 4 de l'article 6 du present arrete",""),
 );
 
 $page4 = array(

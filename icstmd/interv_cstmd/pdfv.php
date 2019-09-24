@@ -68,6 +68,10 @@ $user_cstmd = new User($db);
 $user_cstmd->fetch($user_id); 
 
 
+$dreal = new Societe($db);
+
+$dreal = $dreal->searchByName($soc->array_options['options_dreal'])[0];
+
 // liste variable pour document
 
 
@@ -119,6 +123,11 @@ $suretehrtxt = "L'entreprise ne transporte pas des marchandises dangereuses à h
 $suretehroui = " " ;
 $suretehrnon = "NON" ;
 }
+
+$drealnom = $dreal->nom ;
+$drealaddress = $dreal->address ;
+$drealcpville = $dreal->zip ." ".$dreal->town ;
+
 
 //Mode user
 //
