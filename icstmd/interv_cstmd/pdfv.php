@@ -250,7 +250,7 @@ class PDF_MC_Table extends FPDF{
 	    $this->Image($image,15,87,70);
 	}
 
-	// Page 1
+	// Page 2
 	function page2($title,$data)
 	{
 		$this->return_to_default();
@@ -301,6 +301,20 @@ class PDF_MC_Table extends FPDF{
 	    }
 	}
 
+	// Page 5
+	function page5($title,$data)
+	{
+		$this->return_to_default();
+		$this->head($title);
+	    foreach ($data as $key => $row) {
+	    	$this->Ln($row["ln"]);
+			$this->SetFont('Arial',$row["t"],$row["s"]);
+			$this->MultiCell(0, $row['h'], $row['c'], 0,"L");
+	    }
+	}
+	
+	
+	
 	// Range
 	function range($title,$pages)
 	{
@@ -522,8 +536,8 @@ $pdf->page3($title, $page3);
 $pdf->AddPage();
 $pdf->page4($title, $page4);
 //Range
-//$pdf->AddPage();
-//$pdf->range($title, $pages);
+$pdf->AddPage();
+$pdf->range($title, $pages);
 
 //********************************************************* Questions
 $pdf->AddPage();

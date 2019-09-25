@@ -318,11 +318,10 @@ $page3 = array(
 	array("1.1. Gestion administrative	et operationnelle des activites liees au transport",""),
 	array("1.2. Place du conseiller a la securite dans l organisation",""),
 	array("2. Releve des activites de l'annee ecoulee",""),
-	array("2.1.	Chiffres de l'annee	coliees aux transports de marchandises dangereusesncernes par le rapport",""),
 	array("2.2.	Marchandises dangereuses a haut	risque",""),
-	array("3. Declarations,	rapports, resume et	bilan des differents evenements	et/ou accidents",""),
-	array("3.1. evenements soumis a	declaration au titre de l'article 7 du present arrete(accidents declares)",""),
-	array("3.2.	Accidents soumis a la redaction	d'un rapport d'accident au titre du 4 de l'article 6 du present arrete",""),
+	array("2.3 Dispositions relatives aux parcs de stationnement selon le 2.3.2 de l annexe 1 du present arrete",""),
+	array("4 Bilan des interventions realisees au titre des activites liees au transport de marchandises dangereuses ",""),
+	
 );
 
 $page4 = array(
@@ -346,863 +345,27 @@ $page4 = array(
 	array('c'=>utf8_decode($suretehrtxt), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	);
 
+	
+/// page 5
 $pages = array(
 	//pages
 	array(
-		//info
 		array(
-			"c"=>"2	Organisation par rapport a la	surete",
+			'c'=>"2.2 Marchandises dangereuses a haut risque",
 			"x"=>10,
-			"y"=>22,
+			"y"=>30,
 			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>20,
-			"m"=>1
-		),
-		array(
-			"c"=>"2.1 Organisation par rapport a la	surete",
-			"x"=>10,
-			"y"=>40,
-			"w"=>0,
-			"h"=>8,
+			"h"=>6,
 			"b"=>0,
 			"l"=>"L",
 			"t"=>"B",
 			"s"=>16,
 			"m"=>1
 		),
-		array(
-			"c"=>"2.2.1 Organisation par rapport a la	surete",
-			"x"=>10,
-			"y"=>60,
-			"w"=>0,
-			"h"=>8,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>14,
-			"m"=>1
-		),
-		// start table 1 page 5
-		array(
-			"c"=>"Class (1)",
-			"x"=>15,
-			"y"=>75,
-			"w"=>35,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Class (1)",
-			"x"=>50,
-			"y"=>75,
-			"w"=>35,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Class (1)",
-			"x"=>85,
-			"y"=>75,
-			"w"=>55,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Class (1)",
-			"x"=>140,
-			"y"=>75,
-			"w"=>55,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"N/A: L'entreprise n'emballe pas de MD.",
-			"x"=>15,
-			"y"=>85,
-			"w"=>180,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"N/A: L'entreprise n'emballe pas de MDL'entreprise n'emballe pas de MDL'entreprise n'emballe pas de MDL'entreprise n'emballe pas de MDL'entreprise n'emballe pas de MDL'entreprise n'emballe pas de MD.",
-			"x"=>15,
-			"y"=>95,
-			"w"=>180,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>1
-		),
-		// End table 1 page 5
-		array(
-			"c"=>"2.1.2	Marchandises dangereuses chargees ou remplies",
-			"x"=>10,
-			"y"=>135,
-			"w"=>180,
-			"h"=>10,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>1
-		),
-		//start table 2 page 5
-		array(
-			"c"=>"Classe(1)",
-			"x"=>15,
-			"y"=>150,
-			"w"=>35,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(2)",
-			"x"=>50,
-			"y"=>150,
-			"w"=>35,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>85,
-			"y"=>150,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(1)",
-			"x"=>85,
-			"y"=>160,
-			"w"=>16,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(2)",
-			"x"=>101,
-			"y"=>160,
-			"w"=>16,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(3)",
-			"x"=>117,
-			"y"=>160,
-			"w"=>18,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>135,
-			"y"=>150,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(1)",
-			"x"=>135,
-			"y"=>160,
-			"w"=>16,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(2)",
-			"x"=>151,
-			"y"=>160,
-			"w"=>16,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"(3)",
-			"x"=>167,
-			"y"=>160,
-			"w"=>18,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"N/A",
-			"x"=>15,
-			"y"=>170,
-			"w"=>170,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"N/A",
-			"x"=>15,
-			"y"=>180,
-			"w"=>170,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>1
-		),
-		// End table 2 page 5
-		array(
-			"c"=>"2.1.3	Marchandises dangereuses chargees ou remplies",
-			"x"=>10,
-			"y"=>230,
-			"w"=>0,
-			"h"=>10,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>1
-		),
-		array(
-			"c"=>"2.1.3.1 Marchandises dangereuses chargees ou remplies",
-			"x"=>10,
-			"y"=>242,
-			"w"=>0,
-			"h"=>10,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>11,
-			"m"=>1
-		),
-	),
-	array(
-		//info page 6
-		// Start table 1 page 6
-		array(
-			"c"=>"Classe(1)",
-			"x"=>10,
-			"y"=>20,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(2)",
-			"x"=>40,
-			"y"=>20,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>70,
-			"y"=>20,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>70,
-			"y"=>30,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>110,
-			"y"=>30,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>150,
-			"y"=>30,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>10,
-			"y"=>40,
-			"w"=>30,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>40,
-			"y"=>40,
-			"w"=>30,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>70,
-			"y"=>40,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>110,
-			"y"=>40,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>150,
-			"y"=>40,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>10,
-			"y"=>50,
-			"w"=>30,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>40,
-			"y"=>50,
-			"w"=>30,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>70,
-			"y"=>50,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>110,
-			"y"=>50,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"0",
-			"x"=>150,
-			"y"=>50,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"ndiquer les quantites	de marchandises concernees.ndiquer les quantites de marchandises concernees.ndiquer les quantites de marchandises concernees.",
-			"x"=>10,
-			"y"=>60,
-			"w"=>0,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>12,
-			"m"=>1
-		),
-		// END table 1 page 6
-		array(
-			'c'=>"2.1.3.2 Presentation et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses",
-			"x"=>10,
-			"y"=>100,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>11,
-			"m"=>1
-		),
-		// END table 2 page 6
-		array(
-			'c'=>"Classe (1)",
-			"x"=>10,
-			"y"=>115,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"Classe (2)",
-			"x"=>40,
-			"y"=>115,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"Classe (3)",
-			"x"=>70,
-			"y"=>115,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"1",
-			"x"=>70,
-			"y"=>125,
-			"w"=>65,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"2",
-			"x"=>135,
-			"y"=>125,
-			"w"=>65,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"N/A",
-			"x"=>10,
-			"y"=>135,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>" N/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/A",
-			"x"=>10,
-			"y"=>145,
-			"w"=>0,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>10,
-			"m"=>1
-		),
-		// END table 2 page 6
-		array(
-			'c'=>"2.1.3.2 Presentation et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses",
-			"x"=>10,
-			"y"=>190,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>11,
-			"m"=>1
-		),
-		// END table 3 page 6
 		
+		//Start table 1 page 7
 		array(
-			'c'=>"Classe (1)",
-			"x"=>10,
-			"y"=>205,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"Classe (2)",
-			"x"=>40,
-			"y"=>205,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"Classe (3)",
-			"x"=>70,
-			"y"=>205,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"1",
-			"x"=>70,
-			"y"=>215,
-			"w"=>65,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"2",
-			"x"=>135,
-			"y"=>215,
-			"w"=>65,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>"N/A",
-			"x"=>10,
-			"y"=>225,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			'c'=>" N/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/AN/A N/A N/A",
-			"x"=>10,
-			"y"=>235,
-			"w"=>0,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>10,
-			"m"=>1
-		),
-		// END table 3 page 6
-	),
-	array(
-		//info page 7
-		array(
-			'c'=>"2.1.3.2 Presentation et organisation de l'entreprise pour les activites liees aux transports de marchandises dangereuses",
-			"x"=>10,
-			"y"=>27,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>11,
-			"m"=>1
-		),
-		// Start table 1 page 7
-		array(
-			"c"=>"Classe(1)",
-			"x"=>10,
-			"y"=>40,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(2)",
-			"x"=>40,
-			"y"=>40,
-			"w"=>30,
-			"h"=>20,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>70,
-			"y"=>40,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>70,
-			"y"=>50,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>110,
-			"y"=>50,
-			"w"=>40,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"Classe(3)",
-			"x"=>150,
-			"y"=>50,
-			"w"=>50,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"B",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"N/A",
-			"x"=>10,
-			"y"=>60,
-			"w"=>0,
-			"h"=>10,
-			"b"=>1,
-			"l"=>"C",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-		array(
-			"c"=>"ndiquer les quantites	de marchandises concernees.ndiquer les quantites de marchandises concernees.ndiquer les quantites de marchandises concernees.",
-			"x"=>10,
-			"y"=>70,
-			"w"=>0,
-			"h"=>6,
-			"b"=>1,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>12,
-			"m"=>1
-		),
-		// END table 1 page 7
-		array(
-			'c'=>"2.1.4 Autres operations",
-			"x"=>10,
-			"y"=>120,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>14,
-			"m"=>1
-		),
-		array(
-			'c'=>"N/A",
-			"x"=>10,
-			"y"=>130,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"",
-			"s"=>12,
-			"m"=>0
-		),
-	),
-	array(
-		//info page 8
-		array(
-			'c'=>"2.2 Marchandises dangereuses a haut	risqueMarchandises dangereuses a haut	risque",
-			"x"=>10,
-			"y"=>30,
-			"w"=>0,
-			"h"=>6,
-			"b"=>0,
-			"l"=>"L",
-			"t"=>"B",
-			"s"=>16,
-			"m"=>1
-		),
-		//Start table 1 page 8
-		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est-elle concernée par les marchandises reprises dans le tableau du 1.10.3.1.2 ?"),
 			"x"=>10,
 			"y"=>45,
 			"w"=>0,
@@ -1214,7 +377,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$suretehroui,
 			"x"=>10,
 			"y"=>55,
 			"w"=>95,
@@ -1226,7 +389,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$suretehrnon,
 			"x"=>105,
 			"y"=>55,
 			"w"=>95,
@@ -1238,7 +401,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est-elle concernée par les marchandises reprises dans le tableau du 1.10.3.1.3 ?"),
 			"x"=>10,
 			"y"=>65,
 			"w"=>0,
@@ -1250,7 +413,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>10,
 			"y"=>75,
 			"w"=>95,
@@ -1262,7 +425,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>105,
 			"y"=>75,
 			"w"=>95,
@@ -1274,7 +437,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Si oui, activité (s) concernée (s)"),
 			"x"=>10,
 			"y"=>85,
 			"w"=>0,
@@ -1286,7 +449,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Emballeur",
 			"x"=>10,
 			"y"=>95,
 			"w"=>47,
@@ -1310,7 +473,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Remplisseur",
 			"x"=>105,
 			"y"=>95,
 			"w"=>47,
@@ -1334,7 +497,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Expéditeur"),
 			"x"=>10,
 			"y"=>105,
 			"w"=>47,
@@ -1358,7 +521,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Chargeur",
 			"x"=>105,
 			"y"=>105,
 			"w"=>47,
@@ -1382,7 +545,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Destinataire",
 			"x"=>10,
 			"y"=>115,
 			"w"=>47,
@@ -1406,7 +569,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"Transporteur",
 			"x"=>105,
 			"y"=>115,
 			"w"=>47,
@@ -1430,7 +593,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Déchargeur"),
 			"x"=>10,
 			"y"=>125,
 			"w"=>47,
@@ -1454,7 +617,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"",
 			"x"=>105,
 			"y"=>125,
 			"w"=>0,
@@ -1466,7 +629,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Autre (à préciser)"),
 			"x"=>10,
 			"y"=>135,
 			"w"=>95,
@@ -1490,7 +653,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Préciser, le cas échéant, les marchandises dangereuses et/ou classes de danger concernées, et en cas de pluralité, le(s) site(s) concerné(s):"),
 			"x"=>10,
 			"y"=>155,
 			"w"=>0,
@@ -1498,11 +661,11 @@ $pages = array(
 			"b"=>1,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>10,
+			"s"=>8,
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("L'entreprise est elle soumise au plan de sûreté prévu au 1.10.3.2 ?"),
 			"x"=>10,
 			"y"=>165,
 			"w"=>0,
@@ -1514,7 +677,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>10,
 			"y"=>175,
 			"w"=>95,
@@ -1526,7 +689,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>105,
 			"y"=>175,
 			"w"=>0,
@@ -1538,7 +701,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Si oui est-il établi"),
 			"x"=>10,
 			"y"=>185,
 			"w"=>0,
@@ -1550,7 +713,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"OUI",
 			"x"=>10,
 			"y"=>195,
 			"w"=>95,
@@ -1562,7 +725,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NON",
 			"x"=>105,
 			"y"=>195,
 			"w"=>0,
@@ -1574,7 +737,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
 			"x"=>10,
 			"y"=>205,
 			"w"=>0,
@@ -1586,7 +749,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>"NA",
 			"x"=>10,
 			"y"=>215,
 			"w"=>95,
@@ -1609,12 +772,43 @@ $pages = array(
 			"s"=>12,
 			"m"=>0
 		),
-		//END table 1 page 8
+			
 	),
+	
+	////// page 5
+	
 	array(
-		//info page 9
+		//info page 8
+		
 		array(
-			'c'=>"3 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("2.3 Dispositions relatives aux parcs de stationnement selon le 2.3.2 de l'annexe 1 du présent arrêté L'entreprise dispose-t-elle de parcs de stationnement soumis aux exigences du 2.3.2 ?"),
+			"x"=>10,
+			"y"=>10,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Si oui, nombre de parc de stationnement :"),
+			"x"=>10,
+			"y"=>30,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>1
+		),
+		
+		
+		
+		array(
+			'c'=>utf8_decode("3 Déclarations, rapports, résumé et bilan des différents évènements et/ou accidents"),
 			"x"=>10,
 			"y"=>40,
 			"w"=>0,
@@ -1622,11 +816,11 @@ $pages = array(
 			"b"=>0,
 			"l"=>"L",
 			"t"=>"B",
-			"s"=>20,
+			"s"=>14,
 			"m"=>1
 		),
 		array(
-			'c'=>"Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risqueMarchandises dangereuses a haut risqueMarchandises dangereuses a haut	risqueMarchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("Rappel : En application des acticles 6 et 7 de l'arrêté TMD, tout accident répondant au 1.8.3.6 doit faire l'objet d'un rapport d'accident, par les conseillers à la sécurité concernés, accompagné d'une analyse des causes et de recommandations écrites visant à éviter le renouvellement de tels accidents"),
 			"x"=>10,
 			"y"=>60,
 			"w"=>0,
@@ -1634,14 +828,130 @@ $pages = array(
 			"b"=>0,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Lorsque ces accidents ont répondu aux critères de déclaration d'évènements selon le chapitre 1.8.5.3, le rapport d'accident doit être transmis aux autorités concernées, dans un délai d'un mois"),
+			"x"=>10,
+			"y"=>90,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Les accidents répondant aux critères de déclaration d'évènements impliquant des matières dangereuses selon le chapitre 1.8.5.3 sont résumés dans les tableaux ci-dessous"),
+			"x"=>10,
+			"y"=>110,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("R = route, F = Fer, N = Fluvial"),
+			"x"=>10,
+			"y"=>130,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("C = chargement, D= déchargement, T = transport, E = emballage, Tb = transbordement"),
+			"x"=>10,
+			"y"=>140,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("En cas de perte de la ou les marchandise(s) dangereuse(s)"),
+			"x"=>10,
+			"y"=>150,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 1 : dommages corporels"),
+			"x"=>10,
+			"y"=>160,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 2 : perte de marchandise dangereuse"),
+			"x"=>10,
+			"y"=>170,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 3 : dommages matériels ou à l'environnement,"),
+			"x"=>10,
+			"y"=>180,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("Critère 4 : intervention des autorités."),
+			"x"=>10,
+			"y"=>190,
+			"w"=>0,
+			"h"=>6,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
 			"m"=>1
 		),
 	),
+		
+	
+	///////// Page 9
+	
+	
+	
+	
+	
 	array(
 		//info page 9
 		array(
-			'c'=>"3.1 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.1 Evènements soumis à déclaration au titre de l'article 7 du présent arrêté (accidents déclarés)"),
 			"x"=>10,
 			"y"=>20,
 			"w"=>0,
@@ -1665,7 +975,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Lieu",
 			"x"=>30,
 			"y"=>40,
 			"w"=>20,
@@ -1677,7 +987,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Mode",
 			"x"=>50,
 			"y"=>40,
 			"w"=>20,
@@ -1689,7 +999,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Opération"),
 			"x"=>70,
 			"y"=>40,
 			"w"=>30,
@@ -1701,7 +1011,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"ONU",
 			"x"=>100,
 			"y"=>40,
 			"w"=>20,
@@ -1713,7 +1023,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Classe",
 			"x"=>120,
 			"y"=>40,
 			"w"=>20,
@@ -1725,7 +1035,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"GE",
 			"x"=>140,
 			"y"=>40,
 			"w"=>20,
@@ -1737,7 +1047,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Désignation"),
 			"x"=>160,
 			"y"=>40,
 			"w"=>20,
@@ -1749,7 +1059,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Critères"),
 			"x"=>180,
 			"y"=>40,
 			"w"=>20,
@@ -1761,7 +1071,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Aucun evenement declare cese annee",
+			'c'=>utf8_decode("Aucun évènement déclaré cette année"),
 			"x"=>10,
 			"y"=>50,
 			"w"=>0,
@@ -1773,7 +1083,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"3.2 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.2 Accidents soumis à la rédaction d'un rapport d'accident au titre du 4 de l'article 6 du présent arrêté"),
 			"x"=>10,
 			"y"=>80,
 			"w"=>0,
@@ -1797,7 +1107,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Lieu",
 			"x"=>30,
 			"y"=>100,
 			"w"=>20,
@@ -1809,7 +1119,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Mode",
 			"x"=>50,
 			"y"=>100,
 			"w"=>20,
@@ -1821,7 +1131,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Opération"),
 			"x"=>70,
 			"y"=>100,
 			"w"=>30,
@@ -1833,7 +1143,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"ONU",
 			"x"=>100,
 			"y"=>100,
 			"w"=>20,
@@ -1845,7 +1155,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"Classe",
 			"x"=>120,
 			"y"=>100,
 			"w"=>20,
@@ -1857,7 +1167,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>"GE",
 			"x"=>140,
 			"y"=>100,
 			"w"=>20,
@@ -1869,7 +1179,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Désignation"),
 			"x"=>160,
 			"y"=>100,
 			"w"=>20,
@@ -1881,7 +1191,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Date",
+			'c'=>utf8_decode("Critères"),
 			"x"=>180,
 			"y"=>100,
 			"w"=>20,
@@ -1893,7 +1203,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"Aucun evenement declare cese annee",
+			'c'=>utf8_decode("Aucun accident cette année"),
 			"x"=>10,
 			"y"=>110,
 			"w"=>0,
@@ -1905,7 +1215,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"3.3 Marchandises dangereuses a haut risqueMarchandises dangereuses a haut	risque",
+			'c'=>utf8_decode("3.3 Evènements relatifs au transport de marchandises dangereuses de la classe 7"),
 			"x"=>10,
 			"y"=>140,
 			"w"=>0,
@@ -1917,7 +1227,7 @@ $pages = array(
 			"m"=>1
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Nombre d'évènements significatifs :"),
 			"x"=>10,
 			"y"=>160,
 			"w"=>95,
@@ -1929,7 +1239,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Nombre d'évènements intéressants (EIT)(*):"),
 			"x"=>105,
 			"y"=>160,
 			"w"=>95,
@@ -1941,7 +1251,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("Aucun accident déclaré cette année"),
 			"x"=>10,
 			"y"=>170,
 			"w"=>0,
@@ -1953,7 +1263,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"date",
+			'c'=>utf8_decode("(*) EIT : Ecarts aux exigences réglementaires qui n'entraînent pas de dégradation des fonctions de sûreté et dont les incidences sont faibles. Ces EIT sont alors classés hors échelle sur l'échelle INES et ne nécessitent pas de compte rendu d'évènement significatif"),
 			"x"=>10,
 			"y"=>180,
 			"w"=>0,
@@ -1961,8 +1271,61 @@ $pages = array(
 			"b"=>1,
 			"l"=>"L",
 			"t"=>"",
-			"s"=>12,
+			"s"=>7,
 			"m"=>1
 		),
 	),
+	
+	
+	///// Page 10
+	array(
+		array(
+			'c'=>utf8_decode("4 Bilan des interventions réalisées au titre des activités liées au transport de marchandises dangereuses "),
+			"x"=>10,
+			"y"=>10,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"B",
+			"s"=>14,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("4.1 Tableau de synthèse des visites et interventions réalisées par le conseiller à la sécurité"),
+			"x"=>10,
+			"y"=>30,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		array(
+			'c'=>utf8_decode("4.2 Rappel des autres travaux ou audits réalisés pouvant avoir une incidence sur les activités liées au transport de marchandises dangereuses"),
+			"x"=>10,
+			"y"=>100,
+			"w"=>0,
+			"h"=>8,
+			"b"=>0,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	),
+	
+	
 );
