@@ -335,7 +335,7 @@ class PDF_MC_Table extends FPDF{
 	    $this->Image($image,15,87,70);
 	}
 
-	// Page 1
+	// Page 2
 	function page2($title,$data)
 	{
 		$this->return_to_default();
@@ -638,12 +638,7 @@ $pdf->AddPage();
 
 $t = "5.1. Les procédés visant au respect des règles relatives à l'identification des marchandises dangereuses transportées";
 
-// $pdf->SetFont('Arial','B',12);
-// $pdf->SetXY(10, 10);
-// $pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
-// $pdf->MultiCell(175,5,'', 0, 'L');
-// var_dump($dataq);
-// die();
+
 
 //Table de 20 lignes et 4 colonnes
 $pdf->SetWidths(array(140,12,12,12, 12));
@@ -702,87 +697,7 @@ foreach($dataq as $k => $rows){
 }
 $pdf->Output();
 
-/* 
-class PDF extends FPDF
-{
 
-	// Tableau simple
-	function BasicTable($data)
-	{
-		// Données
-		foreach($data as $row)
-		{
-			$this->SetFont('Arial','B',8);
-			$this->Cell(148,6,iconv('UTF-8', 'cp1252',($row['position'].' '.$row['label_question'])),1,'C');
-			$this->Cell(8,6,' CF ',1,'C');
-			$this->Cell(8,6,' NC ',1,'C');
-			$this->Cell(8,6,' PA ',1,'C');
-			$this->Cell(8,6,' EV ',1,'C');
-			$this->Ln();
-			$this->SetFont('Arial','',8);
-			$this->MultiCell(150,6,utf8_decode($row['texte_reglementaire']), 0, 'L');
-			// $this->Cell(148,6,iconv('UTF-8', 'cp1252',$row['texte_reglementaire']),1,'C');
-			if($row['cf'] == 1){
-				$this->Cell(8,6,' X ',1,'C');
-			}
-			else{
-				$this->Cell(8,6,'  ',1,'C');
-			}
-			if($row['nc'] == 1){
-				$this->Cell(8,6,' X ',1,'C');
-			}
-			else{
-				$this->Cell(8,6,'  ',1,'C');
-			}
-			if($row['pa'] == 1){
-				$this->Cell(8,6,' X ',1,'C');
-			}
-			else{
-				$this->Cell(8,6,'  ',1,'C');
-			}
-			if($row['ev'] == 1){
-				$this->Cell(8,6,' X ',1,'C');
-			}
-			else{
-				$this->Cell(8,6,'  ',1,'C');
-			}
-			$this->Ln();
-		}
-	}
-}
-
-$langs->load("interventions");
-$langs->load("icstmd");
-
-$id	= GETPOST('id','int');
-
-
-
-$data = array();
-
-$sql = "SELECT * ";
-$sql.= " FROM ".MAIN_DB_PREFIX."cstmd_interv_questions ";
-$sql.= " WHERE fk_intervention = ".$id;
-dol_syslog(__METHOD__ . " sql=" . $sql, LOG_DEBUG);
-$resql = $db->query($sql);
-if ($resql) {
-	for($cmp=0;$cmp<$db->num_rows($resql);$cmp++){
-		$obj = $db->fetch_object($resql);
-		$data[$obj->rowid] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev);
-	}
-	$db->free($resql);
-
-} else {
-	$error = "Error " . $db->lasterror();
-	dol_syslog(__METHOD__ . " " . $error, LOG_ERR);
-}
-
-
-$pdf = new PDF();
-$pdf->AddPage();
-$pdf->BasicTable($data);
-
-$pdf->Output(); */
 
 llxFooter();
 

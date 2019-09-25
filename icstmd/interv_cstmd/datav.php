@@ -775,10 +775,10 @@ $pages = array(
 			
 	),
 	
-	////// page 5
+	////// page 6
 	
 	array(
-		//info page 8
+		
 		
 		array(
 			'c'=>utf8_decode("2.3 Dispositions relatives aux parcs de stationnement selon le 2.3.2 de l'annexe 1 du présent arrêté L'entreprise dispose-t-elle de parcs de stationnement soumis aux exigences du 2.3.2 ?"),
@@ -942,14 +942,14 @@ $pages = array(
 	),
 		
 	
-	///////// Page 9
+	///////// Page 7
 	
 	
 	
 	
 	
 	array(
-		//info page 9
+		
 		array(
 			'c'=>utf8_decode("3.1 Evènements soumis à déclaration au titre de l'article 7 du présent arrêté (accidents déclarés)"),
 			"x"=>10,
@@ -1055,7 +1055,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"B",
-			"s"=>12,
+			"s"=>9,
 			"m"=>0
 		),
 		array(
@@ -1187,7 +1187,7 @@ $pages = array(
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"B",
-			"s"=>12,
+			"s"=>9,
 			"m"=>0
 		),
 		array(
@@ -1277,7 +1277,7 @@ $pages = array(
 	),
 	
 	
-	///// Page 10
+	///// Page 8
 	array(
 		array(
 			'c'=>utf8_decode("4 Bilan des interventions réalisées au titre des activités liées au transport de marchandises dangereuses "),
@@ -1316,13 +1316,7 @@ $pages = array(
 			"m"=>1
 		),
 		
-		
-		
-		
-		
-		
-		
-		
+			
 		
 		
 	),
