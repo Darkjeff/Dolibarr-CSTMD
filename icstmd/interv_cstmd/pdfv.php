@@ -114,7 +114,7 @@ $suretehr = $soc->array_options['options_suretehr'] ;
 $suretehrtxt = " " ;
 
 if ($soc->array_options['options_suretehr'] == 1) {
-$suretehrtxt = "L'entreprise a mis en place un plan de sûreté conformément a ses obligations.Le CSTMD a vérifié son adéqua9on avec l'activité et la taille de l'organisme." ;
+$suretehrtxt = "L'entreprise a mis en place un plan de sûreté conformément a ses obligations.Le CSTMD a vérifié son adéquation avec l'activité et la taille de l'organisme." ;
 $suretehroui = "OUI" ;
 $suretehrnon = " " ;
 }
