@@ -208,6 +208,37 @@ $transporteurx = "" ;
 
 $autre = utf8_decode($soc->array_options['options_autre'] );
 
+$plan11032 = $soc->array_options['options_plan11032'] ;
+if ($soc->array_options['options_plan11032'] == 1) {
+$plan11032oui = "OUI" ;
+$plan11032non = " " ;
+}
+if ($soc->array_options['options_plan11032'] == 0) {
+$plan11032oui = "" ;
+$plan11032non = "NON" ;
+}
+
+$planetabli = $soc->array_options['options_planetabli'] ;
+if ($soc->array_options['options_planetabli'] == 1) {
+$planetablioui = "OUI" ;
+$planetablinon = " " ;
+}
+if ($soc->array_options['options_planetabli'] == 0) {
+$planetablioui = "" ;
+$planetablinon = "NON" ;
+}
+
+$disposition1105 = $soc->array_options['options_disposition1105'] ;
+if ($soc->array_options['options_disposition1105'] == 1) {
+$disposition1105oui = "OUI" ;
+$disposition1105non = " " ;
+}
+if ($soc->array_options['options_disposition1105'] == 0) {
+$disposition1105oui = "" ;
+$disposition1105non = "NON" ;
+}
+
+
 
 $drealnom = $dreal->nom ;
 $drealaddress = $dreal->address ;

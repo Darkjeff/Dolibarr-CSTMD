@@ -675,7 +675,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$plan11032oui,
 			"x"=>10,
 			"y"=>175,
 			"w"=>95,
@@ -687,7 +687,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$plan11032non,
 			"x"=>105,
 			"y"=>175,
 			"w"=>0,
@@ -711,7 +711,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$planetablioui,
 			"x"=>10,
 			"y"=>195,
 			"w"=>95,
@@ -723,7 +723,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$planetablinon,
 			"x"=>105,
 			"y"=>195,
 			"w"=>0,
@@ -747,7 +747,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NA",
+			'c'=>$disposition1105oui,
 			"x"=>10,
 			"y"=>215,
 			"w"=>95,
@@ -759,7 +759,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$disposition1105non,
 			"x"=>105,
 			"y"=>215,
 			"w"=>0,
