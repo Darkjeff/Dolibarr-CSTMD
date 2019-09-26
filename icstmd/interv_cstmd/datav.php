@@ -334,15 +334,13 @@ $page4 = array(
 	array('c'=>utf8_decode("1.2. Place du conseiller à la sécurité dans l'organisation"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode("1.2.1 Interlocuteur du Conseiller à la sécurité ou Organigramme"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode("L'entreprise dispose d'un conseiller à la sécurité externe toutes classes en relation avec"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode($prenomuser), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode($modeuser), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode($classuser), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode($interlocuteurcstmd ), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode("Ce conseiller à la sécurité est lié par un contrat et déclaré auprès de la DREAL"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealnom), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealaddress), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealcpville), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode($suretehrtxt), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode($orgasurete), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	);
 
 	
@@ -377,7 +375,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>$suretehroui,
+			'c'=>$marchandise110312oui,
 			"x"=>10,
 			"y"=>55,
 			"w"=>95,
@@ -389,7 +387,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>$suretehrnon,
+			'c'=>$marchandise110312non,
 			"x"=>105,
 			"y"=>55,
 			"w"=>95,
@@ -413,7 +411,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$marchandise110313oui,
 			"x"=>10,
 			"y"=>75,
 			"w"=>95,
@@ -425,7 +423,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$marchandise110313non,
 			"x"=>105,
 			"y"=>75,
 			"w"=>95,
@@ -461,7 +459,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$emballeurx,
 			"x"=>57,
 			"y"=>95,
 			"w"=>48,
@@ -485,7 +483,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$remplisseurx,
 			"x"=>152,
 			"y"=>95,
 			"w"=>48,
@@ -509,7 +507,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$expediteurx,
 			"x"=>57,
 			"y"=>105,
 			"w"=>48,
@@ -533,7 +531,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$chargeurx,
 			"x"=>152,
 			"y"=>105,
 			"w"=>48,
@@ -557,7 +555,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$destinatairex,
 			"x"=>57,
 			"y"=>115,
 			"w"=>48,
@@ -581,7 +579,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$transporteurx,
 			"x"=>152,
 			"y"=>115,
 			"w"=>48,
@@ -605,7 +603,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$dechargeurx,
 			"x"=>57,
 			"y"=>125,
 			"w"=>48,
@@ -641,7 +639,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$autre,
 			"x"=>105,
 			"y"=>135,
 			"w"=>0,
