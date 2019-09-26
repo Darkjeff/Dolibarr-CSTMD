@@ -145,7 +145,7 @@ if ($soc->array_options['options_marchandise110313'] == 1) {
 $marchandise110313oui = "OUI" ;
 $marchandise110313non = " " ;
 }
-if ($soc->array_options['options_marchandise110312'] == 0) {
+if ($soc->array_options['options_marchandise110313'] == 0) {
 $marchandise110313oui = "" ;
 $marchandise110313non = "NON" ;
 }
