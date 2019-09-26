@@ -124,6 +124,46 @@ $suretehroui = " " ;
 $suretehrnon = "NON" ;
 }
 
+
+$interlocuteurcstmd = $soc->array_options['options_interlocuteurcstmd'] ;
+
+$orgasurete = $soc->array_options['options_orgasurete'] ;
+
+
+$marchandise110312 = $soc->array_options['options_marchandise110312'] ;
+if ($soc->array_options['options_marchandise110312'] == 1) {
+$marchandise110312oui = "OUI" ;
+$marchandise110312non = " " ;
+}
+if ($soc->array_options['options_marchandise110312'] == 0) {
+$marchandise110312oui = "" ;
+$marchandise110312non = "NON" ;
+}
+
+$marchandise110313 = $soc->array_options['options_marchandise110313'] ;
+if ($soc->array_options['options_marchandise110313'] == 1) {
+$marchandise110313oui = "OUI" ;
+$marchandise110313non = " " ;
+}
+if ($soc->array_options['options_marchandise110312'] == 0) {
+$marchandise110313oui = "" ;
+$marchandise110313non = "NON" ;
+}
+
+$emballeur = $soc->array_options['options_emballeur'] ;
+if ($soc->array_options['options_emballeur'] == 1) {
+$emballeurx = "X" ;
+}
+if ($soc->array_options['options_emballeur'] == 0) {
+$emballeurx = "" ;
+}
+
+
+
+
+
+
+
 $drealnom = $dreal->nom ;
 $drealaddress = $dreal->address ;
 $drealcpville = $dreal->zip ." ".$dreal->town ;
