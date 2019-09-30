@@ -222,10 +222,12 @@ $planetabli = $soc->array_options['options_planetabli'] ;
 if ($soc->array_options['options_planetabli'] == 1) {
 $planetablioui = "OUI" ;
 $planetablinon = " " ;
+$planremarque = $soc->array_options['options_remarqueplan11032'] ;
 }
 if ($soc->array_options['options_planetabli'] == 0) {
 $planetablioui = "" ;
 $planetablinon = "NON" ;
+$planremarque = "";
 }
 
 $disposition1105 = $soc->array_options['options_disposition1105'] ;
@@ -646,8 +648,8 @@ $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
 $pdf->Image("../" .$user_cstmd->array_options['options_vcstmd'],150,215,40);
 //page 3
-$pdf->AddPage();
-$pdf->page3($title, $page3);
+//$pdf->AddPage();
+//$pdf->page3($title, $page3);
 //page 4
 $pdf->AddPage();
 $pdf->page4($title, $page4);

@@ -313,6 +313,7 @@ $data = array(
 		)
 	)
 );
+/*
 $page3 = array(
 	array("1.Presentation et organisation de l'entreprise pour les actvites liees aux transports de marchandises dangereuses",""),
 	array("1.1. Gestion administrative	et operationnelle des activites liees au transport",""),
@@ -323,6 +324,7 @@ $page3 = array(
 	array("4 Bilan des interventions realisees au titre des activites liees au transport de marchandises dangereuses ",""),
 	
 );
+*/
 
 $page4 = array(
 	array('c'=>utf8_decode("1. 1. Organisation de l'entreprise pour les activités liées au transport de marchandises dangereuses"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
@@ -735,7 +737,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
+			'c'=>$planremarque,
 			"x"=>10,
 			"y"=>205,
 			"w"=>0,
@@ -747,9 +749,21 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>$disposition1105oui,
+			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
 			"x"=>10,
 			"y"=>215,
+			"w"=>0,
+			"h"=>10,
+			"b"=>1,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>0
+		),
+		array(
+			'c'=>$disposition1105oui,
+			"x"=>10,
+			"y"=>225,
 			"w"=>95,
 			"h"=>10,
 			"b"=>1,
@@ -761,7 +775,7 @@ $pages = array(
 		array(
 			'c'=>$disposition1105non,
 			"x"=>105,
-			"y"=>215,
+			"y"=>225,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
