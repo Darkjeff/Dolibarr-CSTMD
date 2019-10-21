@@ -25,10 +25,37 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/company.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/pdf.lib.php';
 
 
+
 $socid = GETPOST('socid','int');
 $object = new Societe($db);
 $object->fetch($socid);
 //var_dump($object);
+
+$contacts = $object->contact_array_objects();
+// var_dump($object->contact_array_objects());die;
+$data = array();
+// var_dump($contacts);die;
+foreach($contacts as $k => $v){
+	// var_dump(get_class_methods($v->fetch()));
+	$sql = "SELECT * ";
+	$sql.= " FROM ".MAIN_DB_PREFIX."categorie_contact as p1, ".MAIN_DB_PREFIX."categorie as p2 ";	
+	$sql.= " WHERE p1.fk_categorie = p2.rowid";
+	$sql.= " AND p2.label = 'Filiale'";
+	$sql.= " AND p1.fk_socpeople = ".$v->id;
+	// echo $sql;
+	$resql = $db->query($sql);
+	if ($resql) {
+		
+		if ($db->num_rows($resql)) {
+			$data[] = array('nom' => $v->lastname, 'adresse' => $v->address, 'adresse2' => $v->zip .", ".$v->town.", ".$v->country);
+			// $obj = $db->fetch_object($resql);
+			// $user_id = $obj->rowid;
+			
+		}
+	}
+}
+
+// var_dump($data);die;
 
 $tab = explode(" ", $object->array_options['options_cstmd']);
 // var_dump($tab);die();
@@ -54,7 +81,6 @@ $user_cstmd->fetch($user_id);
 $myname = $conf->global->MAIN_INFO_SOCIETE_NOM ;
 $logo =  $conf->global->MAIN_INFO_SOCIETE_LOGO;
 $siret =  $conf->global->MAIN_INFO_SIRET;
-
 
 // var_dump($user_cstmd);die;
 
@@ -93,7 +119,7 @@ $pdf->MultiCell(180,8,utf8_decode('ACCEPTATION DE MISSION DE "CONSEILLER A LA S�
 
 $pdf->SetFont('Arial','',12);
 $pdf->SetXY(15, 75);
-$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user_cstmd->array_options['options_cstmd'].' / '.$myname.' SIRET : '.$siret.'), déclare accepter la mission de :'), 0, 'L');
+$pdf->MultiCell(180,8,utf8_decode('Je soussigné '.$object->array_options['options_cstmd'].', (Conseiller à la sécurité certificat n° '.$user_cstmd->array_options['options_cstmd'].' / '.$myname.' SIRET : '.$siret.' ), déclare accepter la mission de :'), 0, 'L');
 
 $pdf->SetFont('Arial','B',12);
 $pdf->SetXY(15, 100);
@@ -118,34 +144,147 @@ $pdf->MultiCell(180,8,utf8_decode($adress), 0, 'L');
 $pdf->SetXY(35, 132);
 $pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object->country), 0, 'L');
 
-$pdf->SetFont('Arial','',12);
-$pdf->SetXY(15, 145);
-$pdf->MultiCell(180,8,utf8_decode("Pour le site situé à l'adresse suivante :"), 0, 'L');
 
-$pdf->SetFont('Arial','B',12);
-$pdf->SetXY(35, 152);
-$pdf->MultiCell(180,8,utf8_decode($object->nom), 0, 'L');
+if(empty($data)){
 
-$pdf->SetFont('Arial','',12);
-$pdf->SetXY(35, 158);
-$adress = str_replace(array("\r", "\n"), '', $object->address);
-$pdf->MultiCell(180,8,utf8_decode($adress), 0, 'L');
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetXY(15, 145);
+	$pdf->MultiCell(180,8,utf8_decode("Pour le site situé à l'adresse suivante :"), 0, 'L');
 
-$pdf->SetXY(35, 164);
-$pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object->country), 0, 'L');
+	$pdf->SetFont('Arial','B',12);
+	$pdf->SetXY(35, 152);
+	$pdf->MultiCell(180,8,utf8_decode($object->nom), 0, 'L');
 
-$pdf->SetFont('Arial','',12);
-$pdf->SetXY(15, 174);
-$pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetXY(35, 158);
+	$adress = str_replace(array("\r", "\n"), '', $object->address);
+	$pdf->MultiCell(180,8,utf8_decode($adress), 0, 'L');
 
-$pdf->SetFont('Arial','B',12);
-$pdf->SetXY(110, 184);
-$pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C');
+	$pdf->SetXY(35, 164);
+	$pdf->MultiCell(180,8,utf8_decode($object->zip .", ".$object->town.", ".$object->country), 0, 'L');
 
-$pdf->SetFont('Arial','',12);
-$pdf->SetXY(110, 190);
-$pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
-$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetXY(15, 174);
+	$pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
+
+	$pdf->SetFont('Arial','B',12);
+	$pdf->SetXY(110, 184);
+	$pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C');
+
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetXY(110, 190);
+	$pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
+
+
+}else{
+	
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetXY(15, 145);
+	$pdf->MultiCell(100,8,utf8_decode("Pour les sites situés aux l'adresses suivantes :"), 0, 'L');
+	// $pdf->Ln(50);
+	$nbr = count($data) -1;
+	$lim = 0;
+	//var_dump($data);die;
+	for($k=0; $k <= $nbr; $k+=2){
+		
+		$y = $pdf->GetY();
+		if($lim<$y){
+			$lim = $y;
+		}
+		// var_dump($lim);
+		$pdf->SetFont('Arial','B',12);
+		$pdf->SetXY(18, $lim);
+		$pdf->MultiCell(100,8,utf8_decode($data[$k]['nom']), 0, 'L');
+
+		$pdf->SetFont('Arial','',12);
+		// $pdf->SetXY(25, 158);
+		$pdf->SetX(18);
+		$adress = str_replace(array("\r", "\n"), '',$data[$k]['adresse']);
+		$pdf->MultiCell(100,8,utf8_decode($adress), 0, 'L');	
+		// $pdf->SetXY(35, 164);
+		$pdf->SetX(18);
+		$pdf->MultiCell(100,8,utf8_decode($data[$k]['adresse2']), 0, 'L');	
+		
+		$i = $k+1;
+		
+		$y1 = $pdf->GetY();
+		// 
+		$pdf->SetXY(112,$lim);
+		$pdf->SetFont('Arial','B',12);
+		$pdf->MultiCell(100,8,utf8_decode($data[$i]['nom']), 0, 'L');
+		$pdf->SetFont('Arial','',12);
+		$pdf->SetX(112);
+		$adress = str_replace(array("\r", "\n"), '',$data[$i]['adresse']);
+		$pdf->MultiCell(100,8,utf8_decode($adress), 0, 'L');	
+		$pdf->SetX(112);
+		$pdf->MultiCell(100,8,utf8_decode($data[$i]['adresse2']), 0, 'L');	
+		
+		
+		if($y >= 225){
+			$pdf->addPage();
+			$pdf->SetXY(15, 60);
+			$pdf->SetFont('Arial','BU',13);
+			$pdf->MultiCell(180,8,utf8_decode('ACCEPTATION DE MISSION DE "CONSEILLER A LA SÉCURITÉ"'), 0, 'C');
+			$pdf->setY(80);
+			$lim = $pdf->GetY();
+			$pdf->Image('../../../documents/mycompany/logos/'.$logo ,20,15,50);
+		}
+		
+		
+		
+	}
+	// die;
+	//
+	$pdf->Ln();
+	$y = $pdf->GetY();
+	// var_dump($y);die;
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetX(15);
+	$pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
+	
+
+	$pdf->SetFont('Arial','B',12);
+	$pdf->SetXY(110, $y);
+	$pdf->MultiCell(80,8,utf8_decode($object->array_options['options_cstmd']), 0, 'C');
+
+	$pdf->SetFont('Arial','',12);
+	$pdf->SetX(110);
+	$pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
+	// $y = $pdf->GetY()+2;
+	// $pdf->Image('img/sig.jpg',135,$y,40);
+	// $pdf->Footer("hhhh");
+	// $pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
+
+
+	$dir = $dolibarr_main_data_root."/icstmd/".$socid;
+	if (!file_exists($dir)) {
+		mkdir($dir, 0777, true);
+	}
+
+	$filename=$dir."/acceptmiss".date('Y_m_d').".pdf";
+	$pdf->Output($filename,'F');
+		
+/* 		 $pdf->Cell(50,5,'111 Here',0,0,'L',0);
+		$pdf->Cell(50,5,'222 Here',1,0,'L',0);
+
+						$pdf->Ln();
+
+		$pdf->Cell(50,5,'[ o ] che1','LR',0,'L',0);
+		$pdf->Cell(50,5,'[ x ] che2','LR',0,'L',0);
+
+						$pdf->Ln();
+
+		$pdf->Cell(50,5,'[ x ] def3','LRB',0,'L',0);
+		$pdf->Cell(50,5,'[ o ] def4','LRB',0,'L',0);
+
+						$pdf->Ln();
+						$pdf->Ln();
+						$pdf->Ln(); */
+		
+	//}
+	
+}
+//$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
 
 /*
 $title_key=(empty($user_cstmd->array_options['options_vcstmd']))?'':($user_cstmd->array_options['options_vcstmd']);	
