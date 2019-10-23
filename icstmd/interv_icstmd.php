@@ -1,6 +1,6 @@
 ﻿<?php
 /* <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
+ * Copyright (C) <2017> jamelbaz.com <jamelbaz@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,33 @@ $id	= GETPOST('id','int');
 $objSociete = new Societe($db);
 if ($id > 0) $objSociete->fetch($id);
 
-//var_dump($objSociete);die();
+$contacts = $objSociete->contact_array_objects();
+// var_dump($object->contact_array_objects());die;
+$data = array();
+// var_dump($contacts);die;
+foreach($contacts as $k => $v){
+	//var_dump($v->array_options);die;
+	$sql = "SELECT * ";
+	$sql.= " FROM ".MAIN_DB_PREFIX."categorie_contact as p1, ".MAIN_DB_PREFIX."categorie as p2 ";	
+	$sql.= " WHERE p1.fk_categorie = p2.rowid";
+	$sql.= " AND p2.label = 'Filiale'";
+	$sql.= " AND p1.fk_socpeople = ".$v->id;
+	// echo $sql;
+	$resql = $db->query($sql);
+	if ($resql) {
+		
+		if ($db->num_rows($resql)) {
+			$data[] = array('nom' => $v->lastname, 'prenom' => $v->firstname, 'adresse' => $v->address, 'cp' => $v->zip , 'ville' => $v->town, 'pays' => $v->country, 'tel1' => $v->phone_pro, 'tel2' => $v->phone_mobile, );
+			// $obj = $db->fetch_object($resql);
+			// $user_id = $obj->rowid;
+			
+		}
+	}
+}
+
+
+// var_dump($data);
+// die();
 
 $object = new Fichinter($db);
 $extrafields = new ExtraFields($db);
@@ -53,7 +79,6 @@ $permissiondellink=$user->rights->ficheinter->creer;	// Used by the include of a
 class PDF extends FPDF {}
 
 $pdf = new PDF();
-
 $pdf->AliasNbPages();
 $pdf->AddPage();
 
@@ -239,271 +264,348 @@ print '<div class="container">
 			</tr>
 		</table>
     </div>
-</div><br>
-<div class="tab">
+</div><br>';
+
+
+print '<div class="tab">
 	<span style="font-size:21px;color:#fff;">Liste des établissements et conseillers à déclarer (transmettre une copie des certificats)</span>
-</div><br>
-<div class="container">
-    <div class="mainbody">
-	   <table style="width: 100%;">
-			<tr>
-				<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 1 :</b></span>  </td>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input name="nic_1" style="width: 80%;" type="text"/></td>
-				<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-				<td colspan="2"><input name="nom_commercial_1" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="5"><input name="adresse_1" style="width: 96%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="8"><input name="adresse_suite_1" style="width: 98%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Code Postal :  </td>
-				<td  style="text-align: center;"><input colspan="2" name="code_postal_1" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Commune : </td>
-				<td colspan="2"><input name="commune_1" style="width: 95%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1_1" style="width: 76%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Téléphone : </td>
-				<td colspan="2"><input name="tele_2_1" style="width: 93%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom_1" style="width: 85%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;">Prenom :</td>
-				<td ><input name="prenom_1" style="width: 90%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat_1" type="text"/></td>
-				<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="3"><input style="width: 93%;" name="pays_certicat_1" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="5"><input name="competence_thematique_1" style="width: 96%;" type="text"/></td>
-			</tr>
-		</table>
-    </div>
-</div>
-<br>
-<div class="container">
-    <div class="mainbody">
-	   <table style="width: 100%;">
-			<tr>
-				<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 2 :</b></span>  </td>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input name="nic_2" style="width: 80%;" type="text"/></td>
-				<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-				<td colspan="2"><input name="nom_commercial_2" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="5"><input name="adresse_2" style="width: 96%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="8"><input name="adresse_suite_2" style="width: 98%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Code Postal :  </td>
-				<td  style="text-align: center;"><input colspan="2" name="code_postal_2" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Commune : </td>
-				<td colspan="2"><input name="commune_2" style="width: 95%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1_2" style="width: 76%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Téléphone : </td>
-				<td colspan="2"><input name="tele_2_2" style="width: 93%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom_2" style="width: 85%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;">Prenom :</td>
-				<td ><input name="prenom_2" style="width: 90%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat_2" type="text"/></td>
-				<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="3"><input style="width: 93%;" name="pays_certicat_2" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="5"><input name="competence_thematique_2" style="width: 96%;" type="text"/></td>
-			</tr>
-		</table>
-    </div>
-</div>
-<br>
-<div class="container">
-    <div class="mainbody">
-	   <table style="width: 100%;">
-			<tr>
-				<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 3 :</b></span>  </td>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input name="nic_3" style="width: 80%;" type="text"/></td>
-				<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-				<td colspan="2"><input name="nom_commercial_3" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="5"><input name="adresse_3" style="width: 96%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="8"><input name="adresse_suite_3" style="width: 98%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Code Postal :  </td>
-				<td  style="text-align: center;"><input colspan="2" name="code_postal_3" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Commune : </td>
-				<td colspan="2"><input name="commune_3" style="width: 95%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1_3" style="width: 76%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Téléphone : </td>
-				<td colspan="2"><input name="tele_2_3" style="width: 93%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom_3" style="width: 85%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;">Prenom :</td>
-				<td ><input name="prenom_3" style="width: 90%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat_3" type="text"/></td>
-				<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="3"><input style="width: 93%;" name="pays_certicat_3" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="5"><input name="competence_thematique_3" style="width: 96%;" type="text"/></td>
-			</tr>
-		</table>
-    </div>
-</div>
-<br>
-<div class="container">
-    <div class="mainbody">
-	   <table style="width: 100%;">
-			<tr>
-				<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 4 :</b></span>  </td>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input name="nic_4" style="width: 80%;" type="text"/></td>
-				<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-				<td colspan="2"><input name="nom_commercial_4" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="5"><input name="adresse_4" style="width: 96%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="8"><input name="adresse_suite_4" style="width: 98%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Code Postal :  </td>
-				<td  style="text-align: center;"><input colspan="2" name="code_postal_4" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Commune : </td>
-				<td colspan="2"><input name="commune_4" style="width: 95%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1_4" style="width: 76%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Téléphone : </td>
-				<td colspan="2"><input name="tele_2_4" style="width: 93%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom_4" style="width: 85%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;">Prenom :</td>
-				<td ><input name="prenom_4" style="width: 90%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat_4" type="text"/></td>
-				<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="3"><input style="width: 93%;" name="pays_certicat_4" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="5"><input name="competence_thematique_4" style="width: 96%;" type="text"/></td>
-			</tr>
-		</table>
-    </div>
-</div>
-<br>
-<div class="container">
-    <div class="mainbody">
-	   <table style="width: 100%;">
-			<tr>
-				<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 5 :</b></span>  </td>
-				<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-				<td><input name="nic_5" style="width: 80%;" type="text"/></td>
-				<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-				<td colspan="2"><input name="nom_commercial_5" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
-				<td colspan="5"><input name="adresse_5" style="width: 96%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="8"><input name="adresse_suite_5" style="width: 98%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Code Postal :  </td>
-				<td  style="text-align: center;"><input colspan="2" name="code_postal_5" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Commune : </td>
-				<td colspan="2"><input name="commune_5" style="width: 95%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="font-size:17px;">Téléphone :  </td>
-				<td colspan="2"><input name="tele_1_5" style="width: 76%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;" >Téléphone : </td>
-				<td colspan="2"><input name="tele_2_5" style="width: 93%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
-				<td style="font-size:17px;">Nom :</td>
-				<td colspan="2"><input name="nom_5" style="width: 85%;" type="text"/></td>
-				<td colspan="2" style="font-size:17px;">Prenom :</td>
-				<td ><input name="prenom_5" style="width: 90%;" type="text"/></td>
-			</tr>
-			<tr>
-				<td style="font-size:17px;">Numéro du certicat :</td>
-				<td style="text-align: center;" ><input name="numero_certicat_5" type="text"/></td>
-				<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
-				<td colspan="3"><input style="width: 93%;" name="pays_certicat_5" type="text"/></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-				<td colspan="5"><input name="competence_thematique_5" style="width: 96%;" type="text"/></td>
-			</tr>
-		</table>
-    </div>
-</div>
-<br>
-<hr>
-<table style="width: 100%;">
-	<tr>
-		<td style="font-size:17px;" >date</td>
-		<td><input name="date" style="width: 80%;" type="text"/></td>
-	</tr>
-</table>
-<hr>
-<br>
-<div class="center"><input type="submit" class="button" name="add" value="'.$langs->trans("Create").'"></div>
-</form>';
+</div><br>';
+
+
+if(empty($data)){
+	print '<div class="container">
+		<div class="mainbody">
+		   <table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 1 :</b></span>  </td>
+					<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+					<td><input name="nic_1" style="width: 80%;" type="text"/></td>
+					<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+					<td colspan="2"><input name="nom_commercial_1" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+					<td colspan="5"><input name="adresse_1" style="width: 96%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="8"><input name="adresse_suite_1" style="width: 98%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+					<td  style="text-align: center;"><input colspan="2" name="code_postal_1" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Commune : </td>
+					<td colspan="2"><input name="commune_1" style="width: 95%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+					<td colspan="2"><input name="tele_1_1" style="width: 76%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+					<td colspan="2"><input name="tele_2_1" style="width: 93%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+					<td style="font-size:17px;">Nom :</td>
+					<td colspan="2"><input name="nom_1" style="width: 85%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;">Prenom :</td>
+					<td ><input name="prenom_1" style="width: 90%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;">Numéro du certicat :</td>
+					<td style="text-align: center;" ><input name="numero_certicat_1" type="text"/></td>
+					<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+					<td colspan="3"><input style="width: 93%;" name="pays_certicat_1" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+					<td colspan="5"><input name="competence_thematique_1" style="width: 96%;" type="text"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="mainbody">
+		   <table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 2 :</b></span>  </td>
+					<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+					<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+					<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+					<td colspan="2"><input name="nom_commercial_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+					<td colspan="5"><input name="adresse_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="8"><input name="adresse_suite_[]" style="width: 98%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+					<td  style="text-align: center;"><input colspan="2" name="code_postal_[]" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Commune : </td>
+					<td colspan="2"><input name="commune_[]" style="width: 95%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+					<td colspan="2"><input name="tele_1_[]" style="width: 76%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+					<td colspan="2"><input name="tele_2_[]" style="width: 93%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+					<td style="font-size:17px;">Nom :</td>
+					<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;">Prenom :</td>
+					<td ><input name="prenom_[]" style="width: 90%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;">Numéro du certicat :</td>
+					<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+					<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+					<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+					<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="mainbody">
+		   <table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 3 :</b></span>  </td>
+					<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+					<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+					<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+					<td colspan="2"><input name="nom_commercial_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+					<td colspan="5"><input name="adresse_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="8"><input name="adresse_suite_[]" style="width: 98%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+					<td  style="text-align: center;"><input colspan="2" name="code_postal_[]" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Commune : </td>
+					<td colspan="2"><input name="commune_[]" style="width: 95%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+					<td colspan="2"><input name="tele_1_[]" style="width: 76%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+					<td colspan="2"><input name="tele_2_[]" style="width: 93%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+					<td style="font-size:17px;">Nom :</td>
+					<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;">Prenom :</td>
+					<td ><input name="prenom_[]" style="width: 90%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;">Numéro du certicat :</td>
+					<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+					<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+					<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+					<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="mainbody">
+		   <table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 4 :</b></span>  </td>
+					<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+					<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+					<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+					<td colspan="2"><input name="nom_commercial_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+					<td colspan="5"><input name="adresse_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="8"><input name="adresse_suite_[]" style="width: 98%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+					<td  style="text-align: center;"><input colspan="2" name="code_postal_[]" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Commune : </td>
+					<td colspan="2"><input name="commune_[]" style="width: 95%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+					<td colspan="2"><input name="tele_1_[]" style="width: 76%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+					<td colspan="2"><input name="tele_2_[]" style="width: 93%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+					<td style="font-size:17px;">Nom :</td>
+					<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;">Prenom :</td>
+					<td ><input name="prenom_[]" style="width: 90%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;">Numéro du certicat :</td>
+					<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+					<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+					<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+					<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="mainbody">
+		   <table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement 5 :</b></span>  </td>
+					<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+					<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+					<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+					<td colspan="2"><input name="nom_commercial_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+					<td colspan="5"><input name="adresse_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="8"><input name="adresse_suite_[]" style="width: 98%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+					<td  style="text-align: center;"><input colspan="2" name="code_postal_[]5" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Commune : </td>
+					<td colspan="2"><input name="commune_[]" style="width: 95%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+					<td colspan="2"><input name="tele_1_[]" style="width: 76%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+					<td colspan="2"><input name="tele_2_[]" style="width: 93%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+					<td style="font-size:17px;">Nom :</td>
+					<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text"/></td>
+					<td colspan="2" style="font-size:17px;">Prenom :</td>
+					<td ><input name="prenom_[]" style="width: 90%;" type="text"/></td>
+				</tr>
+				<tr>
+					<td style="font-size:17px;">Numéro du certicat :</td>
+					<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+					<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+					<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+					<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<hr>
+	<table style="width: 100%;">
+		<tr>
+			<td style="font-size:17px;" >date</td>
+			<td><input name="date" style="width: 80%;" type="text"/></td>
+		</tr>
+	</table>
+	<hr>
+	<br>
+	<div class="center"><input type="submit" class="button" name="add" value="'.$langs->trans("Create").'"></div>
+	</form>';
+}else{
+	
+	foreach($data as $k => $filiale){
+		
+		$i = $k +1;
+		print '<div class="container">
+				<div class="mainbody">
+				   <table style="width: 100%;">
+						<tr>
+							<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement '.$i.' :</b></span>  </td>
+							<td style="font-size:17px;">NIC<b>(1)</b> : </td>
+							<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+							<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
+							<td colspan="2"><input name="nom_commercial_[]" type="text"/><input name="filiale" type="hidden" value="1"/></td>
+						</tr>
+						<tr>
+							<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
+							<td colspan="5"><input name="adresse_[]" style="width: 96%;" type="text" /></td>
+						</tr>
+						<tr>
+							<td colspan="8"><input name="adresse_suite_[]" style="width: 98%;" type="text" value="' .$filiale['adresse']. '"/></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="font-size:17px;">Code Postal :  </td>
+							<td  style="text-align: center;"><input colspan="2" name="code_postal_[]" type="text"  value="' .$filiale['cp']. '"/></td>
+							<td colspan="2" style="font-size:17px;" >Commune : </td>
+							<td colspan="2"><input name="commune_[]" style="width: 95%;" type="text" value="' .$filiale['ville']. '"/></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="font-size:17px;">Téléphone :  </td>
+							<td colspan="2"><input name="tele_1_[]" style="width: 76%;" type="text" value="' .$filiale['tel1']. '"/></td>
+							<td colspan="2" style="font-size:17px;" >Téléphone : </td>
+							<td colspan="2"><input name="tele_2_[]" style="width: 93%;" type="text" value="' .$filiale['tel2']. '"/></td>
+						</tr>
+						<tr>
+							<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
+							<td style="font-size:17px;">Nom :</td>
+							<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text" value="' .$filiale['nom']. '"/></td>
+							<td colspan="2" style="font-size:17px;">Prenom :</td>
+							<td ><input name="prenom_[]" style="width: 90%;" type="text" value="' .$filiale['prenom']. '"/></td>
+						</tr>
+						<tr>
+							<td style="font-size:17px;">Numéro du certicat :</td>
+							<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+							<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
+							<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text" value="FRANCE"/></td>
+						</tr>
+						<tr>
+							<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
+							<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br>';
+	}	
+	
+	print '
+	<hr>
+	<table style="width: 100%;">
+		<tr>
+			<td style="font-size:17px;" >date</td>
+			<td><input name="date" style="width: 80%;" type="text"/></td>
+		</tr>
+	</table>
+	<hr>
+	<br>
+	<div class="center"><input type="submit" class="button" name="add" value="'.$langs->trans("Create").'"></div>
+	</form>';
+	
+}
+
 
 print '
 <style>
