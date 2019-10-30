@@ -113,8 +113,15 @@ $adr	= GETPOST('adr');
 	
 
 // var_dump($_POST);die;
+// nbr contacts
+$nbrcnt = 0;
 if(!empty($_POST)){
-	for($i = 1; $i<=20; $i++){
+	// $nbrcnt = 2;
+	// if(!empty($filiale)){
+		
+		$nbrcnt = count($_POST['nic_']);
+	// }
+	for($i = 1; $i<$nbrcnt; $i++){
 		$nic_[$i]	= GETPOST('nic_')[$i];
 		$nom_commercial_[$i]	= GETPOST('nom_commercial_')[$i];
 		$adresse_[$i]	= GETPOST('adresse_')[$i];
@@ -130,11 +137,11 @@ if(!empty($_POST)){
 		$competence_thematique_[$i]	= GETPOST('competence_thematique_')[$i];
 	}
 }
-// var_dump($code_postal_);die;
+// var_dump($nbrcnt);die;
 	//Établissement 1 :
 
 
-
+	// données pour 1er page
 	$nic_1	= GETPOST('nic_1');
 	$nom_commercial_1	= GETPOST('nom_commercial_1');
 	$adresse_1	= GETPOST('adresse_1');
@@ -167,70 +174,8 @@ if(!empty($_POST)){
 		
 	}
 	
-// /*********************************************************************************/	Établissement 2 :
-	// $nic_2	= GETPOST('nic_2');
-	// $nom_commercial_2	= GETPOST('nom_commercial_2');
-	// $adresse_2	= GETPOST('adresse_2');
-	// $adresse_suite_2	= GETPOST('adresse_suite_2');
-	// $code_postal_2	= GETPOST('code_postal_2');
-	// $commune_2	= GETPOST('commune_2');
-	// $tele_1_2	= GETPOST('tele_1_2');
-	// $tele_2_2	= GETPOST('tele_2_2');
-	// $nom_2	= GETPOST('nom_2');
-	// $prenom_2	= GETPOST('prenom_2');
-	// $numero_certicat_2	= GETPOST('numero_certicat_2');
-	// $pays_certicat_2	= GETPOST('pays_certicat_2');
-	// $competence_thematique_2	= GETPOST('competence_thematique_2');
 
-// /*********************************************************************************/	Établissement 3 :
-	// $nic_3	= GETPOST('nic_3');
-	// $nom_commercial_3	= GETPOST('nom_commercial_3');
-	// $adresse_3	= GETPOST('adresse_3');
-	// $adresse_suite_3	= GETPOST('adresse_suite_3');
-	// $code_postal_3	= GETPOST('code_postal_3');
-	// $commune_3	= GETPOST('commune_3');
-	// $tele_1_3	= GETPOST('tele_1_3');
-	// $tele_2_3	= GETPOST('tele_2_3');
-	// $nom_3	= GETPOST('nom_3');
-	// $prenom_3	= GETPOST('prenom_3');
-	// $numero_certicat_3	= GETPOST('numero_certicat_3');
-	// $pays_certicat_3	= GETPOST('pays_certicat_3');
-	// $competence_thematique_3	= GETPOST('competence_thematique_3');
-
-// /*********************************************************************************/	Établissement 4 :
-	// $nic_4	= GETPOST('nic_4');
-	// $nom_commercial_4	= GETPOST('nom_commercial_4');
-	// $adresse_4	= GETPOST('adresse_4');
-	// $adresse_suite_4	= GETPOST('adresse_suite_4');
-	// $code_postal_4	= GETPOST('code_postal_4');
-	// $commune_4	= GETPOST('commune_4');
-	// $tele_1_4	= GETPOST('tele_1_4');
-	// $tele_2_4	= GETPOST('tele_2_4');
-	// $nom_4	= GETPOST('nom_4');
-	// $prenom_4	= GETPOST('prenom_4');
-	// $numero_certicat_4	= GETPOST('numero_certicat_4');
-	// $pays_certicat_4	= GETPOST('pays_certicat_4');
-	// $competence_thematique_4	= GETPOST('competence_thematique_4');
-
-// /*********************************************************************************/Établissement 5 :
-	// $nic_5	= GETPOST('nic_5');
-	// $nom_commercial_5	= GETPOST('nom_commercial_5');
-	// $adresse_5	= GETPOST('adresse_5');
-	// $adresse_suite_5	= GETPOST('adresse_suite_5');
-	// $code_postal_5	= GETPOST('code_postal_5');
-	// $commune_5	= GETPOST('commune_5');
-	// $tele_1_5	= GETPOST('tele_1_5');
-	// $tele_2_5	= GETPOST('tele_2_5');
-	// $nom_5	= GETPOST('nom_5');
-	// $prenom_5	= GETPOST('prenom_5');
-	// $numero_certicat_5	= GETPOST('numero_certicat_5');
-	// $pays_certicat_5	= GETPOST('pays_certicat_5');
-	// $competence_thematique_5	= GETPOST('competence_thematique_5');
 	$date	= GETPOST('date');
-
-/*********************************************************************************/
-//var_dump($dechargement);die;
-
 
 
 
@@ -264,10 +209,10 @@ $pdf = new FPDI();
 $pdf->AddPage();
 // set the source file
 
-if(!isset($nic_[6])){	
-	$pdf->setSourceFile("cerfa_12251-02.pdf");
-}else{
+if($nbrcnt>6){	
 	$pdf->setSourceFile("cerfa_12251-03.pdf");
+}else{
+	$pdf->setSourceFile("cerfa_12251-02.pdf");
 }
 
 // import page 1
@@ -342,80 +287,16 @@ $identite = array(
 			"CompetenceThematiqueConseiller"   => array(110,265,$competence_thematique_1,0),
 		);
 
-/* $page2 = array(
 
-	//Établissement 2 :
-	"nicEtablis2"   => array(65,30,$nic_2,1),
-	"nomCommercialEtablis2"   => array(120,30,$nom_commercial_2,0),
-	"adresseJuridique1Etablis2"   => array(85,35.8,$adresse_2,0),
-	"adresseJuridique2Etablis2"   => array(20,41.2,$adresse_suite_2,0),
-	"codePostalEtablis2"   => array(38.5,46.8,$code_postal_2,1),
-	"communeEtablis2"   => array(83,46.9,$commune_2,0),
-	"teleEtablis2"   => array(35.5,52.8,$tele_1_2,1),
-	"telecopieEtablis2"   => array(163,52.8,$tele_2_2,1),
-	"nomConseiller2"   => array(65,61.2,$nom_2,0),
-	"prenomConseiller2"   => array(145,61.2,$prenom_2,0),
-	"numCertificatConseiller2"   => array(52,67,$numero_certicat_2,1),
-	"paysCertificatConseiller2"   => array(145,67,$pays_certicat_2,0),
-	"CompetenceThematiqueConseiller2"   => array(110,72.7,$competence_thematique_2,0),
-
-	//Établissement 3 :
-	"nicEtablis3"   => array(65,81.5,$nic_3,1),
-	"nomCommercialEtablis3"   => array(120,81.5,$nom_commercial_3,0),
-	"adresseJuridique1Etablis3"   => array(85,87.2,$adresse_3,0),
-	"adresseJuridique2Etablis3"   => array(20,92.8,$adresse_suite_3,0),
-	"codePostalEtablis3"   => array(38.5,98.2,$code_postal_3,1),
-	"communeEtablis3"   => array(83,98.2,$commune_3,0),
-	"teleEtablis3"   => array(35.5,103.8,$tele_1_3,1),
-	"telecopieEtablis3"   => array(163,103.8,$tele_2_3,1),
-	"nomConseiller3"   => array(65,113,$nom_3,0),
-	"prenomConseiller3"   => array(145,113,$prenom_3,0),
-	"numCertificatConseiller3"   => array(52,118.2,$numero_certicat_3,1),
-	"paysCertificatConseiller3"   => array(145,118.2,$pays_certicat_3,0),
-	"CompetenceThematiqueConseiller3"   => array(110,124,$competence_thematique_3,0),
-	
-	//Établissement 4 :
-	"nicEtablis4"   => array(65,133,$nic_4,1),
-	"nomCommercialEtablis4"   => array(120,133,$nom_commercial_4,0),
-	"adresseJuridique1Etablis4"   => array(85,138.8,$adresse_4,0),
-	"adresseJuridique2Etablis4"   => array(20,143.8,$adresse_suite_4,0),
-	"codePostalEtablis4"   => array(38.5,149.7,$code_postal_4,1),
-	"communeEtablis4"   => array(83,149.7,$commune_4,0),
-	"teleEtablis4"   => array(35.5,155.5,$tele_1_4,1),
-	"telecopieEtablis4"   => array(163,155.5,$tele_2_4,1),
-	"nomConseiller4"   => array(65,164.2,$nom_4,0),
-	"prenomConseiller4"   => array(145,164.2,$prenom_4,0),
-	"numCertificatConseiller4"   => array(52,170,$numero_certicat_4,1),
-	"paysCertificatConseiller4"   => array(145,170,$pays_certicat_4,0),
-	"CompetenceThematiqueConseiller4"   => array(110,175.5,$competence_thematique_4,0),
-
-	//Établissement 5 :
-	"nicEtablis5"   => array(65,184.5,$nic_5,1),
-	"nomCommercialEtablis5"   => array(120,184.5,$nom_commercial_5,0),
-	"adresseJuridique1Etablis5"   => array(85,190.2,$adresse_5,0),
-	"adresseJuridique2Etablis5"   => array(20,195.5,$adresse_suite_5,0),
-	"codePostalEtablis5"   => array(38.5,201.5,$code_postal_5,1),
-	"communeEtablis5"   => array(83,201.5,$commune_5,0),
-	"teleEtablis5"   => array(35.5,206.7,$tele_1_5,1),
-	"telecopieEtablis5"   => array(163,206.7,$tele_2_5,1),
-	"nomConseiller5"   => array(65,216,$nom_5,0),
-	"prenomConseiller5"   => array(145,216,$prenom_5,0),
-	"numCertificatConseiller5"   => array(52,221.5,$numero_certicat_5,1),
-	"paysCertificatConseiller5"   => array(145,221.5,$pays_certicat_5,0),
-	"CompetenceThematiqueConseiller5"   => array(110,226.9,$competence_thematique_5,0),
-	
-	"date" => array(27.6,247,$date,1)
-);
- */
 $pages = array();
 
 	$j = 2;
-	$np = 4;
-	if(isset($nic_[6])){
-		$np = 8;
-	}
+	// $np = 4;
+	// if(isset($nic_[6])){
+		// $np = 8;
+	// }
 	// die($np);
-for($i = 0; $i<$np; $i+=4){
+for($i = 0; $i<$nbrcnt; $i+=4){
 	$k1 = $i+1;$k2 = $i+2;$k3 = $i+3;$k4 = $i+4;
 	// echo $k1.'<br>';
 	// echo $code_postal_[$k1].'<br>';
@@ -487,12 +368,12 @@ for($i = 0; $i<$np; $i+=4){
 	$j++;
 }
 
+// index derniere page
 end( $pages );
 $ky = key( $pages );
 $pages[$ky]["date"] = array(27.6,247,$date,1);
 
-// var_dump($pages);
-// die;
+
 
 
 
@@ -512,13 +393,24 @@ foreach($identite as $key => $valIdentite){
 }
 /***************************End contenu de la premier page****************************/
 
-// var_dump($pages);die;
-
+// var_dump($pages);
+// var_dump($ky);die;
+// autres pages
 foreach($pages as $k => $page){
-	// add a page 2
+	
 	$pdf->AddPage();
-	// import page 2
-	$tplIdx = $pdf->importPage($k);
+	
+	$tplIdx = null;
+	
+	if($ky == 2){
+		$tplIdx = $pdf->importPage(2);
+	}elseif($k != $ky){ // si ce n'est pas la derniere page j'ajoute à chaque fois la deuxième
+		$tplIdx = $pdf->importPage(2);
+	}else{
+		$tplIdx = $pdf->importPage(3);
+	}
+	
+	
 	// use the imported page and place it at point 10,10 with a width of 100 mm
 	$pdf->useTemplate($tplIdx);
 	foreach($page as $key => $valIdentite){
