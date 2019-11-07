@@ -545,9 +545,11 @@ if(empty($data)){
 						<tr>
 							<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement '.$i.' :</b></span>  </td>
 							<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-							<td><input name="nic_[]" style="width: 80%;" type="text"/></td>
+							<td><input name="nic_[]" style="width: 80%;" type="text" value="'.substr($objSociete->idprof2, -5).'"/></td>
 							<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
-							<td colspan="2"><input name="nom_commercial_[]" type="text"/><input name="filiale" type="hidden" value="1"/></td>
+							<td colspan="2">
+							<input name="nom_commercial_[]" type="text" value="' .$filiale['nom']. '"/>
+							<input name="filiale" type="hidden" value="1"/></td>
 						</tr>
 						<tr>
 							<td colspan="3" style="font-size:17px;">Adresse juridique <span style="font-size:13px;"><i>(N°, type et nom de la voie )</i></span> : </td>
@@ -571,19 +573,19 @@ if(empty($data)){
 						<tr>
 							<td style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Conseiller :</b></span>  </td>
 							<td style="font-size:17px;">Nom :</td>
-							<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text" value="' .$filiale['nom']. '"/></td>
+							<td colspan="2"><input name="nom_[]" style="width: 85%;" type="text" value="'.$full_name[1].'"/></td>
 							<td colspan="2" style="font-size:17px;">Prenom :</td>
-							<td ><input name="prenom_[]" style="width: 90%;" type="text" value="' .$filiale['prenom']. '"/></td>
+							<td ><input name="prenom_[]" style="width: 90%;" type="text" value="'.$full_name[0].'"/></td>
 						</tr>
 						<tr>
 							<td style="font-size:17px;">Numéro du certicat :</td>
-							<td style="text-align: center;" ><input name="numero_certicat_[]" type="text"/></td>
+							<td style="text-align: center;" ><input name="numero_certicat_[]" type="text" value="'. $user_cstmd->array_options['options_cstmd'] .'"/></td>
 							<td colspan="3" style="font-size:17px;">Pays ayant délivré le certicat :</td>
 							<td colspan="3"><input style="width: 93%;" name="pays_certicat_[]" type="text" value="FRANCE"/></td>
 						</tr>
 						<tr>
 							<td colspan="3" style="font-size:17px;">Compétence thématique (classes, domaines d\'activité...) :</td>
-							<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text"/></td>
+							<td colspan="5"><input name="competence_thematique_[]" style="width: 96%;" type="text" value="'. $compcstmd  .'"/></td>
 						</tr>
 					</table>
 				</div>
@@ -605,6 +607,7 @@ if(empty($data)){
 	</form>';
 	
 }
+
 
 
 print '
