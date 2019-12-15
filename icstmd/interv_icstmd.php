@@ -49,7 +49,7 @@ foreach($contacts as $k => $v){
 	if ($resql) {
 		
 		if ($db->num_rows($resql)) {
-			$data[] = array('nom' => $v->lastname, 'prenom' => $v->firstname, 'adresse' => $v->address, 'cp' => $v->zip , 'ville' => $v->town, 'pays' => $v->country, 'tel1' => $v->phone_pro, 'tel2' => $v->phone_mobile, );
+			$data[] = array('nic' => $v->array_options['options_nic'], 'nom' => $v->lastname, 'prenom' => $v->firstname, 'adresse' => $v->address, 'cp' => $v->zip , 'ville' => $v->town, 'pays' => $v->country, 'tel1' => $v->phone_pro, 'tel2' => $v->phone_mobile, );
 			// $obj = $db->fetch_object($resql);
 			// $user_id = $obj->rowid;
 			
@@ -545,7 +545,7 @@ if(empty($data)){
 						<tr>
 							<td colspan="2" style="font-size:17px;"><span style="margin-left: -5%;    padding-left: 10%;background-color:#7b92c6;padding-right: 22%;padding-top: 1%;padding-bottom: 1%;"><b>Établissement '.$i.' :</b></span>  </td>
 							<td style="font-size:17px;">NIC<b>(1)</b> : </td>
-							<td><input name="nic_[]" style="width: 80%;" type="text" value="'.substr($objSociete->idprof2, -5).'"/></td>
+							<td><input name="nic_[]" style="width: 80%;" type="text" value="'.sprintf("%05d", $filiale['nic']).'"/></td>
 							<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
 							<td colspan="2">
 							<input name="nom_commercial_[]" type="text" value="' .$filiale['nom']. '"/>

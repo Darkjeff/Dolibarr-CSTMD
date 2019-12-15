@@ -209,7 +209,7 @@ $pdf = new FPDI();
 $pdf->AddPage();
 // set the source file
 
-if($nbrcnt>6){	
+if($nbrcnt>=6){	
 	$pdf->setSourceFile("cerfa_12251-03.pdf");
 }else{
 	$pdf->setSourceFile("cerfa_12251-02.pdf");
