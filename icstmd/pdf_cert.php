@@ -121,7 +121,7 @@ if(!empty($_POST)){
 		
 		$nbrcnt = count($_POST['nic_']);
 	// }
-	for($i = 1; $i<$nbrcnt; $i++){
+	for($i = 0; $i<$nbrcnt; $i++){
 		$nic_[$i]	= GETPOST('nic_')[$i];
 		$nom_commercial_[$i]	= GETPOST('nom_commercial_')[$i];
 		$adresse_[$i]	= GETPOST('adresse_')[$i];
@@ -158,19 +158,19 @@ if(!empty($_POST)){
 	
 	if(!empty($filiale)){
 		
-		$nic_1	= $nic_[1];
-		$nom_commercial_1	= $nom_commercial_[1];
-		$adresse_1	= $adresse_[1];
-		$adresse_suite_1	= $adresse_suite_[1];
-		$code_postal_1	= $code_postal_[1];
-		$commune_1	= $commune_[1];
-		$tele_1_1	= $tele_1_[1];
-		$tele_2_1	= $tele_2_[1];
-		$nom_1	= $nom_[1];
-		$prenom_1	= $prenom_[1];
-		$numero_certicat_1	= $numero_certicat_[1];
-		$pays_certicat_1	= $pays_certicat_[1];
-		$competence_thematique_1	= $competence_thematique_[1];
+		$nic_1	= $nic_[0];
+		$nom_commercial_1	= $nom_commercial_[0];
+		$adresse_1	= $adresse_[0];
+		$adresse_suite_1	= $adresse_suite_[0];
+		$code_postal_1	= $code_postal_[0];
+		$commune_1	= $commune_[0];
+		$tele_1_1	= $tele_1_[0];
+		$tele_2_1	= $tele_2_[0];
+		$nom_1	= $nom_[0];
+		$prenom_1	= $prenom_[0];
+		$numero_certicat_1	= $numero_certicat_[0];
+		$pays_certicat_1	= $pays_certicat_[0];
+		$competence_thematique_1	= $competence_thematique_[0];
 		
 	}
 	
@@ -298,6 +298,7 @@ $pages = array();
 	// die($np);
 for($i = 0; $i<$nbrcnt; $i+=4){
 	$k1 = $i+1;$k2 = $i+2;$k3 = $i+3;$k4 = $i+4;
+	//$k1 = $i+2;$k2 = $i+3;$k3 = $i+4;$k4 = $i+5;
 	// echo $k1.'<br>';
 	// echo $code_postal_[$k1].'<br>';
 	// echo $code_postal_[$k2].'<br>';
