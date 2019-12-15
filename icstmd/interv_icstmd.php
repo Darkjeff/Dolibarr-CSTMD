@@ -548,7 +548,7 @@ if(empty($data)){
 							<td><input name="nic_[]" style="width: 80%;" type="text" value="'.sprintf("%05d", $filiale['nic']).'"/></td>
 							<td style="font-size:17px;" colspan="2" >Nom commercial : </td>
 							<td colspan="2">
-							<input name="nom_commercial_[]" type="text" value="' .$filiale['nom']. '"/>
+							<input name="nom_commercial_[]" type="text" value="' .$objSociete->nom. '"/>
 							<input name="filiale" type="hidden" value="1"/></td>
 						</tr>
 						<tr>
