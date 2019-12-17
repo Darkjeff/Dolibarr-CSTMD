@@ -237,7 +237,7 @@ if(empty($data)){
 	//
 	$pdf->Ln();
 	$y = $pdf->GetY();
-	// var_dump($y);die;
+	
 	$pdf->SetFont('Arial','',12);
 	$pdf->SetX(15);
 	$pdf->MultiCell(180,8,utf8_decode("Fait à ".$conf->global->MAIN_INFO_SOCIETE_TOWN." , le ".date("d/m/Y")), 0, 'L');
@@ -250,19 +250,10 @@ if(empty($data)){
 	$pdf->SetFont('Arial','',12);
 	$pdf->SetX(110);
 	$pdf->MultiCell(80,8,utf8_decode("Conseiller à la sécurité"), 0, 'C');
-	// $y = $pdf->GetY()+2;
-	// $pdf->Image('img/sig.jpg',135,$y,40);
-	// $pdf->Footer("hhhh");
-	// $pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
-
-
-	$dir = $dolibarr_main_data_root."/icstmd/".$socid;
-	if (!file_exists($dir)) {
-		mkdir($dir, 0777, true);
-	}
-
-	$filename=$dir."/acceptmiss".date('Y_m_d').".pdf";
-	$pdf->Output($filename,'F');
+	
+	
+	// var_dump($y);die;
+	
 		
 /* 		 $pdf->Cell(50,5,'111 Here',0,0,'L',0);
 		$pdf->Cell(50,5,'222 Here',1,0,'L',0);
@@ -301,6 +292,23 @@ else
 	setEventMessages('FPDF error: Image file has no extension and no type was specified:'.$title_key, null, 'errors');
 }
 */
+
+
+	
+	$pdf->Image($user_cstmd->array_options['options_vcstmd'],135,200,40);
+
+
+	$dir = $dolibarr_main_data_root."/icstmd/".$socid;
+	if (!file_exists($dir)) {
+		mkdir($dir, 0777, true);
+	}
+
+	$filename=$dir."/acceptmiss".date('Y_m_d').".pdf";
+	$pdf->Output($filename,'F');
+
+
+
+
 $dir = $dolibarr_main_data_root."/icstmd/".$socid;
 if (!file_exists($dir)) {
     mkdir($dir, 0777, true);
