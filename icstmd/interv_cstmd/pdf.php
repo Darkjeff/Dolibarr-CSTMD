@@ -215,6 +215,133 @@ $suretehrnon = "NON" ;
 }
 
 
+$interlocuteurcstmd = $soc->array_options['options_interlocuteurcstmd'] ;
+
+$orgasurete = $soc->array_options['options_orgasurete'] ;
+
+
+$marchandise110312 = $soc->array_options['options_marchandise110312'] ;
+if ($soc->array_options['options_marchandise110312'] == 1) {
+$marchandise110312oui = "OUI" ;
+$marchandise110312non = " " ;
+}
+if ($soc->array_options['options_marchandise110312'] == 0) {
+$marchandise110312oui = "" ;
+$marchandise110312non = "NON" ;
+}
+
+$marchandise110313 = $soc->array_options['options_marchandise110313'] ;
+if ($soc->array_options['options_marchandise110313'] == 1) {
+$marchandise110313oui = "OUI" ;
+$marchandise110313non = " " ;
+}
+if ($soc->array_options['options_marchandise110313'] == 0) {
+$marchandise110313oui = "" ;
+$marchandise110313non = "NON" ;
+}
+
+$emballeur = $soc->array_options['options_emballeur'] ;
+if ($soc->array_options['options_emballeur'] == 1) {
+$emballeurx = "X" ;
+}
+if ($soc->array_options['options_emballeur'] == 0) {
+$emballeurx = "" ;
+}
+
+$expediteur = $soc->array_options['options_expediteur'] ;
+if ($soc->array_options['options_expediteur'] == 1) {
+$expediteurx = "X" ;
+}
+if ($soc->array_options['options_expediteur'] == 0) {
+$expediteurx = "" ;
+}
+
+$destinataire = $soc->array_options['options_destinataire'] ;
+if ($soc->array_options['options_destinataire'] == 1) {
+$destinatairex = "X" ;
+}
+if ($soc->array_options['options_destinataire'] == 0) {
+$destinatairex = "" ;
+}
+
+$dechargeur = $soc->array_options['options_dechargeur'] ;
+if ($soc->array_options['options_dechargeur'] == 1) {
+$dechargeurx = "X" ;
+}
+if ($soc->array_options['options_dechargeur'] == 0) {
+$dechargeurx = "" ;
+}
+
+$remplisseur = $soc->array_options['options_remplisseur'] ;
+if ($soc->array_options['options_remplisseur'] == 1) {
+$remplisseurx = "X" ;
+}
+if ($soc->array_options['options_remplisseur'] == 0) {
+$remplisseurx = "" ;
+}
+
+$chargeur = $soc->array_options['options_chargeur'] ;
+if ($soc->array_options['options_chargeur'] == 1) {
+$chargeurx = "X" ;
+}
+if ($soc->array_options['options_chargeur'] == 0) {
+$chargeurx = "" ;
+}
+
+$transporteur = $soc->array_options['options_transporteur'] ;
+if ($soc->array_options['options_transporteur'] == 1) {
+$transporteurx = "X" ;
+}
+if ($soc->array_options['options_transporteur'] == 0) {
+$transporteurx = "" ;
+}
+
+$autre = utf8_decode($soc->array_options['options_autre'] );
+
+$plan11032 = $soc->array_options['options_plan11032'] ;
+if ($soc->array_options['options_plan11032'] == 1) {
+$plan11032oui = "OUI" ;
+$plan11032non = " " ;
+}
+if ($soc->array_options['options_plan11032'] == 0) {
+$plan11032oui = "" ;
+$plan11032non = "NON" ;
+}
+
+$planetabli = $soc->array_options['options_planetabli'] ;
+if ($soc->array_options['options_planetabli'] == 1) {
+$planetablioui = "OUI" ;
+$planetablinon = " " ;
+$planremarque = $soc->array_options['options_remarqueplan11032'] ;
+}
+if ($soc->array_options['options_planetabli'] == 0) {
+$planetablioui = "" ;
+$planetablinon = "NON" ;
+$planremarque = "";
+}
+
+$disposition1105 = $soc->array_options['options_disposition1105'] ;
+if ($soc->array_options['options_disposition1105'] == 1) {
+$disposition1105oui = "OUI" ;
+$disposition1105non = " " ;
+}
+if ($soc->array_options['options_disposition1105'] == 0) {
+$disposition1105oui = "" ;
+$disposition1105non = "NON" ;
+}
+
+
+
+$drealnom = $dreal->nom ;
+$drealaddress = $dreal->address ;
+$drealcpville = $dreal->zip ." ".$dreal->town ;
+
+
+
+
+
+
+
 //Mode user
 //
 
