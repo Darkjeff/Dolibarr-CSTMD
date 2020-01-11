@@ -1992,7 +1992,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>$suretehroui,
+			'c'=>$marchandise110312oui,
 			"x"=>10,
 			"y"=>55,
 			"w"=>95,
@@ -2004,7 +2004,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>$suretehrnon,
+			'c'=>$marchandise110312non,
 			"x"=>105,
 			"y"=>55,
 			"w"=>95,
@@ -2028,7 +2028,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$marchandise110313oui,
 			"x"=>10,
 			"y"=>75,
 			"w"=>95,
@@ -2040,7 +2040,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$marchandise110313non,
 			"x"=>105,
 			"y"=>75,
 			"w"=>95,
@@ -2076,7 +2076,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$emballeurx,
 			"x"=>57,
 			"y"=>95,
 			"w"=>48,
@@ -2100,7 +2100,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$remplisseurx,
 			"x"=>152,
 			"y"=>95,
 			"w"=>48,
@@ -2124,7 +2124,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$expediteurx,
 			"x"=>57,
 			"y"=>105,
 			"w"=>48,
@@ -2148,7 +2148,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$chargeurx,
 			"x"=>152,
 			"y"=>105,
 			"w"=>48,
@@ -2172,7 +2172,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$destinatairex,
 			"x"=>57,
 			"y"=>115,
 			"w"=>48,
@@ -2196,7 +2196,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$transporteurx,
 			"x"=>152,
 			"y"=>115,
 			"w"=>48,
@@ -2220,7 +2220,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$dechargeurx,
 			"x"=>57,
 			"y"=>125,
 			"w"=>48,
@@ -2256,7 +2256,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$autre,
 			"x"=>105,
 			"y"=>135,
 			"w"=>0,
@@ -2292,7 +2292,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$plan11032oui,
 			"x"=>10,
 			"y"=>175,
 			"w"=>95,
@@ -2304,7 +2304,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$plan11032non,
 			"x"=>105,
 			"y"=>175,
 			"w"=>0,
@@ -2328,7 +2328,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"OUI",
+			'c'=>$planetablioui,
 			"x"=>10,
 			"y"=>195,
 			"w"=>95,
@@ -2340,7 +2340,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NON",
+			'c'=>$planetablinon,
 			"x"=>105,
 			"y"=>195,
 			"w"=>0,
@@ -2352,7 +2352,7 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
+			'c'=>$planremarque,
 			"x"=>10,
 			"y"=>205,
 			"w"=>0,
@@ -2364,9 +2364,21 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"NA",
+			'c'=>utf8_decode("Le cas échéant pour les matières radioactives, les dispositions du 1.10.5 sont-elles respectées"),
 			"x"=>10,
 			"y"=>215,
+			"w"=>0,
+			"h"=>10,
+			"b"=>1,
+			"l"=>"L",
+			"t"=>"",
+			"s"=>12,
+			"m"=>0
+		),
+		array(
+			'c'=>$disposition1105oui,
+			"x"=>10,
+			"y"=>225,
 			"w"=>95,
 			"h"=>10,
 			"b"=>1,
@@ -2376,9 +2388,9 @@ $pages = array(
 			"m"=>0
 		),
 		array(
-			'c'=>"class 0",
+			'c'=>$disposition1105non,
 			"x"=>105,
-			"y"=>215,
+			"y"=>225,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
