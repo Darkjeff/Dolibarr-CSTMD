@@ -186,6 +186,43 @@ $j_critere4 = $obj3->j_critere4;
 
 
 
+// qry pour les 3.2 accidents
+
+$sql4 = "SELECT 32date as k_date, 32lieu as k_lieu, 32R as k_r," ;
+$sql4.= "32F as k_f, 32N as k_n, 32C as k_c, 32D as k_d,";
+$sql4.= " 32T as k_t, 32E as k_e , 32RE as k_re, 32EX as k_ex,";
+$sql4.= " 32marchandises as k_marchandises, 32quantites as k_quantites";
+$sql4.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_accidents_extrafields";	
+$sql4.= " WHERE fk_object = " . $id ;
+
+ //echo $sql;
+
+dol_syslog(__METHOD__ . " sql4=" . $sql4, LOG_DEBUG);
+$resql4 = $db->query($sql4);
+if ($resql4) {
+	if ($db->num_rows($resql4)) {
+		$obj4 = $db->fetch_object($resql4);
+				
+	}
+}
+
+$k_date = $obj4->k_date;
+$k_lieu = $obj4->k_lieu;
+$k_r = $obj4->k_r;
+$k_f = $obj4->k_f;
+$k_n = $obj4->k_n;
+$k_c = $obj4->k_c;
+$k_d = $obj4->k_d;
+$k_t = $obj4->k_t;
+$k_e = $obj4->k_e;
+$k_re = $obj4->k_re;
+$k_ex = $obj4->k_ex;
+$k_marchandises = $obj4->k_marchandises;
+$k_quantites = $obj4->k_quantites;
+
+
+
+
 //////////////
 global $conf,$langs,$mysoc;
 
