@@ -153,10 +153,10 @@ $sql3.= " 31T as j_t, 31E as j_e , 31RE as j_re, 31EX as j_ex";
 $sql3.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_evenements_extrafields";	
 $sql3.= " WHERE fk_object = " . $id ;
 
-// echo $sql;
+ //echo $sql;
 
-dol_syslog(__METHOD__ . " sql3=" . $sql2, LOG_DEBUG);
-$resql3 = $db->query($sql2);
+dol_syslog(__METHOD__ . " sql3=" . $sql3, LOG_DEBUG);
+$resql3 = $db->query($sql3);
 if ($resql3) {
 	if ($db->num_rows($resql3)) {
 		$obj3 = $db->fetch_object($resql3);

@@ -2701,22 +2701,36 @@ $pages = array(
 			"s"=>12,
 			"m"=>0
 		),
+		
 		array(
-			'c'=>utf8_decode("Aucun évènement déclaré cette année"),
+			'c'=>$j_date,
 			"x"=>10,
-			"y"=>50,
-			"w"=>0,
-			"h"=>8,
+			"y"=>60,
+			"w"=>20,
+			"h"=>10,
 			"b"=>1,
 			"l"=>"C",
 			"t"=>"",
-			"s"=>12,
+			"s"=>10,
 			"m"=>1
 		),
 		array(
+			'c'=>$j_lieu,
+			"x"=>30,
+			"y"=>60,
+			"w"=>20,
+			"h"=>10,
+			"b"=>1,
+			"l"=>"C",
+			"t"=>"",
+			"s"=>10,
+			"m"=>1
+		),
+		
+		array(
 			'c'=>utf8_decode("3.2 Accidents soumis à la rédaction d'un rapport d'accident au titre du 4 de l'article 6 du présent arrêté"),
 			"x"=>10,
-			"y"=>80,
+			"y"=>120,
 			"w"=>0,
 			"h"=>8,
 			"b"=>0,
