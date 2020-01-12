@@ -149,7 +149,9 @@ $i_citerne = $obj2->i_citerne;
 
 $sql3 = "SELECT 31date as j_date, 31lieu as j_lieu, 31R as j_r," ;
 $sql3.= "31F as j_f, 31N as j_n, 31C as j_c, 31D as j_d,";
-$sql3.= " 31T as j_t, 31E as j_e , 31RE as j_re, 31EX as j_ex";
+$sql3.= " 31T as j_t, 31E as j_e , 31RE as j_re, 31EX as j_ex,";
+$sql3.= " 31marchandises as j_marchandises, 31quantites as j_quantites,";
+$sql3.= " 31critere1 as j_critere1, 31critere2 as j_critere2, 31critere3 as j_critere3, 31critere4 as j_critere4";
 $sql3.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_evenements_extrafields";	
 $sql3.= " WHERE fk_object = " . $id ;
 
@@ -175,12 +177,12 @@ $j_t = $obj3->j_t;
 $j_e = $obj3->j_e;
 $j_re = $obj3->j_re;
 $j_ex = $obj3->j_ex;
-
-
-
-
-
-
+$j_marchandises = $obj3->j_marchandises;
+$j_quantites = $obj3->j_quantites;
+$j_critere1 = $obj3->j_critere1;
+$j_critere2 = $obj3->j_critere2;
+$j_critere3 = $obj3->j_critere3;
+$j_critere4 = $obj3->j_critere4;
 
 
 
