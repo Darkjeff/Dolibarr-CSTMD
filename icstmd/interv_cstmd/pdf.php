@@ -144,6 +144,47 @@ $i_etiquette = $obj2->i_etiquette;
 $i_bateau = $obj2->i_bateau;
 $i_citerne = $obj2->i_citerne;
 
+
+// qry pour les 3.1 evenements
+
+$sql3 = "SELECT 31date as j_date, 31lieu as j_lieu, 31R as j_r," ;
+$sql3.= "31F as j_f, 31N as j_n, 31C as j_c, 31D as j_d,";
+$sql3.= " 31T as j_t, 31E as j_e , 31RE as j_re, 31EX as j_ex";
+$sql3.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_evenements_extrafields";	
+$sql3.= " WHERE fk_object = " . $id ;
+
+// echo $sql;
+
+dol_syslog(__METHOD__ . " sql3=" . $sql2, LOG_DEBUG);
+$resql3 = $db->query($sql2);
+if ($resql3) {
+	if ($db->num_rows($resql3)) {
+		$obj3 = $db->fetch_object($resql3);
+				
+	}
+}
+
+$j_date = $obj3->j_date;
+$j_lieu = $obj3->j_lieu;
+$j_r = $obj3->j_r;
+$j_f = $obj3->j_f;
+$j_n = $obj3->j_n;
+$j_c = $obj3->j_c;
+$j_d = $obj3->j_d;
+$j_t = $obj3->j_t;
+$j_e = $obj3->j_e;
+$j_re = $obj3->j_re;
+$j_ex = $obj3->j_ex;
+
+
+
+
+
+
+
+
+
+//////////////
 global $conf,$langs,$mysoc;
 
 
