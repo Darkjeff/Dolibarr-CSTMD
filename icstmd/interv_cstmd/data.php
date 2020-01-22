@@ -3510,7 +3510,7 @@ $pages = array(
 		array(
 			'c'=>utf8_decode("4.2 Rappel des autres travaux ou audits réalisés pouvant avoir une incidence sur les activités liées au transport de marchandises dangereuses"),
 			"x"=>10,
-			"y"=>100,
+			"y"=>140,
 			"w"=>0,
 			"h"=>8,
 			"b"=>0,

@@ -835,7 +835,7 @@ $pdf->page4($title, $page4);
 // Range
  $pdf->AddPage();
  $pdf->range($title, $pages);
-$pdf->Image("../img/tableau41.jpg",30,30,60);
+$pdf->Image("../img/tableau41.jpg",10,40,180);
 
 
 
