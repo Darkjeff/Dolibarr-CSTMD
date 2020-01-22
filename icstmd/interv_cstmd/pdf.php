@@ -818,8 +818,8 @@ $pdf->firstpage($firstpage);
 $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
-$pdf->Image("../" .$signuser,160,156,20);
-$pdf->Image("../" .$signuser,150,215,40);
+$pdf->Image("../" .$signuser,160,156,10);
+$pdf->Image("../" .$signuser,150,215,10);
 
 //page 3
 $pdf->AddPage();
@@ -835,7 +835,7 @@ $pdf->page4($title, $page4);
 // Range
  $pdf->AddPage();
  $pdf->range($title, $pages);
-
+$pdf->Image("../img/tableau41.jpg",30,30,60);
 
 
 
