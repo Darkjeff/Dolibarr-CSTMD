@@ -902,6 +902,10 @@ foreach($dataq as $k => $rows){
 	
 	}
 }
+
+$pdf->AddPage();
+$pdf->SetFont('Arial','',8);
+$pdf->MultiCell(170,5,utf8_decode($observation), 0, 'L');
 $pdf->Output();
 
 
