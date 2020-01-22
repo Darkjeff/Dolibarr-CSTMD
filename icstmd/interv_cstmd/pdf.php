@@ -144,6 +144,86 @@ $i_etiquette = $obj2->i_etiquette;
 $i_bateau = $obj2->i_bateau;
 $i_citerne = $obj2->i_citerne;
 
+
+// qry pour les 3.1 evenements
+
+$sql3 = "SELECT 31date as j_date, 31lieu as j_lieu, 31R as j_r," ;
+$sql3.= "31F as j_f, 31N as j_n, 31C as j_c, 31D as j_d,";
+$sql3.= " 31T as j_t, 31E as j_e , 31RE as j_re, 31EX as j_ex,";
+$sql3.= " 31marchandises as j_marchandises, 31quantites as j_quantites,";
+$sql3.= " 31critere1 as j_critere1, 31critere2 as j_critere2, 31critere3 as j_critere3, 31critere4 as j_critere4";
+$sql3.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_evenements_extrafields";	
+$sql3.= " WHERE fk_object = " . $id ;
+
+ //echo $sql;
+
+dol_syslog(__METHOD__ . " sql3=" . $sql3, LOG_DEBUG);
+$resql3 = $db->query($sql3);
+if ($resql3) {
+	if ($db->num_rows($resql3)) {
+		$obj3 = $db->fetch_object($resql3);
+				
+	}
+}
+
+$j_date = $obj3->j_date;
+$j_lieu = $obj3->j_lieu;
+$j_r = $obj3->j_r;
+$j_f = $obj3->j_f;
+$j_n = $obj3->j_n;
+$j_c = $obj3->j_c;
+$j_d = $obj3->j_d;
+$j_t = $obj3->j_t;
+$j_e = $obj3->j_e;
+$j_re = $obj3->j_re;
+$j_ex = $obj3->j_ex;
+$j_marchandises = $obj3->j_marchandises;
+$j_quantites = $obj3->j_quantites;
+$j_critere1 = $obj3->j_critere1;
+$j_critere2 = $obj3->j_critere2;
+$j_critere3 = $obj3->j_critere3;
+$j_critere4 = $obj3->j_critere4;
+
+
+
+// qry pour les 3.2 accidents
+
+$sql4 = "SELECT 32date as k_date, 32lieu as k_lieu, 32R as k_r," ;
+$sql4.= "32F as k_f, 32N as k_n, 32C as k_c, 32D as k_d,";
+$sql4.= " 32T as k_t, 32E as k_e , 32RE as k_re, 32EX as k_ex,";
+$sql4.= " 32marchandises as k_marchandises, 32quantites as k_quantites";
+$sql4.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_accidents_extrafields";	
+$sql4.= " WHERE fk_object = " . $id ;
+
+ //echo $sql;
+
+dol_syslog(__METHOD__ . " sql4=" . $sql4, LOG_DEBUG);
+$resql4 = $db->query($sql4);
+if ($resql4) {
+	if ($db->num_rows($resql4)) {
+		$obj4 = $db->fetch_object($resql4);
+				
+	}
+}
+
+$k_date = $obj4->k_date;
+$k_lieu = $obj4->k_lieu;
+$k_r = $obj4->k_r;
+$k_f = $obj4->k_f;
+$k_n = $obj4->k_n;
+$k_c = $obj4->k_c;
+$k_d = $obj4->k_d;
+$k_t = $obj4->k_t;
+$k_e = $obj4->k_e;
+$k_re = $obj4->k_re;
+$k_ex = $obj4->k_ex;
+$k_marchandises = $obj4->k_marchandises;
+$k_quantites = $obj4->k_quantites;
+
+
+
+
+//////////////
 global $conf,$langs,$mysoc;
 
 
