@@ -257,6 +257,7 @@ $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
 $synthrapport =  $interv->array_options['options_synthrapport'] ;
+$observation = $interv->array_options['options_bilanrapportvisite'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
 $adressedoli = $myadress .", ". $myzip .", ". $mytown;
 $activiteclient =  utf8_decode($soc->array_options['options_activiteclient'] );
