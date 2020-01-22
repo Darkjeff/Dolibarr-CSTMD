@@ -857,10 +857,10 @@ foreach($dataq as $k => $rows){
 	// die();
 		$pdf->Ln();
 		$t = "5.".$k." ".$chap["5.".$k];
-		$pdf->SetFont('Arial','B',12);
+		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(10);
-		$pdf->MultiCell(170,5,utf8_decode($t), 0, 'L');
-		$pdf->MultiCell(175,5,'', 0, 'L');
+		$pdf->MultiCell(0,5,utf8_decode($t), 0, 'L');
+		$pdf->MultiCell(0,5,'', 0, 'L');
 		
 	$posit = 0;
 	
