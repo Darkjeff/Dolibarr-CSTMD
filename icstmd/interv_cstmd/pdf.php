@@ -221,6 +221,37 @@ $k_marchandises = $obj4->k_marchandises;
 $k_quantites = $obj4->k_quantites;
 
 
+////////// sql pour synthese visite 
+
+
+$dataq2 = array();
+
+$sql5 = "SELECT date, lieu, verifmat, procetcons, chargdecharg, autres, formers, procurg, ainainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
+$sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite";
+$sql5.= " WHERE fk_intervention = ".$id;
+dol_syslog(__METHOD__ . " sql=" . $sql5, LOG_DEBUG);
+$resql5 = $db->query($sql5);
+if ($resql5) {
+	for($cmp=0;$cmp<$db->num_rows($resql5);$cmp++){
+		$obj = $db->fetch_object($resql5);
+		$p = explode(".", $obj->position);//die;
+		$dataq2[$p[1]][] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+	}
+	$db->free($resql5);
+
+} else {
+	$error = "Error " . $db->lasterror();
+	dol_syslog(__METHOD__ . " " . $error, LOG_ERR);
+}
+
+
+
+
+
+
+
+
+
 
 
 //////////////
