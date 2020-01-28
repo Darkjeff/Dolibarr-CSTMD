@@ -227,15 +227,15 @@ $k_quantites = $obj4->k_quantites;
 $dataq2 = array();
 
 $sql5 = "SELECT date, lieu, verifmat, procetcons, chargdecharg, autres, formers, procurg, ainainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
-$sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite";
-$sql5.= " WHERE fk_intervention = ".$id;
+$sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite_extrafields";
+$sql5.= " WHERE fk_object = ".$id;
 dol_syslog(__METHOD__ . " sql=" . $sql5, LOG_DEBUG);
 $resql5 = $db->query($sql5);
 if ($resql5) {
 	for($cmp=0;$cmp<$db->num_rows($resql5);$cmp++){
-		$obj = $db->fetch_object($resql5);
-		$p = explode(".", $obj->position);//die;
-		$dataq2[$p[1]][] = array( 'position'=> $obj->position, 'label_question'=> $obj->label_question, 'texte_reglementaire'=> $obj->texte_reglementaire, 'etat_lieux'=> $obj->etat_lieux, 'titre_recommandation'=> $obj->titre_recommandation, 'recommandation'=> $obj->recommandation, 'dater'=> $obj->dater, 'cf'=> $obj->cf, 'nc'=> $obj->nc, 'pa'=> $obj->pa, 'ev'=> $obj->ev, 'recommandation'=> $obj->recommandation, 'reference'=> $obj->reference);
+		$obj5 = $db->fetch_object($resql5);
+		$p5 = explode(".", $obj5->fk_object);//die;
+		$dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
 	}
 	$db->free($resql5);
 
@@ -869,6 +869,29 @@ $pdf->page4($title, $page4);
  $pdf->range($title, $pages);
 $pdf->Image("../img/tableau41.jpg",10,40,180);
 
+
+////  $dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
+
+
+foreach($dataq2 as $k => $rows){
+		$pdf->SetFont('Arial','B',8);		
+		$pdf->SetFont('Arial','',8);
+		$verifmat = $procetcons = $chargdecharg  = null;
+		$show = false;
+		if($row['verifmat'] == 1){ $verifmat = 'X'; $show = true;}
+		
+		if($row['procetcons'] == 1){ $procetcons = 'X'; $show = true;}
+		
+		if($row['chargdecharg'] == 1){ $chargdecharg = 'X'; $show = true;}
+		
+		
+		
+		if($show){
+			
+			$pdf->Row(array(utf8_decode($row['date']),utf8_decode($row['lieu']), $verifmat, $procetcons, $chargdecharg ));
+		}
+	
+	}
 
 
 
