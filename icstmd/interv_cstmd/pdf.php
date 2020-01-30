@@ -226,7 +226,7 @@ $k_quantites = $obj4->k_quantites;
 
 $dataq2 = array();
 
-$sql5 = "SELECT date, lieu, verifmat, procetcons, chargdecharg, autres, formers, procurg, ainainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
+$sql5 = "SELECT date, lieu, verifmat, procetcons, chargdecharg, autres, formpers, procurg, anainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
 $sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite_extrafields";
 $sql5.= " WHERE fk_object = ".$id;
 dol_syslog(__METHOD__ . " sql=" . $sql5, LOG_DEBUG);
