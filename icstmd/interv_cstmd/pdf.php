@@ -1,6 +1,6 @@
 <?php
 /* <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) <2017> SaaSprov.ma <saasprov@gmail.com>
+ * Copyright (C) <2017> jamelbaz.com <jamelbaz@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -868,30 +868,74 @@ $pdf->page4($title, $page4);
  $pdf->AddPage();
  $pdf->range($title, $pages);
 $pdf->Image("../img/tableau41.jpg",10,40,180);
-
-
-////  $dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
-
+$pdf->SetY(110);
 
 foreach($dataq2 as $k => $rows){
-		$pdf->SetFont('Arial','B',8);		
-		$pdf->SetFont('Arial','',8);
-		$verifmat = $procetcons = $chargdecharg  = null;
-		$show = false;
-		if($row['verifmat'] == 1){ $verifmat = 'X'; $show = true;}
-		
-		if($row['procetcons'] == 1){ $procetcons = 'X'; $show = true;}
-		
-		if($row['chargdecharg'] == 1){ $chargdecharg = 'X'; $show = true;}
-		
-		
-		
-		if($show){
-			
-			$pdf->Row(array(utf8_decode($row['date']),utf8_decode($row['lieu']), $verifmat, $procetcons, $chargdecharg ));
-		}
-	
-	}
+$pdf->SetWidths(array(21,22,10,9,10,9,10,9,10,9,10,9,10,9,10,13));	
+$pdf->Ln();		
+
+if ($obj5->verifmat == 1) {
+$verifmat = "X" ;
+}
+
+if ($obj5->procetcons == 1) {
+$procetcons = "X" ;
+}
+
+if ($obj5->chargdecharg == 1) {
+$chargdecharg = "X" ;
+}
+
+if ($obj5->autres == 1) {
+$autres = "X" ;
+}
+
+if ($obj5->formpers == 1) {
+$formpers = "X" ;
+}
+
+if ($obj5->procurg == 1) {
+$procurg = "X" ;
+}
+
+if ($obj5->anainterv == 1) {
+$anainterv = "X" ;
+}
+
+if ($obj5->docequip == 1) {
+$docequip = "X" ;
+}
+
+if ($obj5->plan == 1) {
+$plan = "X" ;
+}
+
+if ($obj5->idmd == 1) {
+$idmd = "X" ;
+}
+
+if ($obj5->achmoy == 1) {
+$achmoy = "X" ;
+}
+
+if ($obj5->soustrait == 1) {
+$soustrait = "X" ;
+}
+
+if ($obj5->sensmd == 1) {
+$sensmd = "X" ;
+}
+
+if ($obj5->mesevitacci == 1) {
+$mesevitacci = "X" ;
+}
+
+$pdf->Row(array(utf8_decode($obj5->date), $obj5->lieu, $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
+
+
+
+}
+
 
 
 
