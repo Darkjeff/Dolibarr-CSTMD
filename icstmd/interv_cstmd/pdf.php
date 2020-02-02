@@ -236,6 +236,8 @@ if ($resql5) {
 		$obj5 = $db->fetch_object($resql5);
 		$p5 = explode(".", $obj5->fk_object);//die;
 		$dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
+		
+		
 	}
 	$db->free($resql5);
 
@@ -247,7 +249,9 @@ if ($resql5) {
 
 
 
-
+//print '<pre>';
+// var_dump($dataq2);die;
+// print '</pre>';
 
 
 
