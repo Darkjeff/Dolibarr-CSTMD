@@ -224,7 +224,7 @@ $k_quantites = $obj4->k_quantites;
 ////////// sql pour synthese visite 
 
 
-$dataq2 = array();
+//$dataq2 = array();
 
 $sql5 = "SELECT fk_object,  date, lieu, verifmat, procetcons, chargdecharg, autres, formpers, procurg, anainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
 $sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite_extrafields";
@@ -828,6 +828,11 @@ if ($resql) {
 	dol_syslog(__METHOD__ . " " . $error, LOG_ERR);
 }
 
+//print '<pre>';
+//var_dump($dataq);die;
+//print '</pre>';
+
+
 // chapitres
 
 $sql = "SELECT * ";
@@ -885,7 +890,8 @@ $pdf->SetWidths(array(21,22,10,9,10,9,10,9,10,9,10,9,10,9,10,13));
 
 $pdf->Row(array('date', 'lieu', '', '', '', '', '', '', '', '', '', '' , '', '', '', ''));
 
-foreach($dataq2 as $row){
+foreach($dataq2 as $k => $rows){
+
 
 //$pdf->Ln();		
 
@@ -946,9 +952,10 @@ if ($obj5->mesevitacci == 1) {
 $mesevitacci = "X" ;
 }
 
-$pdf->Row(array(utf8_decode($obj5->date), $obj5->lieu, $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
+$pdf->Row(array(utf8_decode($k), $b, $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
 
 }
+
 
 
 
