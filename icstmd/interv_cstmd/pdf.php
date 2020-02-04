@@ -896,63 +896,63 @@ foreach($dataq2 as $k => $rows){
 //$pdf->Ln();		
 
 
-if ($obj5->verifmat == 1) {
+if ($rows['verifmat'] == 1) {
 $verifmat = "X" ;
 }
 
-if ($obj5->procetcons == 1) {
+if ($rows['procetcons'] == 1) {
 $procetcons = "X" ;
 }
 
-if ($obj5->chargdecharg == 1) {
+if ($rows['chargdecharg'] == 1) {
 $chargdecharg = "X" ;
 }
 
-if ($obj5->autres == 1) {
+if ($rows['autres'] == 1) {
 $autres = "X" ;
 }
 
-if ($obj5->formpers == 1) {
+if ($rows['formpers'] == 1) {
 $formpers = "X" ;
 }
 
-if ($obj5->procurg == 1) {
+if ($rows['procurg'] == 1) {
 $procurg = "X" ;
 }
 
-if ($obj5->anainterv == 1) {
+if ($rows['anainterv'] == 1) {
 $anainterv = "X" ;
 }
 
-if ($obj5->docequip == 1) {
+if ($rows['docequip'] == 1) {
 $docequip = "X" ;
 }
 
-if ($obj5->plan == 1) {
+if ($rows['plan'] == 1) {
 $plan = "X" ;
 }
 
-if ($obj5->idmd == 1) {
+if ($rows['idmd'] == 1) {
 $idmd = "X" ;
 }
 
-if ($obj5->achmoy == 1) {
+if ($rows['achmoy'] == 1) {
 $achmoy = "X" ;
 }
 
-if ($obj5->soustrait == 1) {
+if ($rows['soustrait'] == 1) {
 $soustrait = "X" ;
 }
 
-if ($obj5->sensmd == 1) {
+if ($rows['sensmd'] == 1) {
 $sensmd = "X" ;
 }
 
-if ($obj5->mesevitacci == 1) {
+if ($rows['mesevitacci'] == 1) {
 $mesevitacci = "X" ;
 }
 
-$pdf->Row(array(utf8_decode($k), $b, $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
+$pdf->Row(array(utf8_decode($k), $rows['lieu'], $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
 
 }
 
