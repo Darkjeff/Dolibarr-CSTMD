@@ -254,9 +254,9 @@ if ($resql5) {
 
 
 
-print '<pre>';
-var_dump($dataq2);die;
-print '</pre>';
+//print '<pre>';
+//var_dump($dataq2);die;
+//print '</pre>';
 
 
 
@@ -878,12 +878,17 @@ $pdf->page4($title, $page4);
 // Range
  $pdf->AddPage();
  $pdf->range($title, $pages);
-$pdf->Image("../img/tableau41.jpg",10,40,180);
+$pdf->Image("../img/tableau41bis.jpg",10,40,180);
 $pdf->SetY(110);
 
-foreach($dataq2 as $k => $rows){
 $pdf->SetWidths(array(21,22,10,9,10,9,10,9,10,9,10,9,10,9,10,13));	
-$pdf->Ln();		
+
+$pdf->Row(array('date', 'lieu', '', '', '', '', '', '', '', '', '', '' , '', '', '', ''));
+
+foreach($dataq2 as $row){
+
+//$pdf->Ln();		
+
 
 if ($obj5->verifmat == 1) {
 $verifmat = "X" ;
@@ -943,9 +948,9 @@ $mesevitacci = "X" ;
 
 $pdf->Row(array(utf8_decode($obj5->date), $obj5->lieu, $verifmat, $procetcons, $chargdecharg, $autres, $formpers, $procurg, $anainterv, $docequip, $plan, $idmd , $achmoy, $soustrait, $sensmd, $mesevitacci));
 
-
-
 }
+
+
 
 
 
