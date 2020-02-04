@@ -226,16 +226,21 @@ $k_quantites = $obj4->k_quantites;
 
 $dataq2 = array();
 
-$sql5 = "SELECT date, lieu, verifmat, procetcons, chargdecharg, autres, formpers, procurg, anainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
+$sql5 = "SELECT fk_object,  date, lieu, verifmat, procetcons, chargdecharg, autres, formpers, procurg, anainterv, docequip, plan, idmd, achmoy, soustrait, sensmd, mesevitacci ";
 $sql5.= " FROM ".MAIN_DB_PREFIX."cust_cstmd_syntvisite_extrafields";
 $sql5.= " WHERE fk_object = ".$id;
 dol_syslog(__METHOD__ . " sql=" . $sql5, LOG_DEBUG);
 $resql5 = $db->query($sql5);
+
+
+
+
 if ($resql5) {
 	for($cmp=0;$cmp<$db->num_rows($resql5);$cmp++){
 		$obj5 = $db->fetch_object($resql5);
-		$p5 = explode(".", $obj5->fk_object);//die;
-		$dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
+		//$p5 = explode(".", $obj5->fk_object);//die;
+		//$dataq2[$p5[1]][] = array( 'position'=> $obj5->fk_object, 'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg );
+		$dataq2[$obj5->date] = array(  'date'=> $obj5->date, 'lieu'=> $obj5->lieu, 'verifmat'=> $obj5->verifmat, 'procetcons'=> $obj5->procetcons, 'chargdecharg'=> $obj5->chargdecharg, 'autres'=> $obj5->autres, 'formpers'=> $obj5->formpers, 'procurg'=> $obj5->procurg,'anainterv'=> $obj5->anainterv,'docequip'=> $obj5->docequip, 'plan'=> $obj5->plan, 'idmd'=> $obj5->idmd, 'achmoy'=> $obj5->achmoy, 'soustrait'=> $obj5->soustrait, 'sensmd'=> $obj5->sensmd, 'mesevitacci'=> $obj5->mesevitacci);
 		
 		
 	}
@@ -249,9 +254,9 @@ if ($resql5) {
 
 
 
-//print '<pre>';
-// var_dump($dataq2);die;
-// print '</pre>';
+print '<pre>';
+var_dump($dataq2);die;
+print '</pre>';
 
 
 
@@ -840,6 +845,8 @@ if ($resql) {
 	$error = "Error " . $db->lasterror();
 	dol_syslog(__METHOD__ . " " . $error, LOG_ERR);
 }
+
+
 
 
 $pdf=new PDF_MC_Table();
