@@ -304,8 +304,10 @@ $activiteclient =  utf8_decode($soc->array_options['options_activiteclient'] );
 $orgaclient =  $soc->array_options['options_orgaclient'] ;
 $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
+$interlocuteur = $soc->array_options['options_interlocuteurcstmd'];
+$cstmdaux = $soc->array_options['options_cstmdaux'];
 
-$certificat = $user->array_options['options_cstmd'];
+$certificat = $user_cstmd->array_options['options_cstmd'];
 $datecertif = date('d/m/Y',$user->array_options['options_valcertif']);
 
 $prenomuser = $tab[0] ." ". $tab[1];

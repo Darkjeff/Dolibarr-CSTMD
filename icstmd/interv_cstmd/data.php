@@ -309,7 +309,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Identite du ou des conseillers ayant éffectue la ou les visites : \n" .$prenomuser),
+			"c"=>utf8_decode("Identite du ou des conseillers ayant effectué la ou les visites : \n" .$cstmdaux),
 			"x"=>10,
 			"y"=>140,
 			"w"=>80,
@@ -410,7 +410,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>"A: Interlocuteur	CSTMD",
+			"c"=>utf8_decode("A: Interlocuteur" .$interlocuteur),
 			"x"=>90,
 			"y"=>178,
 			"w"=>0,
