@@ -48,6 +48,7 @@ $dreal = new Societe($db);
 
 $dreal = $dreal->searchByName($soc->array_options['options_dreal'])[0];
 
+
 $tab = explode(" ", $soc->array_options['options_cstmd']);
 // var_dump($tab);die();
 $sql = "SELECT rowid ";
@@ -65,6 +66,25 @@ if ($resql) {
 		
 	}
 }
+
+
+$tab2 = explode(" ", $soc->array_options['options_cstmdaux']);
+
+$sql6 = "SELECT rowid ";
+$sql6.= " FROM ".MAIN_DB_PREFIX."user";	
+$sql6.= " WHERE firstname = '" . $tab2[0] . "'";
+$sql6.= " AND lastname = '" . $tab2[1] . "'";
+$useraux_id = null;
+dol_syslog(__METHOD__ . " sql=" . $sql6, LOG_DEBUG);
+$resql6 = $db->query($sql6);
+if ($resql6) {
+	if ($db->num_rows($resql6)) {
+		$obj6 = $db->fetch_object($resql6);
+		$useraux_id = $obj6->rowid;
+		
+	}
+}
+
 
 // qry pour les quantites marchandises
 
@@ -305,10 +325,20 @@ $orgaclient =  $soc->array_options['options_orgaclient'] ;
 $nom = $user_cstmd->array_options['options_cstmd'];
 $prenom = "";
 $interlocuteur = $soc->array_options['options_interlocuteurcstmd'];
-$cstmdaux = $soc->array_options['options_cstmdaux'];
+
 
 $certificat = $user_cstmd->array_options['options_cstmd'];
 $datecertif = date('d/m/Y',$user->array_options['options_valcertif']);
+
+
+//// information CSTMD AUX 
+$user_cstmdaux = new User($db);
+$user_cstmdaux->fetch($useraux_id);
+
+$cstmdaux = $soc->array_options['options_cstmdaux'];
+$certificataux = $user_cstmdaux->array_options['options_cstmd'];
+$datecertifaux = date('d/m/Y',$user_cstmdaux->array_options['options_valcertif']);
+
 
 $prenomuser = $tab[0] ." ". $tab[1];
 $nomuser = $tab[1];
