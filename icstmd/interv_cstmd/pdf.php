@@ -316,6 +316,7 @@ $now = date('d/m/Y' ,dol_now());
 $date = date('d/m/Y' ,$interv->datec);
 $annee = date('Y', $interv->datec);
 $daterapport =  date('d/m/Y',$interv->array_options['options_daterapport'] );
+$datetransmis =  date('d/m/Y',$interv->array_options['options_datetransmis'] );
 $synthrapport =  $interv->array_options['options_synthrapport'] ;
 $observation = $interv->array_options['options_bilanrapportvisite'] ;
 $adresse = $soc->address .", ". $soc->zip .", ". $soc->town;
@@ -338,6 +339,7 @@ $user_cstmdaux->fetch($useraux_id);
 $cstmdaux = $soc->array_options['options_cstmdaux'];
 $certificataux = $user_cstmdaux->array_options['options_cstmd'];
 $datecertifaux = date('d/m/Y',$user_cstmdaux->array_options['options_valcertif']);
+$signuseraux = $user_cstmdaux->array_options['options_vcstmd'] ;
 
 
 $prenomuser = $tab[0] ." ". $tab[1];
@@ -898,8 +900,8 @@ $pdf->firstpage($firstpage);
 $pdf->AddPage();
 $pdf->drawfirsttable($firstpage['logo']);
 $pdf->page2($title, $data);
-$pdf->Image("../" .$signuser,160,156,10);
-$pdf->Image("../" .$signuser,150,215,10);
+$pdf->Image("../" .$signuseraux,160,159,14);
+$pdf->Image("../" .$signuser,150,215,14);
 
 //page 3
 $pdf->AddPage();

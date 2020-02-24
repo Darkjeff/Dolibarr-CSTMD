@@ -331,7 +331,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>$certificat,
+			"c"=>$certificataux,
 			"x"=>150,
 			"y"=>140,
 			"w"=>0,
@@ -353,7 +353,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>$datecertif,
+			"c"=>$datecertifaux,
 			"x"=>150,
 			"y"=>148,
 			"w"=>0,
@@ -388,7 +388,7 @@ $data = array(
 	),
 	array(
 		array(
-			"c"=>utf8_decode("Rapport annuel établi le :" .$daterapport),
+			"c"=>utf8_decode("Rapport annuel établi le : " .$daterapport),
 			"x"=>10,
 			"y"=>170,
 			"w"=>80,
@@ -399,7 +399,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>utf8_decode("Transmis à l'entreprise le :"),
+			"c"=>utf8_decode("Transmis à l'entreprise le : " .$datetransmis),
 			"x"=>90,
 			"y"=>170,
 			"w"=>0,
@@ -410,7 +410,7 @@ $data = array(
 			"s"=>"12"
 		),
 		array(
-			"c"=>utf8_decode("A: Interlocuteur" .$interlocuteur),
+			"c"=>utf8_decode("A: Interlocuteur " .$interlocuteur),
 			"x"=>90,
 			"y"=>178,
 			"w"=>0,
