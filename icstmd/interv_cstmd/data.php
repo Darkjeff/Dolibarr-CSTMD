@@ -634,13 +634,13 @@ $pages = array(
 			"m"=>1
 		),
 		
-		
-	
+		),
+		array(
 		// End table 1 page 5
 		array(
 			"c"=>utf8_decode("2.1.2	Marchandises dangereuses chargées ou remplies"),
 			"x"=>10,
-			"y"=>150,
+			"y"=>20,
 			"w"=>150,
 			"h"=>10,
 			"b"=>0,
@@ -659,7 +659,7 @@ $pages = array(
 		array(
 			"c"=>"Classe (1)",
 			"x"=>10,
-			"y"=>160,
+			"y"=>30,
 			"w"=>40,
 			"h"=>20,
 			"b"=>1,
@@ -671,7 +671,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette (2)",
 			"x"=>50,
-			"y"=>160,
+			"y"=>30,
 			"w"=>35,
 			"h"=>20,
 			"b"=>1,
@@ -683,7 +683,7 @@ $pages = array(
 		array(
 			"c"=>"Type de contenant (5)",
 			"x"=>85,
-			"y"=>160,
+			"y"=>30,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
@@ -695,7 +695,7 @@ $pages = array(
 		array(
 			"c"=>"Colis",
 			"x"=>85,
-			"y"=>170,
+			"y"=>40,
 			"w"=>16,
 			"h"=>10,
 			"b"=>1,
@@ -707,7 +707,7 @@ $pages = array(
 		array(
 			"c"=>"Vrac",
 			"x"=>101,
-			"y"=>170,
+			"y"=>40,
 			"w"=>16,
 			"h"=>10,
 			"b"=>1,
@@ -719,7 +719,7 @@ $pages = array(
 		array(
 			"c"=>"Citerne",
 			"x"=>117,
-			"y"=>170,
+			"y"=>40,
 			"w"=>18,
 			"h"=>10,
 			"b"=>1,
@@ -731,7 +731,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles (3)"),
 			"x"=>135,
-			"y"=>160,
+			"y"=>30,
 			"w"=>65,
 			"h"=>10,
 			"b"=>1,
@@ -743,7 +743,7 @@ $pages = array(
 		array(
 			"c"=>"R",
 			"x"=>135,
-			"y"=>170,
+			"y"=>40,
 			"w"=>22,
 			"h"=>10,
 			"b"=>1,
@@ -755,7 +755,7 @@ $pages = array(
 		array(
 			"c"=>"F",
 			"x"=>157,
-			"y"=>170,
+			"y"=>40,
 			"w"=>22,
 			"h"=>10,
 			"b"=>1,
@@ -767,7 +767,7 @@ $pages = array(
 		array(
 			"c"=>"N",
 			"x"=>179,
-			"y"=>170,
+			"y"=>40,
 			"w"=>21,
 			"h"=>10,
 			"b"=>1,
@@ -782,7 +782,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_classe),
 			"x"=>10,
-			"y"=>180,
+			"y"=>50,
 			"w"=>40,
 			"h"=>10,
 			"b"=>1,
@@ -794,7 +794,7 @@ $pages = array(
 			array(
 			"c"=>utf8_decode($b_etiquette),
 			"x"=>50,
-			"y"=>180,
+			"y"=>50,
 			"w"=>35,
 			"h"=>10,
 			"b"=>1,
@@ -806,7 +806,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_colis),
 			"x"=>85,
-			"y"=>180,
+			"y"=>50,
 			"w"=>16,
 			"h"=>10,
 			"b"=>1,
@@ -818,7 +818,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_vrac),
 			"x"=>101,
-			"y"=>180,
+			"y"=>50,
 			"w"=>16,
 			"h"=>10,
 			"b"=>1,
@@ -830,7 +830,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_citerne),
 			"x"=>117,
-			"y"=>180,
+			"y"=>50,
 			"w"=>18,
 			"h"=>10,
 			"b"=>1,
@@ -842,7 +842,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_R),
 			"x"=>135,
-			"y"=>180,
+			"y"=>50,
 			"w"=>22,
 			"h"=>10,
 			"b"=>1,
@@ -854,7 +854,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_F),
 			"x"=>157,
-			"y"=>180,
+			"y"=>50,
 			"w"=>22,
 			"h"=>10,
 			"b"=>1,
@@ -866,7 +866,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($b_N),
 			"x"=>179,
-			"y"=>180,
+			"y"=>50,
 			"w"=>21,
 			"h"=>10,
 			"b"=>1,
