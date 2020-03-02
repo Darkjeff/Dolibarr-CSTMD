@@ -469,14 +469,14 @@ $page3 = array(
 );
 
 $page4 = array(
-	array('c'=>utf8_decode("1. 1. Organisation de l'entreprise pour les activités liées au transport de marchandises dangereuses"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1. Organisation de l'entreprise pour les activités liées au transport de marchandises dangereuses"), 'h'=>8, 's'=>16, 't'=>"B" ,'ln'=>"" ),
 	array('c'=>utf8_decode("1.1. Gestion administrative et opérationnelle des activités liées au transport"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("1.1.1 Activité de l'entreprise"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.1.1 Activité de l'entreprise"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>$activiteclient, 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("1.1.2 Organisation et équipements"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.1.2 Organisation et équipements"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($orgaclient), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("1.2. Place du conseiller à la sécurité dans l'organisation"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
-	array('c'=>utf8_decode("1.2.1 Interlocuteur du Conseiller à la sécurité ou Organigramme"), 'h'=>8, 's'=>12, 't'=>"B" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.2. Place du conseiller à la sécurité dans l'organisation"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.2.1 Interlocuteur du Conseiller à la sécurité ou Organigramme"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode("L'entreprise dispose d'un conseiller à la sécurité externe toutes classes en relation avec"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($prenomuser), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($modeuser), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
@@ -485,7 +485,7 @@ $page4 = array(
 	array('c'=>utf8_decode($drealnom), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealaddress), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($drealcpville), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
-	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>12, 't'=>"" ,'ln'=>"" ),
+	array('c'=>utf8_decode("1.2.2 Organisation par rapport à la sûreté"), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	array('c'=>utf8_decode($suretehrtxt), 'h'=>8, 's'=>10, 't'=>"" ,'ln'=>"" ),
 	);
 /*
