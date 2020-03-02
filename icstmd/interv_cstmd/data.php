@@ -1041,12 +1041,13 @@ $pages = array(
 			"s"=>10,
 			"m"=>1
 		),
+		),
 		//end tableau 3 page 5
-		
+		array(
 		array(
 			"c"=>"2.1.3.2 Mode ferroviaire",
 			"x"=>15,
-			"y"=>140,
+			"y"=>20,
 			"w"=>0,
 			"h"=>10,
 			"b"=>0,
@@ -1061,7 +1062,7 @@ $pages = array(
 		array(
 			"c"=>"Classe (1)",
 			"x"=>10,
-			"y"=>150,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1073,7 +1074,7 @@ $pages = array(
 		array(
 			"c"=>"Etiquette (2)",
 			"x"=>60,
-			"y"=>150,
+			"y"=>30,
 			"w"=>50,
 			"h"=>20,
 			"b"=>1,
@@ -1085,7 +1086,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode("Quantités totales annuelles (4)"),
 			"x"=>110,
-			"y"=>150,
+			"y"=>30,
 			"w"=>0,
 			"h"=>10,
 			"b"=>1,
@@ -1097,7 +1098,7 @@ $pages = array(
 		array(
 			"c"=>"Wagons",
 			"x"=>110,
-			"y"=>160,
+			"y"=>40,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1109,7 +1110,7 @@ $pages = array(
 		array(
 			"c"=>"UTI",
 			"x"=>155,
-			"y"=>160,
+			"y"=>40,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1121,7 +1122,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($d_classe),
 			"x"=>10,
-			"y"=>170,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
@@ -1133,7 +1134,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($d_etiquette),
 			"x"=>60,
-			"y"=>170,
+			"y"=>50,
 			"w"=>50,
 			"h"=>10,
 			"b"=>1,
@@ -1145,7 +1146,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($d_wagon),
 			"x"=>110,
-			"y"=>170,
+			"y"=>50,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
@@ -1157,7 +1158,7 @@ $pages = array(
 		array(
 			"c"=>utf8_decode($d_uti),
 			"x"=>155,
-			"y"=>170,
+			"y"=>50,
 			"w"=>45,
 			"h"=>10,
 			"b"=>1,
